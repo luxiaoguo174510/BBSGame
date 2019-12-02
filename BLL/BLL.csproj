@@ -31,8 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NPOI">
+      <HintPath>..\DLL\NPOI.dll</HintPath>
+    </Reference>
     <Reference Include="PublicToolsLib">
-      <HintPath>D:\资料\专高四\技能\PublicToolsLib\bin\Debug\PublicToolsLib.dll</HintPath>
+      <HintPath>..\DLL\PublicToolsLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
