@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
+    
     public class BllOpt
     {
-        
+        PublicToolsLib.HelpDb.DbHelper db = new PublicToolsLib.HelpDb.DbHelper();
     }
 }
