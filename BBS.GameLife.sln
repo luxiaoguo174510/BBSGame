@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBS.GameLife", "BBS.GameLife\BBS.GameLife.csproj", "{D89BC367-725D-48FF-B885-BE15E0FE2F36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelInfo", "ModelInfo\ModelInfo.csproj", "{26831A61-2005-459A-8A0E-6CAE6C14BFF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{2642B1B2-7867-4FEE-A155-71FFAE88112E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D89BC367-725D-48FF-B885-BE15E0FE2F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89BC367-725D-48FF-B885-BE15E0FE2F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89BC367-725D-48FF-B885-BE15E0FE2F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89BC367-725D-48FF-B885-BE15E0FE2F36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26831A61-2005-459A-8A0E-6CAE6C14BFF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26831A61-2005-459A-8A0E-6CAE6C14BFF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26831A61-2005-459A-8A0E-6CAE6C14BFF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26831A61-2005-459A-8A0E-6CAE6C14BFF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2642B1B2-7867-4FEE-A155-71FFAE88112E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2642B1B2-7867-4FEE-A155-71FFAE88112E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2642B1B2-7867-4FEE-A155-71FFAE88112E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2642B1B2-7867-4FEE-A155-71FFAE88112E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87CE2FC9-BB57-465F-81AF-985631316012}
+	EndGlobalSection
+EndGlobal
