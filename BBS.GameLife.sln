@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL", "DLL", "{FDFCF125-764
 		DLL\PublicToolsLib.dll = DLL\PublicToolsLib.dll
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBSGame", "BBSGame\BBSGame.csproj", "{3E1E8982-4F13-4AD5-8EC1-693490CE7755}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBSGame", "BBSGame\BBSGame.csproj", "{BB1B449B-F75C-413E-B7FD-477F66110F75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{2642B1B2-7867-4FEE-A155-71FFAE88112E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2642B1B2-7867-4FEE-A155-71FFAE88112E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2642B1B2-7867-4FEE-A155-71FFAE88112E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E1E8982-4F13-4AD5-8EC1-693490CE7755}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E1E8982-4F13-4AD5-8EC1-693490CE7755}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E1E8982-4F13-4AD5-8EC1-693490CE7755}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E1E8982-4F13-4AD5-8EC1-693490CE7755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB1B449B-F75C-413E-B7FD-477F66110F75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB1B449B-F75C-413E-B7FD-477F66110F75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB1B449B-F75C-413E-B7FD-477F66110F75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB1B449B-F75C-413E-B7FD-477F66110F75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
