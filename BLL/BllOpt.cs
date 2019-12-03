@@ -38,5 +38,47 @@ namespace BLL
             pairs.Add("@CId", CId);
             return JsonConvert.DeserializeObject<List<Comments>>(JsonConvert.SerializeObject(db.Proc_GetTable("P_Show", pairs)));
         }
+
+        PublicToolsLib.HelpDb.DbHelper db = new PublicToolsLib.HelpDb.DbHelper();
+        //添加帖子（发帖）
+        public int AddPoste(PostsInfoModel m,out string outname)//out输出参数
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@PTitle", m.PTitle);
+            pairs.Add("@PContent", m.PContent);
+            pairs.Add("@CreateDate", m.CreateDate);
+            pairs.Add("@CreateUser", m.CreateUser);
+            pairs.Add("@PState", m.PState);
+            pairs.Add("@PageView", m.PageView);
+            pairs.Add("@PlateId", m.PlateId);
+            pairs.Add("@PicId", m.PicId);
+            pairs.Add("@count", "");
+            return db.Proc_ExecuteNonQuery("P_AddPostsInfo", pairs,out outname);
+        }
+        //显示帖子（模糊查询）
+        public List<PostsInfoModel> ShowPoste(string name)
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@title", name);
+            DataTable dt = db.Proc_GetTable("P_ShowPostsInfo",pairs);
+            List<PostsInfoModel> list =  JsonConvert.DeserializeObject<List<PostsInfoModel>>(JsonConvert.SerializeObject(dt));
+            return list;
+        }
+        //删除帖子
+        public int DelPoste(string IdName,string TableName,int Id)//（ID名称，表名称，要删除的ID）
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@IdName",IdName);
+            pairs.Add("@TableName",TableName);
+            pairs.Add("@Id",Id);
+            return db.Proc_ExecuteNonQuery("P_Del", pairs);
+        }
+        public int AddPicture(PicturesModel m)
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@PostId",m.PostId);
+            pairs.Add("@Pricture",m.Picture);
+            return db.Proc_ExecuteNonQuery("P_AddPicture", pairs);
+        }
     }
 }
