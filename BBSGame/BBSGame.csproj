@@ -208,7 +208,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Default\" />
     <Folder Include="Views\Login\" />
     <Folder Include="Views\Posts\" />
   </ItemGroup>
