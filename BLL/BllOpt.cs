@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,6 @@ using Newtonsoft.Json;
 
 namespace BLL
 {
-    
     public class BllOpt
     {
         PublicToolsLib.HelpDb.DbHelper db = new PublicToolsLib.HelpDb.DbHelper();
@@ -38,10 +38,8 @@ namespace BLL
             pairs.Add("@CId", CId);
             return JsonConvert.DeserializeObject<List<Comments>>(JsonConvert.SerializeObject(db.Proc_GetTable("P_Show", pairs)));
         }
-
-        PublicToolsLib.HelpDb.DbHelper db = new PublicToolsLib.HelpDb.DbHelper();
         //添加帖子（发帖）
-        public int AddPoste(PostsInfoModel m,out string outname)//out输出参数
+        public int AddPoste(PostsInfo m,out string outname)//out输出参数
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
             pairs.Add("@PTitle", m.PTitle);
@@ -51,17 +49,16 @@ namespace BLL
             pairs.Add("@PState", m.PState);
             pairs.Add("@PageView", m.PageView);
             pairs.Add("@PlateId", m.PlateId);
-            pairs.Add("@PicId", m.PicId);
             pairs.Add("@count", "");
             return db.Proc_ExecuteNonQuery("P_AddPostsInfo", pairs,out outname);
         }
         //显示帖子（模糊查询）
-        public List<PostsInfoModel> ShowPoste(string name)
+        public List<PostsInfo> ShowPoste(string name)
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
             pairs.Add("@title", name);
             DataTable dt = db.Proc_GetTable("P_ShowPostsInfo",pairs);
-            List<PostsInfoModel> list =  JsonConvert.DeserializeObject<List<PostsInfoModel>>(JsonConvert.SerializeObject(dt));
+            List<PostsInfo> list =  JsonConvert.DeserializeObject<List<PostsInfo>>(JsonConvert.SerializeObject(dt));
             return list;
         }
         //删除帖子
@@ -73,7 +70,7 @@ namespace BLL
             pairs.Add("@Id",Id);
             return db.Proc_ExecuteNonQuery("P_Del", pairs);
         }
-        public int AddPicture(PicturesModel m)
+        public int AddPicture(Pictures m)
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
             pairs.Add("@PostId",m.PostId);
