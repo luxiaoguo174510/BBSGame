@@ -133,6 +133,61 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\B\110446a00rjmoy0co622o0.png" />
+    <Content Include="Content\B\144727i7ayay8nn8bhkrwz.jpg" />
+    <Content Include="Content\B\ad_close.gif" />
+    <Content Include="Content\B\arw_r.gif" />
+    <Content Include="Content\B\common.js" />
+    <Content Include="Content\B\crystal2.js" />
+    <Content Include="Content\B\fav.gif" />
+    <Content Include="Content\B\fj_btn.png" />
+    <Content Include="Content\B\forum.js" />
+    <Content Include="Content\B\forum_viewthread.js" />
+    <Content Include="Content\B\logging.js" />
+    <Content Include="Content\B\logo.png" />
+    <Content Include="Content\B\noavatar_middle.gif" />
+    <Content Include="Content\B\online_member.gif" />
+    <Content Include="Content\B\oshr.png" />
+    <Content Include="Content\B\pn_post.png" />
+    <Content Include="Content\B\print.png" />
+    <Content Include="Content\B\qq_login.gif" />
+    <Content Include="Content\B\qq_share.png" />
+    <Content Include="Content\B\rec_add.gif" />
+    <Content Include="Content\B\rec_subtract.gif" />
+    <Content Include="Content\B\rt.png" />
+    <Content Include="Content\B\seditor.js" />
+    <Content Include="Content\B\site_qq.jpg" />
+    <Content Include="Content\B\star_level2.gif" />
+    <Content Include="Content\B\style_1_common.css" />
+    <Content Include="Content\B\style_1_forum_viewthread.css" />
+    <Content Include="Content\B\thread-next.png" />
+    <Content Include="Content\B\thread-prev.png" />
+    <Content Include="Content\B\userinfo.gif" />
+    <Content Include="Content\B\微信图片_20190715151718.jpg" />
+    <Content Include="Content\Plate\005.small.gif" />
+    <Content Include="Content\Plate\008.small.gif" />
+    <Content Include="Content\Plate\011.small.gif" />
+    <Content Include="Content\Plate\110446a00rjmoy0co622o0.png" />
+    <Content Include="Content\Plate\144727i7ayay8nn8bhkrwz.jpg" />
+    <Content Include="Content\Plate\ad_close.gif" />
+    <Content Include="Content\Plate\collapsed_no.gif" />
+    <Content Include="Content\Plate\common.gif" />
+    <Content Include="Content\Plate\common.js" />
+    <Content Include="Content\Plate\crystal2.js" />
+    <Content Include="Content\Plate\folder_common.gif" />
+    <Content Include="Content\Plate\forum.js" />
+    <Content Include="Content\Plate\image_s.gif" />
+    <Content Include="Content\Plate\logging.js" />
+    <Content Include="Content\Plate\logo.png" />
+    <Content Include="Content\Plate\pin_1.gif" />
+    <Content Include="Content\Plate\pin_3.gif" />
+    <Content Include="Content\Plate\pn_post.png" />
+    <Content Include="Content\Plate\qq_login.gif" />
+    <Content Include="Content\Plate\QQ图片20191204104950.png" />
+    <Content Include="Content\Plate\seditor.js" />
+    <Content Include="Content\Plate\site_qq.jpg" />
+    <Content Include="Content\Plate\style_1_common.css" />
+    <Content Include="Content\Plate\style_1_forum_forumdisplay.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -205,11 +260,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Posts\AddPost.cshtml" />
+    <Content Include="Views\Posts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Login\" />
-    <Folder Include="Views\Posts\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -223,6 +279,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{2642B1B2-7867-4FEE-A155-71FFAE88112E}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModelInfo\ModelInfo.csproj">
+      <Project>{26831A61-2005-459A-8A0E-6CAE6C14BFF5}</Project>
+      <Name>ModelInfo</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
