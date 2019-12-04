@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
-using BBSGame.Models;
 
 namespace BBSGame.Controllers
 {

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ModelInfo
 {
-    public class Pictures
+    public class Pictures//图片
     {
-        public int PId { get; set; }
-        public int PostId { get; set; }
-        public string Picture { get; set; }
+        public int PId { get; set; }//主键
+        public int PostId { get; set; }//帖子
+        public string Picture { get; set; }//图片路径
     }
 }
