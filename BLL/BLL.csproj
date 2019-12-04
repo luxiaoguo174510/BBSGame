@@ -31,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\资料\专高四\技能\PublicToolsLib\bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NPOI">
       <HintPath>..\DLL\NPOI.dll</HintPath>
     </Reference>
@@ -49,6 +53,12 @@
   <ItemGroup>
     <Compile Include="BllOpt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModelInfo\ModelInfo.csproj">
+      <Project>{26831a61-2005-459a-8a0e-6cae6c14bff5}</Project>
+      <Name>ModelInfo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
