@@ -1,43 +1,174 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("应用程序名称", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+    <META content="IE=11.0000"
+          http-equiv="X-UA-Compatible">
+    <META http-equiv="Content-Type" content="text/html; charset=gbk">
+    <TITLE>好客游戏论坛 | 天地农大BBS -  Powered by Discuz!</TITLE>
+    <META name="keywords" content="好客游戏论坛">
+    <META name="description" content="好客游戏最活跃的生活社区，好客游戏考研论坛，最新考研资讯，最全考研真题资料分享。 ">
+    <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
+    <META name="author" content="Discuz! Team and Comsenz UI Team">
+    <META name="copyright" content="2001-2017 Comsenz Inc.">
+    <META name="MSSmartTagsPreventParsing" content="True">
+    <META http-equiv="MSThemeCompatible" content="Yes">
+    <LINK href="~/Content/Index/style_1_common.css"
+          rel="stylesheet" type="text/css">
+    <LINK href="~/Content/Index/style_1_forum_index.css"
+          rel="stylesheet" type="text/css">
+    <link href="~/Content/css/iconfont.css" rel="stylesheet" />
+    <link href="~/Content/css/Cooldog.css" rel="stylesheet" />
+    <SCRIPT type="text/javascript">var STYLEID = '1', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'l2X', charset = 'gbk', discuz_uid = '0', cookiepre = 'VvWM_2132_', cookiedomain = '', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'login|newthread|reply', creditnotice = '1|威望|,2|金钱|,3|贡献|', defaultstyle = '', REPORTURL = 'aHR0cDovL3d3dy50ZG5kLmNuL2luZGV4LnBocA==', SITEURL = 'http://www.tdnd.cn/', JSPATH = 'data/cache/', CSSPATH = 'data/cache/style_', DYNAMICURL = '';</SCRIPT>
+
+    <SCRIPT src="~/Content/Index/common.js" type="text/javascript"></SCRIPT>
+
+    <META name="application-name" content="好客游戏论坛|天地农大BBS">
+    <META name="msapplication-tooltip" content="好客游戏论坛|天地农大BBS">
+    <META name="msapplication-task" content="name=社区论坛;action-uri=http://www.tdnd.cn/forum.php;icon-uri=http://www.tdnd.cn/static/image/common/bbs.ico">
+    <META name="msapplication-task" content="name=同道中人;action-uri=http://www.tdnd.cn/group.php;icon-uri=http://www.tdnd.cn/static/image/common/group.ico">
+    <META name="msapplication-task" content="name=家园;action-uri=http://www.tdnd.cn/home.php;icon-uri=http://www.tdnd.cn/static/image/common/home.ico">
+    <LINK title="好客游戏论坛|天地农大BBS" href="http://www.tdnd.cn/archiver/" rel="archives">
+    <SCRIPT src="~/Content/Index/forum.js" type="text/javascript"></SCRIPT>
+    <script src="~/Content/js/Cooldog.js"></script>
+    <script src="~/Content/js/jquery.min.js"></script>
+</HEAD>
+<body class="pg_index" id="nv_forum" onkeydown="if(event.keyCode==27) return false;">
+    <div id="append_parent"></div>
+    <div id="ajaxwaitid"></div>
+    <div class="p_pop blk" id="qmenu_menu" style="display: none;">
+        <div class="ptm pbw hm">
+            请 <a class="xi2" onclick="lsSubmit()" href="javascript:;"><strong>登录</strong></a>
+            后使用快捷导航<br>没有帐号？<a class="xi2 xw1" href="http://www.tdnd.cn/member.php?mod=register">立即注册</a>
+        </div>
+        <div class="btda" id="fjump_menu"></div>
+    </div>
+    <div id="hd">
+        <div class="wp">
+            <div class="hdc cl">
+                <a title="好客游戏论坛|天地农大BBS" href="http://www.tdnd.cn/">
+                    <img alt="游戏生活" src="/Content/Index/QQ%e5%9b%be%e7%89%8720191204092257.png" style="width:100%" height="300" border="0">
+                </a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("关于", "About", "Home")</li>
-                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
+            <div id="nv">
+                <a id="qmenu" onmouseover="delayShow(this, function () {showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});showForummenu();})" href="javascript:;">快捷导航</a>
+                <ul>
+                    <li class="a" id="mn_forum"><a title="BBS" hidefocus="true" href="http://www.tdnd.cn/forum.php">男生区<span>BBS</span></a></li>
+                    <li id="mn_N67f5">
+                        <a hidefocus="true" href="http://www.tdnd.cn/home.php">女生区</a>
+                    </li>
+                    <li id="mn_Nb218"><a style="color: yellow;" hidefocus="true" href="http://www.tdnd.cn/forum-66-1.html">男女生区</a></li>
+                    <li id="mn_N2be2">
+                        <a style="color: orange; font-weight: bold;" hidefocus="true" href="http://www.tdnd.cn/thread-21694-1-1.html">双人区</a>
+                    </li>
+                    <li id="mn_F113">
+                        <a style="color: yellow; font-weight: bold;" hidefocus="true" href="http://www.tdnd.cn/forum-117-1.html">单机游戏区</a>
+                    </li>
+                    <li id="mn_S11">
+                        <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" onclick="lsSubmit()" href="http://www.tdnd.cn/thread-36965-1-1.html">登录</a>
+                    </li>
+                    <li id="mn_N76E">
+                        <a class="xi2 xw1" style="color:  brown; font-weight: bold;" hidefocus="true" href="http://www.tdnd.cn/member.php?mod=register">注册</a>
+                    </li>
+                    <li id="mn_N55dd">
+                        <a hidefocus="true" href="http://www.tdnd.cn/thread-36965-1-1.html">帮助/导航</a>
+                    </li>
                 </ul>
+            </div>
+            <div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div>
+            <div class="cl" id="mu"></div>
+            <div class="a_mu">
+                <style>
+
+                    .nav_bd {
+                        width: 960px;
+                        height: 63px;
+                        margin: 0 auto;
+                        background: url(http://www.tianhong.jp/thimg/daohangbeijing.png) no-repeat;
+                        overflow: hidden;
+                    }
+
+                    .nav_bd_ul {
+                        margin: 7px 0px 0 7px;
+                        float: left;
+                        width: 960px;
+                    }
+
+                        .nav_bd_ul li {
+                            height: 25px;
+                            width: 94px;
+                            line-height: 25px;
+                            border-left: 1px dashed #ccc;
+                            float: left;
+                        }
+
+                            .nav_bd_ul li a {
+                                font-size: 13px;
+                                color: #0099CC;
+                                display: block;
+                                width: 60px;
+                                height: 25px;
+                                background: url(http://www.tianhong.jp/thimg/5.png) no-repeat 10px 9px;
+                                padding: 0 13px 0 19px;
+                                text-decoration: none;
+                            }
+
+                                .nav_bd_ul li a:hover {
+                                    background: url(http://www.tianhong.jp/thimg/6.gif) no-repeat 5px center;
+                                    color: #FF0066;
+                                    text-decoration: none;
+                                }
+                </style>
+
+                <div class="scbar_narrow cl" id="scbar">
+                    <form id="scbar_form" onsubmit="searchFocus($('scbar_txt'))" action="search.php?searchsubmit=yes" method="post" target="_blank" autocomplete="off">
+                        <input name="mod" id="scbar_mod" type="hidden" value="search">
+                        <input name="formhash" type="hidden" value="be2be25b">
+                        <input name="srchtype" type="hidden" value="title"> <input name="srhfid" type="hidden">
+                        <input name="srhlocality" type="hidden" value="forum::index">
+                        <table cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td class="scbar_icon_td"></td>
+                                    <td class="scbar_txt_td">
+                                        <input name="srchtxt" id="scbar_txt" type="text" value="请输入搜索内容" autocomplete="off" speech="" x-webkit-speech="">
+                                    </td>
+                                    <td class="scbar_type_td">
+                                        <a class="xg1" id="scbar_type" hidefocus="true" onclick="showMenu(this.id)" href="javascript:;">搜索</a>
+                                    </td>
+                                    <td class="scbar_btn_td">
+                                        <button name="searchsubmit" class="pn pnc" id="scbar_btn" type="submit" value="true" sc="1">
+                                            <strong class="xi2">搜索</strong>
+                                        </button>
+                                    </td>
+                                    <td class="scbar_hot_td">
+                                        <div id="scbar_hot">
+                                            <strong class="xw1">热搜: </strong>
+                                            <a class="xi2" href="http://www.tdnd.cn/search.php?mod=forum&amp;srchtxt=%BB%AF%D1%A7&amp;formhash=be2be25b&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">英雄皮肤</a>
+                                            <a class="xi2" href="http://www.tdnd.cn/search.php?mod=forum&amp;srchtxt=%C9%FA%CE%EF%BB%AF%D1%A7&amp;formhash=be2be25b&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">英雄装备</a>
+                                            <a class="xi2" href="http://www.tdnd.cn/search.php?mod=forum&amp;srchtxt=%D6%B2%CE%EF%B1%A3%BB%A4&amp;formhash=be2be25b&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">最新战绩</a>
+                                            <a class="xi2" href="http://www.tdnd.cn/search.php?mod=forum&amp;srchtxt=806%C9%FA%CE%EF%BB%AF%D1%A7&amp;formhash=be2be25b&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">打野内战</a>
+                                            <a class="xi2" href="http://www.tdnd.cn/search.php?mod=forum&amp;srchtxt=%CA%B3%C6%B7&amp;formhash=be2be25b&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">佐伊</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+                <ul class="p_pop" id="scbar_type_menu" style="display: none;">
+                    <li><a class="curtype" href="javascript:;" rel="forum">帖子</a></li>
+                    <li><a href="javascript:;" rel="group">同道中人</a></li>
+                    <li><a href="javascript:;" rel="user">用户</a></li>
+                </ul>
+                <script type="text/javascript">
+                    initSearchmenu('scbar', '');
+                </script>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>
+    <div style="text-align:center;">
+            @RenderBody()
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </body>
-</html>
+</HTML>
