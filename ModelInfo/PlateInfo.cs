@@ -14,5 +14,6 @@ namespace ModelInfo
         public int PImage { get; set; }//板块图
         public int Url { get; set; }//路径
         public int PState { get; set; }//状态
+        public int FLag { get; set; }//标识列
     }
 }

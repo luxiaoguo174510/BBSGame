@@ -1,13 +1,12 @@
-﻿<!DOCTYPE html>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
     <META content="IE=11.0000"
           http-equiv="X-UA-Compatible">
     <META http-equiv="Content-Type" content="text/html; charset=gbk">
-    <TITLE>好客游戏论坛 | 天地农大BBS -  Powered by Discuz!</TITLE>
-    <META name="keywords" content="好客游戏论坛">
-    <META name="description" content="好客游戏最活跃的生活社区，好客游戏考研论坛，最新考研资讯，最全考研真题资料分享。 ">
+    <TITLE>GameLife游戏生活</TITLE>
+    <META name="keywords" content="GameLife游戏论坛">
+    <META name="description" content="GameLife游戏最活跃的生活社区，GameLife游戏考研论坛，最新考研资讯，最全考研真题资料分享。 ">
     <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
     <META name="author" content="Discuz! Team and Comsenz UI Team">
     <META name="copyright" content="2001-2017 Comsenz Inc.">
@@ -23,12 +22,12 @@
 
     <SCRIPT src="~/Content/Index/common.js" type="text/javascript"></SCRIPT>
 
-    <META name="application-name" content="好客游戏论坛|天地农大BBS">
-    <META name="msapplication-tooltip" content="好客游戏论坛|天地农大BBS">
+    <META name="application-name" content="GameLife游戏论坛">
+    <META name="msapplication-tooltip" content="GameLife游戏论坛">
     <META name="msapplication-task" content="name=社区论坛;action-uri=http://www.tdnd.cn/forum.php;icon-uri=http://www.tdnd.cn/static/image/common/bbs.ico">
     <META name="msapplication-task" content="name=同道中人;action-uri=http://www.tdnd.cn/group.php;icon-uri=http://www.tdnd.cn/static/image/common/group.ico">
     <META name="msapplication-task" content="name=家园;action-uri=http://www.tdnd.cn/home.php;icon-uri=http://www.tdnd.cn/static/image/common/home.ico">
-    <LINK title="好客游戏论坛|天地农大BBS" href="http://www.tdnd.cn/archiver/" rel="archives">
+    <LINK title="GameLife游戏论坛" href="http://www.tdnd.cn/archiver/" rel="archives">
     <SCRIPT src="~/Content/Index/forum.js" type="text/javascript"></SCRIPT>
     <script src="~/Content/js/Cooldog.js"></script>
     <script src="~/Content/js/jquery.min.js"></script>
@@ -37,10 +36,6 @@
     <div id="append_parent"></div>
     <div id="ajaxwaitid"></div>
     <div class="p_pop blk" id="qmenu_menu" style="display: none;">
-        <div class="ptm pbw hm">
-            请 <a class="xi2" onclick="lsSubmit()" href="javascript:;"><strong>登录</strong></a>
-            后使用快捷导航<br>没有帐号？<a class="xi2 xw1" href="http://www.tdnd.cn/member.php?mod=register">立即注册</a>
-        </div>
         <div class="btda" id="fjump_menu"></div>
     </div>
     <div id="hd">
@@ -51,27 +46,21 @@
                 </a>
             </div>
             <div id="nv">
-                <a id="qmenu" onmouseover="delayShow(this, function () {showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});showForummenu();})" href="javascript:;">快捷导航</a>
                 <ul>
-                    <li class="a" id="mn_forum"><a title="BBS" hidefocus="true" href="/HomePage/Index" target="myframe">主页<span>BBS</span></a></li>
-                    <li id="mn_N67f5">
-                        <a hidefocus="true" href="http://www.tdnd.cn/home.php">女生区</a>
+                    <li class="a" id="mn_forum">
+                        <a title="BBS" hidefocus="true" href="/HomePage/Index" target="myframe">主页<span>主页</span></a>
                     </li>
-                    <li id="mn_Nb218"><a style="color: yellow;" hidefocus="true" href="http://www.tdnd.cn/forum-66-1.html">男女生区</a></li>
-                    <li id="mn_N2be2">
-                        <a style="color: orange; font-weight: bold;" hidefocus="true" href="http://www.tdnd.cn/thread-21694-1-1.html">双人区</a>
-                    </li>
-                    <li id="mn_F113">
-                        <a style="color: yellow; font-weight: bold;" hidefocus="true" href="http://www.tdnd.cn/forum-117-1.html">单机游戏区</a>
-                    </li>
+                    @foreach (var item in ViewBag.GameType)
+                    {
+                        <li id="mn_N67f5">
+                            <a hidefocus="true" href="@item.Url">@item.GName</a>
+                        </li>
+                    }
                     <li id="mn_S11">
-                        <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" onclick="lsSubmit()" href="http://www.tdnd.cn/thread-36965-1-1.html">登录</a>
+                        <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" href="">登录</a>
                     </li>
                     <li id="mn_N76E">
-                        <a class="xi2 xw1" style="color:  brown; font-weight: bold;" hidefocus="true" href="http://www.tdnd.cn/member.php?mod=register">注册</a>
-                    </li>
-                    <li id="mn_N55dd">
-                        <a hidefocus="true" href="http://www.tdnd.cn/thread-36965-1-1.html">帮助/导航</a>
+                        <a class="xi2 xw1" style="color:  brown; font-weight: bold;" hidefocus="true" href="">注册</a>
                     </li>
                 </ul>
             </div>
@@ -148,7 +137,7 @@
                                             <a class="xi2" href="http://www.tdnd.cn/search.php?mod=forum&amp;srchtxt=%C9%FA%CE%EF%BB%AF%D1%A7&amp;formhash=be2be25b&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">英雄装备</a>
                                             <a class="xi2" href="http://www.tdnd.cn/search.php?mod=forum&amp;srchtxt=%D6%B2%CE%EF%B1%A3%BB%A4&amp;formhash=be2be25b&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">最新战绩</a>
                                             <a class="xi2" href="http://www.tdnd.cn/search.php?mod=forum&amp;srchtxt=806%C9%FA%CE%EF%BB%AF%D1%A7&amp;formhash=be2be25b&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">打野内战</a>
-                                            <a class="xi2" href="http://www.tdnd.cn/search.php?mod=forum&amp;srchtxt=%CA%B3%C6%B7&amp;formhash=be2be25b&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">佐伊</a>
+                                            <a class="xi2" href="http://www.tdnd.cn/search.php?mod=forum&amp;srchtxt=%CA%B3%C6%B7&amp;formhash=be2be25b&amp;searchsubmit=true&amp;source=hotsearch" target="_blank" sc="1">FPX夺冠</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -156,14 +145,6 @@
                         </table>
                     </form>
                 </div>
-                <ul class="p_pop" id="scbar_type_menu" style="display: none;">
-                    <li><a class="curtype" href="javascript:;" rel="forum">帖子</a></li>
-                    <li><a href="javascript:;" rel="group">同道中人</a></li>
-                    <li><a href="javascript:;" rel="user">用户</a></li>
-                </ul>
-                <script type="text/javascript">
-                    initSearchmenu('scbar', '');
-                </script>
             </div>
         </div>
     </div>

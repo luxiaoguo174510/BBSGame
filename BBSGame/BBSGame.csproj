@@ -196,6 +196,7 @@
     <Content Include="Content\Index\site_qq.jpg" />
     <Content Include="Content\Index\style_1_common.css" />
     <Content Include="Content\Index\style_1_forum_index.css" />
+    <Content Include="Content\Index\untitled.png" />
     <Content Include="Content\js\Cooldog.js" />
     <Content Include="Content\js\jquery.min.js" />
     <Content Include="favicon.ico" />
@@ -290,6 +291,16 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{2642b1b2-7867-4fee-a155-71ffae88112e}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModelInfo\ModelInfo.csproj">
+      <Project>{26831a61-2005-459a-8a0e-6cae6c14bff5}</Project>
+      <Name>ModelInfo</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
