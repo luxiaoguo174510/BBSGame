@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModelInfo
 {
-    class UserInfo
+    public class UserInfo
     {
         public string UId { get; set; }             //int identity              not null,
         public string UName { get; set; }             //varchar(50)                    null,

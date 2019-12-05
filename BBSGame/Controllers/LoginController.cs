@@ -5,7 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
-using BBSGame.Models;
+using System.Data;
+using System.Data.SqlClient;
+using ModelInfo;
 
 namespace BBSGame.Controllers
 {
@@ -17,6 +19,26 @@ namespace BBSGame.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 登录验证
+        /// 在图片验证后验证
+        /// </summary>
+        /// <param name="UserInfo"></param>
+        /// <returns></returns>
+        public int LoginUser(string UName,string PassWord,string Phone)
+        {
+            using (SqlConnection conn=new SqlConnection("Data Source=10.1.152.12;Initial Catalog=BBSGame;User ID=sa;pwd=1234"))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand($"select COUNT(1) from UserInfo where UName='{UName}' and PassWord='{PassWord}' and Phone='{Phone}'",conn);
+                SqlDataAdapter sqlData = new SqlDataAdapter(comm);
+                DataTable DT = new DataTable();
+                sqlData.Fill(DT);
+                int i = (int)DT.Rows[0][0];
+                conn.Close();
+                return i;
+            }
+        }
 
         /// <summary>
         /// Api接口发送短信验证码
@@ -44,9 +66,29 @@ namespace BBSGame.Controllers
             {
                 return "";
             }
-
         }
 
+        public int TuPianYanZheng(string token)
+        {
+            String appId = "f4821addb462dd54853153c0c72ef42f";
+            String appSecret = "4a1b54464e6af3cb0ceb4bda7816cf32";
+            DxCsharpSDK.Captcha captcha = new DxCsharpSDK.Captcha(appId, appSecret);
+            DxCsharpSDK.CaptchaResponse response = captcha.VerifyToken(token);
+            Response.Write(response.captchaStatus);
+            //确保验证状态是SERVER_SUCCESS，SDK中有容错机制，在网络出现异常的情况会返回通过
+            if (response.result)
+            {
+                /**token验证通过，继续其他流程**/
+                return 1;
+            }
+            else
+            {
+                /**token验证失败，业务系统可以直接阻断该次请求或者继续弹验证码**/
+                return 0;
+            }
+            
+
+        }
 
         private string Sign(string strSource, string sEncode)
         {
@@ -65,7 +107,7 @@ namespace BBSGame.Controllers
             strResult = strResult.Replace("-", "");
 
             return strResult.ToLower();
-
         }
+
     }
 }
