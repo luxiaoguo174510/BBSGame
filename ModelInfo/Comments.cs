@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ModelInfo
 {
-    public class Comments
+    public class Comments//评论
     {
-        public int CId{ get; set; }
-        public int UId{ get; set; }
-        public string Content{ get; set; }
-        public DateTime CreateDate { get; set; }
-        public int PId{ get; set; }
-        public int FId { get; set; }
+        public int CId{ get; set; }//主键
+        public int UId{ get; set; }//用户
+        public string Content{ get; set; }//内容
+        public DateTime CreateDate { get; set; }//发表时间
+        public int PId{ get; set; }//帖子
+        public int FId { get; set; }//父级Id
     }
 }
