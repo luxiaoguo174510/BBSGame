@@ -44,10 +44,8 @@ namespace BLL
             Dictionary<string, object> pairs = new Dictionary<string, object>();
             pairs.Add("@PTitle", m.PTitle);
             pairs.Add("@PContent", m.PContent);
-            pairs.Add("@CreateDate", m.CreateDate);
+            pairs.Add("@CreateDate", System.DateTime.Now);
             pairs.Add("@CreateUser", m.CreateUser);
-            pairs.Add("@PState", m.PState);
-            pairs.Add("@PageView", m.PageView);
             pairs.Add("@PlateId", m.PlateId);
             pairs.Add("@count", "");
             return db.Proc_ExecuteNonQuery("P_AddPostsInfo", pairs, out outname);
@@ -70,6 +68,7 @@ namespace BLL
             pairs.Add("@Id", Id);
             return db.Proc_ExecuteNonQuery("P_Del", pairs);
         }
+        //添加图片
         public int AddPicture(Pictures m)
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();

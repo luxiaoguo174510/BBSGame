@@ -1,0 +1,1167 @@
+#vfastpost {
+	background: rgb(229, 237, 242); padding: 3px;
+}
+.previewvfastpost {
+	margin: 0px 10px 3px;
+}
+.fullvfastpost {
+	margin-top: 30px;
+}
+#vfastpost th {
+	padding: 0px;
+}
+#vfastpost td {
+	padding: 0px;
+}
+#vfastpost td {
+	height: 38px;
+}
+#vfastpost #vf_l {
+	background: url("http://www.tdnd.cn/static/image/common/v.png") no-repeat -30px -39px; width: 5px;
+}
+#vfastpost #vf_m {
+	background: url("http://www.tdnd.cn/static/image/common/v.png") repeat-x 0px -79px;
+}
+#vfastpost #vf_m input {
+	border: 1px solid white; border-image: none; width: 100%; font-size: 14px;
+}
+#vfastpost #vf_r {
+	background: url("http://www.tdnd.cn/static/image/common/v.png") no-repeat -47px -119px; width: 10px;
+}
+#vfastpost #vf_b {
+	width: 120px;
+}
+#vfastpost #vf_b button {
+	background: url("http://www.tdnd.cn/static/image/common/v.png") no-repeat 0px 0px; margin: 0px; padding: 0px; border: currentColor; border-image: none; width: 120px; height: 38px; line-height: 100px; overflow: hidden; display: block;
+}
+.quote {
+	background: url("http://www.tdnd.cn/static/image/common/qa.gif") no-repeat 0px 0px; margin: 10px 0px; color: rgb(102, 102, 102); overflow: hidden; padding-left: 16px;
+}
+.quote blockquote {
+	background: url("http://www.tdnd.cn/static/image/common/qz.gif") no-repeat 100% 100%; margin: 0px; padding-right: 16px; display: inline;
+}
+.m_c .quote {
+	width: 585px;
+}
+.blockcode {
+	background: rgb(247, 247, 247); margin: 10px 0px; padding: 5px 10px; color: rgb(102, 102, 102); overflow: hidden;
+}
+.blockcode code {
+	line-height: 1.8em; font-family: Monaco,Consolas,"Lucida Console","Courier New",serif; font-size: 12px;
+}
+* html .blockcode code {
+	font-family: "Courier New",serif;
+}
+.ct2_a .mn {
+	float: left;
+}
+.appl {
+	border: currentColor; border-image: none; margin-top: 8px; float: right; background-color: transparent;
+}
+.upf {
+	width: 500px;
+}
+* + html .upf {
+	width: 520px;
+}
+.upnf {
+	white-space: normal;
+}
+.upbk {
+	-ms-zoom: 1;
+}
+.fldt {
+	margin-bottom: 8px;
+}
+.p_pop .flb {
+	top: 18px; right: 10px; position: absolute;
+}
+.fnm {
+	width: 130px !important;
+}
+.fszm {
+	width: 55px !important; line-height: normal;
+}
+.fnm li {
+	cursor: pointer;
+}
+.fszm li {
+	cursor: pointer;
+}
+.simm li {
+	cursor: pointer;
+}
+.qsv {
+	background: url("http://www.tdnd.cn/static/image/common/repquote.gif") no-repeat 50% 50%; width: 16px; height: 16px; padding-left: 16px; cursor: pointer;
+}
+.marked {
+	background: url("http://www.tdnd.cn/static/image/common/mark.png") no-repeat 100% 50%; padding-right: 16px;
+}
+#taglistarea a {
+	white-space: nowrap; -ms-zoom: 1;
+}
+#taglistarea .marked {
+	background: none; color: rgb(242, 108, 79) !important; padding-right: 0px; font-weight: 700;
+}
+.p_tbl {
+	height: auto; line-height: 160%; border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+.p_tbl table {
+	
+}
+.p_tbl table td {
+	height: 28px; line-height: 28px; border-bottom-color: rgb(242, 242, 242); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.atnu {
+	width: 16px;
+}
+.atna {
+	
+}
+.atna p img {
+	height: 16px; vertical-align: middle;
+}
+.attswf p img {
+	height: 16px; vertical-align: middle;
+}
+.atna .lighttxt {
+	color: rgb(102, 102, 102) !important;
+}
+.attswf .lighttxt {
+	color: rgb(102, 102, 102) !important;
+}
+.attpr {
+	width: 40px; text-align: center;
+}
+.attv .px {
+	width: 25px;
+}
+.attp .px {
+	width: 25px;
+}
+.attv {
+	width: 100px;
+}
+.atturl img {
+	height: 20px !important;
+}
+.attc {
+	width: 20px;
+}
+* + html .attc {
+	width: 40px;
+}
+.atds {
+	width: 80px; text-align: center;
+}
+.atds .px {
+	width: 60px;
+}
+.attp {
+	width: 40px; text-align: center;
+}
+.attach_preview {
+	border: 1px solid rgb(205, 205, 205); border-image: none; box-shadow: 0px 0px 5px rgba(96,96,96,0.3);
+}
+.ie8 .attach_preview {
+	top: 57px; right: 18px;
+}
+.ie9 .attach_preview {
+	top: 57px; right: 18px;
+}
+#newspecial_menu {
+	width: 90px;
+}
+#newspecial_menu li {
+	background: url("http://www.tdnd.cn/static/image/common/folder_new.gif") no-repeat 8px 50%; display: block; -ms-zoom: 1;
+}
+#sti .wx {
+	background: url("http://www.tdnd.cn/static/image/common/folder_new.gif") no-repeat 8px 50%; display: block; -ms-zoom: 1;
+}
+#newspecial_menu .poll {
+	background-image: url("http://www.tdnd.cn/static/image/common/pollsmall.gif");
+}
+#sti .poll {
+	background-image: url("http://www.tdnd.cn/static/image/common/pollsmall.gif");
+}
+#newspecial_menu .trade {
+	background-image: url("http://www.tdnd.cn/static/image/common/tradesmall.gif");
+}
+#sti .trade {
+	background-image: url("http://www.tdnd.cn/static/image/common/tradesmall.gif");
+}
+#newspecial_menu .reward {
+	background-image: url("http://www.tdnd.cn/static/image/common/rewardsmall.gif");
+}
+#sti .reward {
+	background-image: url("http://www.tdnd.cn/static/image/common/rewardsmall.gif");
+}
+#newspecial_menu .activity {
+	background-image: url("http://www.tdnd.cn/static/image/common/activitysmall.gif");
+}
+#sti .activity {
+	background-image: url("http://www.tdnd.cn/static/image/common/activitysmall.gif");
+}
+#newspecial_menu .debate {
+	background-image: url("http://www.tdnd.cn/static/image/common/debatesmall.gif");
+}
+#sti .debate {
+	background-image: url("http://www.tdnd.cn/static/image/common/debatesmall.gif");
+}
+#newspecial_menu a {
+	padding: 3px 0px 3px 30px; display: block; white-space: normal;
+}
+#newspecial_menu a:hover {
+	background: none; color: rgb(51, 102, 153); text-decoration: underline; text-shadow: none;
+}
+#sti {
+	
+}
+#sti .wx {
+	background-position: 0px 50%; padding-left: 25px;
+}
+#sti .tb {
+	margin-top: 0px;
+}
+#f_pst .bm_c {
+	padding: 20px;
+}
+#f_pst .tedt {
+	width: auto;
+}
+.hasfsl {
+	margin-right: 170px; -ms-zoom: 1;
+}
+#f_pst .upfl {
+	height: auto; max-height: 100%;
+}
+#f_pst .upfl td {
+	padding: 4px 0px;
+}
+#f_pst .atds {
+	width: 100px;
+}
+#f_pst .px {
+	padding: 2px;
+}
+.mobile-type {
+	background: url("http://www.tdnd.cn/static/image/common/mobile-type.png") no-repeat 100% 100%; margin: -5px 0px -85px 103px; width: 58px; height: 80px; position: absolute;
+}
+.ie6 .mobile-type {
+	margin-left: 88px;
+}
+.ie7 .mobile-type {
+	margin-left: 88px;
+}
+.mobile-type a {
+	background: url("http://www.tdnd.cn/static/image/common/mobile-type.png") no-repeat 0px 0px; width: 46px; height: 80px; display: block;
+}
+.mobile-type-2 a {
+	background-position: 0px -80px;
+}
+.mobile-type-3 a {
+	background-position: 0px -160px;
+}
+.mobile-type-4 a {
+	background-position: 0px -240px;
+}
+.ie6 .mobile-type {
+	background-image: url("http://www.tdnd.cn/static/image/common/mobile-type-ie6.png") !important;
+}
+.ie6 .mobile-type a {
+	background-image: url("http://www.tdnd.cn/static/image/common/mobile-type-ie6.png") !important;
+}
+.mobile-location {
+	background: url("http://www.tdnd.cn/static/image/common/mobile-attach-2.png") no-repeat 0px 0px; padding-left: 20px;
+}
+#threadbeginid {
+	left: 0px; top: 0px; position: fixed; z-index: 999;
+}
+#threadbeginid .beginidin {
+	top: 0px; right: 0px; position: absolute; z-index: 999;
+}
+#threadbeginid .beginidimg {
+	background: white; opacity: 0;
+}
+.fl {
+	
+}
+.fl_tb {
+	width: 100%;
+}
+.fl_tb td {
+	padding: 10px 0px;
+}
+.fl_icn {
+	width: 31px; padding-right: 10px !important;
+}
+.fl_by {
+	width: 220px;
+}
+.fl_by div {
+	width: 210px; overflow: hidden; padding-left: 8px; margin-left: 10px; white-space: nowrap; -ms-word-break: keep-all; -ms-word-wrap: normal; -ms-text-overflow: ellipsis;
+}
+.fl_by div .xi2 {
+	-ms-zoom: 1;
+}
+.fl_by cite {
+	display: block;
+}
+.fl_i {
+	width: 150px; text-align: right;
+}
+.fl_i em {
+	width: 5em; display: block;
+}
+.fl .i_z {
+	padding-right: 8px; margin-right: 8px; border-right-color: rgb(194, 213, 227); border-right-width: 1px; border-right-style: solid;
+}
+.fl_icn_g {
+	width: 31px; float: left;
+}
+.fl_g {
+	vertical-align: top;
+}
+.fl_g dl {
+	padding-left: 10px; margin-left: 31px;
+}
+.fl_g dt {
+	font-weight: 700;
+}
+.fl_row td {
+	border-top-color: rgb(205, 205, 205); border-top-width: 1px; border-top-style: dashed;
+}
+.flt {
+	
+}
+.flt .flc {
+	width: 294px;
+}
+.gcop {
+	clear: left; margin-right: 15px;
+}
+.ghfl dt {
+	font-size: 14px; font-weight: 700;
+}
+.flt dt {
+	font-size: 14px; font-weight: 700;
+}
+.ghfl dt span {
+	color: rgb(153, 153, 153); font-size: 12px; font-weight: 200;
+}
+.flt dt span {
+	color: rgb(153, 153, 153); font-size: 12px; font-weight: 200;
+}
+.flt dd span {
+	color: rgb(153, 153, 153); font-size: 12px; font-weight: 200;
+}
+.ghfl dd {
+	line-height: 1.8em;
+}
+.flt dd {
+	line-height: 1.8em;
+}
+.bdl {
+	border: 1px solid rgb(189, 215, 227); border-image: none; overflow: hidden; float: left; background-color: rgb(245, 249, 251);
+}
+.ie6 .bdl {
+	position: relative;
+}
+.bdl_h {
+	height: 32px; line-height: 22px;
+}
+.bdl .tbn {
+	margin: 10px;
+}
+.bdl dl {
+	margin: -1px -10px 0px;
+}
+.bdl dt {
+	background: url("http://www.tdnd.cn/static/image/common/titlebg_sd.png") repeat-x 100% 0px rgb(245, 249, 251); border-width: 1px 0px; border-style: solid; border-color: rgb(204, 224, 235); border-image: none; height: 27px; line-height: 27px; overflow: hidden;
+}
+.bdl dt a {
+	padding: 0px 15px 0px 10px; display: block;
+}
+.bdl dt a:hover {
+	text-decoration: none;
+}
+.bdl_a a:hover {
+	text-decoration: none;
+}
+.bdl dd {
+	display: none;
+}
+.bdl dd a {
+	margin: 0px 3px; padding: 0px 7px; height: 26px; line-height: 26px; overflow: hidden; display: block;
+}
+.bdl dl.a {
+	padding-bottom: 4px; background-color: rgb(255, 255, 255);
+}
+.bdl dl.a dt {
+	background-position: 100% -27px; margin-bottom: 3px;
+}
+.bdl dl.a dd {
+	overflow: hidden; display: block; -ms-zoom: 1;
+}
+.bdl_fav dd {
+	overflow: hidden; display: block; -ms-zoom: 1;
+}
+.bdl dd.bdl_a a {
+	color: rgb(51, 102, 153); font-weight: 700; background-color: rgb(245, 249, 251);
+}
+.previewPost {
+	width: 100%; font-size: 14px;
+}
+#autopbn {
+	border-radius: 3px; border: 1px solid rgb(194, 213, 227); border-image: none; text-align: center; margin-bottom: 10px; display: block;
+}
+#autopbn:hover {
+	background: rgb(255, 255, 255); text-decoration: none;
+}
+.ico_increase {
+	background: url("http://www.tdnd.cn/static/image/common/increase.png") no-repeat left; margin: 0px 5px; width: 16px; height: 16px; text-indent: -999em; vertical-align: middle; display: inline-block;
+}
+.ico_fall {
+	background: url("http://www.tdnd.cn/static/image/common/increase.png") no-repeat left; margin: 0px 5px; width: 16px; height: 16px; text-indent: -999em; vertical-align: middle; display: inline-block;
+}
+.ico_fall {
+	background: url("http://www.tdnd.cn/static/image/common/fall.png") no-repeat left;
+}
+#ReTie_review h6 {
+	padding: 0px 10px; line-height: 27px;
+}
+.review_this {
+	padding: 5px 0px 10px;
+}
+.review_this li {
+	width: 7.5%; text-align: center; float: left;
+}
+#forumnew {
+	top: 0px; right: 0px; position: absolute; z-index: -1;
+}
+.tl #forumnewshow {
+	background: rgb(255, 250, 243); text-align: center; font-size: 12px;
+}
+.tl #forumnewshow th {
+	padding: 0px; border: 0px currentColor; border-image: none;
+}
+.tl #forumnewshow td {
+	padding: 0px; border: 0px currentColor; border-image: none;
+}
+.tl #forumnewshow th:hover {
+	background: rgb(255, 255, 233);
+}
+.tl #forumnewshow td:hover {
+	background: rgb(255, 255, 233);
+}
+.tl #forumnewshow a {
+	height: 29px; color: rgb(239, 170, 0); line-height: 29px; text-indent: 25px; border-top-color: rgb(244, 228, 180); border-bottom-color: rgb(244, 228, 180); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; display: block;
+}
+.tl #forumnewshow a:hover {
+	text-decoration: none;
+}
+#checknewline tr td {
+	background: rgb(255, 255, 235); text-align: center; color: rgb(102, 102, 102);
+}
+#checknewline tr th {
+	background: rgb(255, 255, 235); text-align: center; color: rgb(102, 102, 102);
+}
+.newthread tr th {
+	background: rgb(255, 250, 243);
+}
+.newthread tr td {
+	background: rgb(255, 250, 243);
+}
+.newthread .new em {
+	margin-right: 4px;
+}
+.newthread .new em {
+	font: 12px/1.5 Tahoma, "Microsoft Yahei", "Simsun"; color: rgb(0, 124, 213); font-size-adjust: none; font-stretch: normal;
+}
+.newthread .new em a {
+	font: 12px/1.5 Tahoma, "Microsoft Yahei", "Simsun"; color: rgb(0, 124, 213); font-size-adjust: none; font-stretch: normal;
+}
+.forumrefresh {
+	background: url("http://www.tdnd.cn/static/image/common/refresh.png") no-repeat 100% 50%; padding-right: 14px;
+}
+#fjump_menu {
+	-ms-overflow-x: hidden; max-height: 600px;
+}
+#fjump_menu dl {
+	width: 200px;
+}
+#fjump_menu dt {
+	font-weight: 700;
+}
+#fjump_menu dd {
+	text-indent: 1em;
+}
+#fjump_menu li.a a {
+	background-color: rgb(229, 237, 242);
+}
+.fct a {
+	margin-left: 8px; float: left;
+}
+.fa_fav_0 {
+	background: no-repeat 0px 50%; padding-left: 20px;
+}
+.fa_fav {
+	background: no-repeat 0px 50%; padding-left: 20px;
+}
+.fa_rss {
+	background: no-repeat 0px 50%; padding-left: 20px;
+}
+.fa_achv {
+	background: no-repeat 0px 50%; padding-left: 20px;
+}
+.fa_bin {
+	background: no-repeat 0px 50%; padding-left: 20px;
+}
+.fa_ivt {
+	background: no-repeat 0px 50%; padding-left: 20px;
+}
+.fa_fav_0 {
+	background-image: url("http://www.tdnd.cn/static/image/common/fav_grey.gif");
+}
+.fa_fav {
+	background-image: url("http://www.tdnd.cn/static/image/common/fav.gif");
+}
+.fa_rss {
+	background-image: url("http://www.tdnd.cn/static/image/common/feed.gif");
+}
+.fa_achv {
+	background-image: url("http://www.tdnd.cn/static/image/common/clock.gif");
+}
+.fa_bin {
+	background-image: url("http://www.tdnd.cn/static/image/common/recyclebin.gif");
+}
+.fa_ivt {
+	background-image: url("http://www.tdnd.cn/static/image/common/user_add.gif");
+}
+#fh {
+	width: 644px;
+}
+.mw #fh {
+	width: 100%;
+}
+#fh .bm {
+	padding-top: 5px; padding-bottom: 0px;
+}
+#nv_group #fh {
+	margin-bottom: 1em;
+}
+#fh #gh {
+	padding-top: 10px;
+}
+#fh .h {
+	margin-top: 10px;
+}
+#fh .h * {
+	float: left;
+}
+#fh h1 {
+	font-size: 16px; margin-right: 10px;
+}
+#fh .h .y {
+	float: right;
+}
+#fh .o a {
+	margin-right: 10px; float: left;
+}
+.m#fh {
+	padding-top: 0px; background-color: rgb(242, 242, 242);
+}
+.xst {
+	font-family: Tahoma,"Microsoft Yahei","Simsun"; font-size: 14px;
+}
+.xst i {
+	font-style: italic;
+}
+.ttp {
+	background: none; border-width: 2px 0px 0px; padding-top: 10px; margin-bottom: 5px;
+}
+.ttp li {
+	padding-bottom: 5px; float: left;
+}
+.ttp a {
+	background: rgb(255, 255, 255); padding: 4px 8px 3px; border: 1px solid rgb(205, 205, 205); border-image: none; height: 18px; margin-right: 5px; float: left; white-space: nowrap;
+}
+.ttp strong {
+	background: rgb(255, 255, 255); padding: 4px 8px 3px; border: 1px solid rgb(205, 205, 205); border-image: none; height: 18px; margin-right: 5px; float: left; white-space: nowrap;
+}
+.ttp a:hover {
+	border-color: rgb(51, 102, 153); color: rgb(51, 102, 153); text-decoration: none;
+}
+.ttp .a a {
+	background: rgb(229, 237, 242); border-color: rgb(51, 102, 153); color: rgb(51, 102, 153); padding-right: 12px; padding-left: 12px;
+}
+.ttp .pipe {
+	background: rgb(194, 213, 227); padding: 0px; width: 2px; height: 27px; text-indent: -9999px; margin-right: 10px; float: left;
+}
+.cttp {
+	height: 32px; overflow: hidden; padding-right: 35px;
+}
+.cttp .unfold {
+	margin: 5px -35px 9px 0px; padding: 0px 0px 0px 10px; width: 25px; height: 18px; color: rgb(51, 102, 153); font-weight: 400; float: right; display: inline; background-color: transparent;
+}
+.cttp .fold {
+	margin: 5px -35px 9px 0px; padding: 0px 0px 0px 10px; width: 25px; height: 18px; color: rgb(51, 102, 153); font-weight: 400; float: right; display: inline; background-color: transparent;
+}
+.tl .bm_c {
+	padding-top: 0px;
+}
+.tl table {
+	width: 100%; border-collapse: separate; table-layout: fixed;
+}
+.tl th {
+	padding: 5px 0px; border-bottom-color: rgb(194, 213, 227); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.tl td {
+	padding: 5px 0px; border-bottom-color: rgb(194, 213, 227); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.emptb th {
+	padding: 0px; border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+.emptb td {
+	padding: 0px; border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+.tl tr:hover th {
+	background-color: rgb(242, 242, 242);
+}
+.tl tr:hover td {
+	background-color: rgb(242, 242, 242);
+}
+.tl .threadpre td {
+	background-color: rgb(252, 252, 252);
+}
+.tl .threadpre:hover td {
+	background-color: rgb(252, 252, 252);
+}
+.tl .threadpre .threadpretd {
+	border-right-color: rgb(194, 213, 227); border-left-color: rgb(194, 213, 227); border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid;
+}
+.tl th .tdpre {
+	width: 31px; height: 17px; text-indent: -999em; overflow: hidden; margin-top: 3px; display: inline; visibility: hidden; background-image: url("http://www.tdnd.cn/static/image/common/preview.png");
+}
+.tl td.fn .tdpre {
+	width: 31px; height: 17px; text-indent: -999em; overflow: hidden; margin-top: 3px; display: inline; visibility: hidden; background-image: url("http://www.tdnd.cn/static/image/common/preview.png");
+}
+.tl th:hover .tdpre {
+	visibility: visible;
+}
+.tl td.fn:hover .tdpre {
+	visibility: visible;
+}
+.ie6 .tl th .tdpre {
+	display: none;
+}
+.ie6 .tl td.fn .tdpre {
+	display: none;
+}
+.fastpreview {
+	position: relative;
+}
+.icon_preview {
+	background: url("http://www.tdnd.cn/static/image/common/icon_preview.png"); left: 80px; top: -13px; width: 11px; height: 8px; overflow: hidden; display: block; position: absolute;
+}
+a.icon_up {
+	background: url("http://www.tdnd.cn/static/image/common/arrow_up.png") no-repeat 50% 50% rgb(242, 242, 242); margin: 0px 10px; border-radius: 3px; border: 1px dashed rgb(194, 213, 227); border-image: none; height: 25px; overflow: hidden; display: block;
+}
+a.icon_up:hover {
+	background: url("http://www.tdnd.cn/static/image/common/arrow_up_hover.png") no-repeat 50% 50% rgb(255, 255, 255);
+}
+.fastpreview td {
+	border-bottom-color: currentColor !important; border-bottom-width: medium !important; border-bottom-style: none !important;
+}
+.tl th {
+	padding-right: 1.5em; -ms-zoom: 1;
+}
+.tl td.fn {
+	padding-right: 1.5em; -ms-zoom: 1;
+}
+.tl th a:visited {
+	color: rgb(102, 102, 102);
+}
+.tl td.fn a:visited {
+	color: rgb(102, 102, 102);
+}
+.fromg {
+	visibility: hidden;
+}
+.ie6 .fromg {
+	visibility: visible;
+}
+tr:hover .fromg {
+	visibility: visible;
+}
+.tl .icn {
+	width: 25px; text-align: left; padding-left: 5px;
+}
+.tl .icn a:hover {
+	text-decoration: none;
+}
+.tl .new {
+	
+}
+.tl .comm {
+	
+}
+.tl .frm {
+	width: 150px;
+}
+.tl .o {
+	width: 20px;
+}
+.tl .num {
+	width: 60px; line-height: 14px;
+}
+.tl .by {
+	width: 105px; line-height: 14px;
+}
+.tl cite {
+	display: block;
+}
+.tl .num em {
+	display: block;
+}
+.tl th em {
+	margin-right: 4px; -ms-zoom: 1;
+}
+.tl th em {
+	color: rgb(0, 124, 213);
+}
+.tl th em a {
+	color: rgb(0, 124, 213);
+}
+.tl td em {
+	font-family: Arial,Psimsun,sans-serif; font-size: 11px; -webkit-text-size-adjust: none;
+}
+.tl td em {
+	color: rgb(153, 153, 153);
+}
+.tl td em a {
+	color: rgb(153, 153, 153);
+}
+.tl .ts th {
+	background: rgb(242, 242, 242); padding: 3px 0px; border-bottom-color: rgb(205, 205, 205);
+}
+.tl .ts td {
+	background: rgb(242, 242, 242); padding: 3px 0px; border-bottom-color: rgb(205, 205, 205);
+}
+.tl .th {
+	background: rgb(242, 242, 242); padding: 0px 10px; margin-top: 1px; border-bottom-color: rgb(205, 205, 205); border-bottom-width: 1px; border-bottom-style: solid;
+}
+.tl .th table {
+	border: currentColor; border-image: none;
+}
+.tl .th td {
+	border: currentColor; border-image: none; height: 20px; vertical-align: baseline;
+}
+.tl .th th {
+	border: currentColor; border-image: none; height: 20px; vertical-align: baseline;
+}
+.tl .tf {
+	padding: 3px 0px;
+}
+.tf .showmenu:hover {
+	border-color: rgb(194, 213, 227);
+}
+.tl_reply {
+	background: url("http://www.tdnd.cn/static/image/common/dot.gif") no-repeat 0px 7px; padding-left: 10px;
+}
+.recy {
+	text-decoration: line-through;
+}
+.tps {
+	white-space: nowrap;
+}
+.tps a {
+	padding: 2px 4px; color: rgb(68, 68, 68);
+}
+.tps a:hover {
+	color: rgb(0, 124, 213); background-color: rgb(242, 242, 242);
+}
+.tsm {
+	width: 100%; overflow: hidden; margin-bottom: -10px; border-collapse: collapse !important;
+}
+.ie6 .tsm {
+	margin-bottom: 0px;
+}
+.ie7 .tsm {
+	margin-bottom: 0px;
+}
+.tsm th {
+	padding: 5px 0px 5px 10px; border: currentColor; border-image: none; vertical-align: top;
+}
+.tsm td {
+	padding: 5px 10px 5px 0px; border: currentColor; border-image: none; vertical-align: top;
+}
+.tsm tr:hover th {
+	background: none !important;
+}
+.tsm tr:hover td {
+	background: none !important;
+}
+.tsm li {
+	padding: 0px 4px; margin-right: 4px; float: left; white-space: nowrap;
+}
+.tsm .a a {
+	color: rgb(68, 68, 68); font-weight: 700;
+}
+.tsm .a a:hover {
+	text-decoration: none;
+}
+.subtsm {
+	padding: 5px; border: 1px dotted rgb(194, 213, 227); border-image: none; margin-top: 5px;
+}
+.mfm .mtm {
+	margin-right: 10px;
+}
+.mfm span {
+	height: 26px;
+}
+.ttp .a a:hover {
+	background: url("http://www.tdnd.cn/static/image/common/close-s.png") no-repeat 100% 11px rgb(229, 237, 242);
+}
+#ttp_all a:hover {
+	background-image: none !important;
+}
+#atarget {
+	background: url("http://www.tdnd.cn/static/image/common/atarget.png") no-repeat 0px 3px; color: rgb(51, 102, 153); line-height: 16px; padding-left: 15px; cursor: pointer;
+}
+.unchk {
+	background: url("http://www.tdnd.cn/static/image/common/atarget.png") no-repeat 0px 3px; color: rgb(51, 102, 153); line-height: 16px; padding-left: 15px; cursor: pointer;
+}
+.chked {
+	background: url("http://www.tdnd.cn/static/image/common/atarget.png") no-repeat 0px 3px; color: rgb(51, 102, 153); line-height: 16px; padding-left: 15px; cursor: pointer;
+}
+.ie_all #atarget {
+	height: 20px; line-height: 20px; display: inline-block;
+}
+.ie_all .unchk {
+	height: 20px; line-height: 20px; display: inline-block;
+}
+.ie_all .chked {
+	height: 20px; line-height: 20px; display: inline-block;
+}
+.atarget_1#atarget {
+	background-position: 0px -37px;
+}
+.chked {
+	background-position: 0px -37px;
+}
+.unchk:hover {
+	text-decoration: none;
+}
+.chked:hover {
+	text-decoration: none;
+}
+#a_magic_doodle {
+	background: url("http://www.tdnd.cn/static/image/magic/doodle.small.gif") no-repeat 0px 50%; padding-left: 20px;
+}
+.ttp .num {
+	background: rgb(153, 153, 153); padding: 0px 5px; border-radius: 3px; color: rgb(255, 255, 255) !important; margin-left: 5px;
+}
+.ttp .a .num {
+	background: rgb(145, 189, 211);
+}
+.pop_moremenu li {
+	line-height: 24px; border-bottom-color: rgb(229, 237, 242); border-bottom-width: 1px; border-bottom-style: solid; display: block;
+}
+.pop_moremenu a {
+	text-decoration: none; border-bottom-color: currentColor; border-bottom-width: 0px; border-bottom-style: none; display: inline;
+}
+.pop_moremenu li:last-child {
+	border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+.pop_moremenu .pipe {
+	margin: 0px;
+}
+.pop_moremenu a.xw1 {
+	color: rgb(51, 102, 153); font-weight: normal; text-decoration: none; background-color: rgb(229, 237, 242);
+}
+.mlt {
+	
+}
+.mlt li {
+	background: rgb(255, 255, 255); border-width: 1px; border-style: solid; border-color: rgb(229, 237, 242) rgb(229, 237, 242) rgb(194, 213, 227); margin: 0px 4px 10px; border-image: none; text-align: left; padding-top: 5px; display: inline;
+}
+.mlt .sum {
+	background: rgb(229, 237, 242); padding: 0px 5px; border-radius: 5px; height: 16px; line-height: 16px; display: inline-block;
+}
+.mlt .pin {
+	background: rgb(119, 187, 51); color: rgb(255, 255, 255);
+}
+.mlt .digest {
+	background: rgb(0, 187, 204); color: rgb(255, 255, 255);
+}
+.mlt .c .nopic {
+	background: url("http://www.tdnd.cn/static/image/common/nophototiny.png") no-repeat 50% 50% rgb(255, 255, 255); display: block; cursor: pointer;
+}
+.mlt img.vm {
+	display: inline;
+}
+.mlt h3 {
+	height: 30px; line-height: 30px; overflow: hidden; font-weight: 400; white-space: nowrap; -ms-text-overflow: ellipsis;
+}
+.mlt li .cl {
+	height: 18px; overflow: hidden;
+}
+.mlt li .c {
+	height: auto !important;
+}
+.mlt li span {
+	color: rgb(68, 68, 68); display: inline;
+}
+.tl tbody:last-child th {
+	border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+.tl tbody:last-child td {
+	border-bottom-color: currentColor; border-bottom-width: medium; border-bottom-style: none;
+}
+.tl tbody:last-child .threadpre .threadpretd {
+	border: 1px solid rgb(194, 213, 227); border-image: none;
+}
+.showhide {
+	background: url("http://www.tdnd.cn/static/image/common/close.gif") no-repeat 0px 0px; margin: 5px 5px 0px; width: 12px; height: 12px; text-indent: -999em; overflow: hidden; cursor: pointer;
+}
+.showhide:hover {
+	background-position: 0px -12px;
+}
+.ie6 .showhide {
+	display: none;
+}
+.pcb .jammer {
+	color: rgb(255, 255, 255); font-size: 10px;
+}
+#hiddenthread {
+	background: rgb(255, 250, 243); text-align: center; line-height: 40px; padding-left: 20px; font-size: 12px; border-top-color: rgb(194, 213, 227); border-bottom-color: rgb(194, 213, 227); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid;
+}
+.last#hiddenthread {
+	border-top-color: currentColor; border-top-width: medium; border-top-style: none;
+}
+.ie6 #hiddenthread {
+	border-top-color: currentColor; border-top-width: medium; border-top-style: none;
+}
+.ie7 #hiddenthread {
+	border-top-color: currentColor; border-top-width: medium; border-top-style: none;
+}
+.ie8 #hiddenthread {
+	border-top-color: currentColor; border-top-width: medium; border-top-style: none;
+}
+#hiddenthread a {
+	height: 29px; color: rgb(239, 170, 0); line-height: 29px; text-indent: 25px; display: block;
+}
+#hiddenthread a:hover {
+	text-decoration: none;
+}
+.previewPost .tindex {
+	padding: 5px; border: 1px solid rgb(204, 204, 204); border-image: none; width: 500px; line-height: 22px;
+}
+.previewPost .tindex h3 {
+	padding-left: 10px; margin-bottom: 10px; border-bottom-color: rgb(204, 204, 204); border-bottom-width: 1px; border-bottom-style: dotted;
+}
+.previewPost .tindex li {
+	background: url("http://www.tdnd.cn/static/image/common/ico_mulu.png") no-repeat 10px; height: 22px; overflow: hidden; padding-left: 22px; cursor: pointer;
+}
+#visitedforums_menu {
+	width: 150px;
+}
+#visitedforums_menu li {
+	float: none; display: block;
+}
+#visitedforums_menu td {
+	padding: 5px 10px; vertical-align: top;
+}
+#visitedforums_menu a {
+	height: 1.5em; overflow: hidden; display: inline-block; white-space: normal !important;
+}
+#v_forums {
+	width: 120px;
+}
+#v_threads li {
+	background: url("http://www.tdnd.cn/static/image/common/dot.gif") no-repeat 0px 7px; padding-left: 10px;
+}
+#v_forums li {
+	background: url("http://www.tdnd.cn/static/image/common/dot.gif") no-repeat 0px 7px; padding-left: 10px;
+}
+#fastsmilies {
+	text-align: right;
+}
+#fastsmilies table {
+	width: 160px; height: 133px; table-layout: auto;
+}
+#fastsmilies td {
+	text-align: right; vertical-align: middle; cursor: pointer;
+}
+#fastsmilies img {
+	vertical-align: middle;
+}
+.zoominner {
+	background: rgb(255, 255, 255); padding: 5px 10px 10px; text-align: left;
+}
+.zoominner p {
+	padding: 8px 0px;
+}
+.zoominner p a {
+	background: url("http://www.tdnd.cn/static/image/common/imgzoom_tb.gif") no-repeat 0px 0px; width: 17px; height: 17px; line-height: 100px; overflow: hidden; margin-left: 10px; float: left;
+}
+.zoominner p a:hover {
+	background-position: 0px -39px;
+}
+.zoominner p a.imgadjust {
+	background-position: -40px 0px;
+}
+.zoominner p a.imgadjust:hover {
+	background-position: -40px -39px;
+}
+.zoominner p a.imgclose {
+	background-position: -80px 0px;
+}
+.zoominner p a.imgclose:hover {
+	background-position: -80px -39px;
+}
+.zimg_c {
+	position: relative;
+}
+.zimg_prev {
+	background: url("http://www.tdnd.cn/static/image/common/pic-prev.png") no-repeat 0px -100px; width: 80px; height: 100%; display: block; position: absolute; cursor: pointer;
+}
+.zimg_next {
+	background: url("http://www.tdnd.cn/static/image/common/pic-prev.png") no-repeat 0px -100px; width: 80px; height: 100%; display: block; position: absolute; cursor: pointer;
+}
+.zimg_next {
+	background-position: 100% -100px; right: 10px; background-image: url("http://www.tdnd.cn/static/image/common/pic-next.png");
+}
+.zimg_c img {
+	margin: 0px auto;
+}
+.zimg_p strong {
+	display: none;
+}
+.unfold {
+	background: url("http://www.tdnd.cn/static/image/common/arrwd.gif") no-repeat 0px 50%; padding-left: 10px; float: right; cursor: pointer;
+}
+.fold {
+	background: url("http://www.tdnd.cn/static/image/common/arrwd.gif") no-repeat 0px 50%; padding-left: 10px; float: right; cursor: pointer;
+}
+.fold {
+	background-image: url("http://www.tdnd.cn/static/image/common/arrow_top.gif");
+}
+#livereplycontentout {
+	background: rgb(255, 255, 255); border: 1px solid rgb(232, 241, 247); border-image: none; height: 195px; margin-top: 10px; position: relative; -ms-overflow-y: auto;
+}
+#livereplycontent {
+	padding: 0px 15px; left: 0px; bottom: 0px; position: absolute;
+}
+#liverefresh {
+	border: 1px dashed rgb(252, 228, 145); border-image: none; height: 30px; text-align: center; color: rgb(242, 108, 79); line-height: 30px; margin-top: 10px; display: none; cursor: pointer; background-color: rgb(252, 244, 205);
+}
+#livefastcomment {
+	margin: 10px 0px 0px; padding: 5px 10px; border: 1px solid rgb(232, 241, 247); border-image: none; height: 34px; position: relative; background-color: rgb(255, 255, 255);
+}
+#livereplycontent dl {
+	padding: 10px 0px; width: 100%; line-height: 20px; clear: both; border-top-color: rgb(204, 204, 204); border-top-width: 1px; border-top-style: dotted; position: relative; min-height: 45px;
+}
+#livereplycontent dl dt {
+	padding: 1px; border: 1px solid rgb(204, 204, 204); border-image: none; left: 0px; top: 10px; width: 40px; height: 40px; position: absolute;
+}
+#livereplycontent dl dt img {
+	width: 40px; height: 40px;
+}
+#livereplycontent dl dd {
+	padding-left: 62px;
+}
+#livereplycontent dl dd a {
+	color: rgb(51, 102, 153);
+}
+#livereplycontent dl dd.dateline {
+	padding: 0px; top: 10px; right: 0px; color: rgb(153, 153, 153); position: absolute;
+}
+#livereplymessage {
+	background: white; padding: 0px !important; outline: 0px; border: currentColor; border-image: none; width: 100%; height: 33px; line-height: 28px; -ms-overflow-y: auto;
+}
+.ie6 #livereplycontent dl {
+	width: 97%;
+}
+.ie7 #livereplycontent dl {
+	width: 97%;
+}
+#livethread {
+	background: rgb(245, 249, 251); border-top-color: rgb(189, 215, 227); border-top-width: 2px; border-top-style: solid;
+}
+.livethreadtitle {
+	margin-bottom: 5px;
+}
+.livethreadtitle a {
+	color: rgb(51, 102, 153); font-size: 14px;
+}
+.livethreadtitle img {
+	vertical-align: middle;
+}
+.livethreadtitle .replynumber {
+	line-height: 25px; float: right;
+}
+.livethreadtitle .replynumber .xi1 {
+	background: rgb(242, 108, 79); padding: 0px 5px; border-radius: 5px; color: rgb(255, 255, 255); font-weight: 700;
+}
+.livethreadcon {
+	line-height: 160%; font-size: 14px;
+}
+.discuz-vp-container {
+	background: rgba(0, 0, 0, 0.3); left: 0px; top: 0px; right: 0px; bottom: 0px; position: fixed; z-index: 99999;
+}
+.discuz-vp-container .vp-content {
+	margin: 0px auto; width: 400px;
+}
+.discuz-vp-container .vp-header {
+	margin: 0px auto; width: 400px;
+}
+.discuz-vp-container .vp-header {
+	background: rgb(33, 43, 57); color: rgb(255, 255, 255); line-height: 30px; padding-left: 10px; margin-top: 150px; box-sizing: border-box;
+}
+.discuz-vp-container .vp-content {
+	background: rgb(255, 255, 255); height: 230px; position: relative;
+}
+.discuz-vp-container .vp-content .loading {
+	background: rgb(255, 255, 255); width: 100%; height: 100%; text-align: center; padding-top: 25%; position: absolute; box-sizing: border-box;
+}
+.discuz-vp-container .vp-content .loading span {
+	border-radius: 50%; animation:bounceDelay 1s ease-in-out infinite both; width: 10px; height: 10px; margin-left: 4px; display: inline-block; background-color: rgb(52, 126, 255);
+}
+.discuz-vp-container .vp-header a {
+	color: rgb(64, 73, 85); padding-right: 10px; float: right;
+}
+.syn_qq {
+	background: url("http://www.tdnd.cn/static/image/common/connect_post_syn.png") no-repeat 0px 0px; width: 19px; height: 19px; line-height: 64px; overflow: hidden; margin-top: 3px; vertical-align: top; display: inline-block; cursor: pointer;
+}
+.syn_tqq {
+	background: url("http://www.tdnd.cn/static/image/common/connect_post_syn.png") no-repeat 0px 0px; width: 19px; height: 19px; line-height: 64px; overflow: hidden; margin-top: 3px; vertical-align: top; display: inline-block; cursor: pointer;
+}
+.syn_qq_check {
+	background: url("http://www.tdnd.cn/static/image/common/connect_post_syn.png") no-repeat 0px 0px; width: 19px; height: 19px; line-height: 64px; overflow: hidden; margin-top: 3px; vertical-align: top; display: inline-block; cursor: pointer;
+}
+.syn_tqq_check {
+	background: url("http://www.tdnd.cn/static/image/common/connect_post_syn.png") no-repeat 0px 0px; width: 19px; height: 19px; line-height: 64px; overflow: hidden; margin-top: 3px; vertical-align: top; display: inline-block; cursor: pointer;
+}
+.ie6 .syn_qq {
+	display: inline;
+}
+.ie6 .syn_tqq {
+	display: inline;
+}
+.ie6 .syn_qq_check {
+	display: inline;
+}
+.ie6 .syn_tqq_check {
+	display: inline;
+}
+.syn_qq_check {
+	background-position: -22px 0px;
+}
+.syn_tqq {
+	background-position: 0px -22px; margin-left: 5px;
+}
+.syn_tqq_check {
+	background-position: -22px -22px; margin-left: 5px;
+}
