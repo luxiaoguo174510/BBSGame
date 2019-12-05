@@ -217,6 +217,49 @@
                     </TBODY>
                 </TABLE>
                 <DIV id="post_371067">
+
+                    @{ 
+
+                        ModelInfo.PostsInfo p = Model[0];
+                    }
+                    
+                    <table class="table table-bordered:1px">
+                        <tr>
+                            <td>1查看: 258|回复: 0</td>
+                            <td>
+                                <IMG class="authicn vm" id="authicon371067" src="~/Content/B/online_member.gif">
+                                <EM id="authorposton371067">发表于 2018-1-10 18:23:34</EM> <SPAN class="pipe">|</SPAN> <A href="http://www.tdnd.cn/forum.php?mod=viewthread&amp;tid=218550&amp;page=1&amp;authorid=60038"
+                                                                                                                       rel="nofollow">只看该作者</A> <SPAN class="none">
+                                    <IMG class="vm" alt="回帖奖励"
+                                         src="~/Content/B/arw_r.gif">
+                                </SPAN> <SPAN class="pipe show">|</SPAN><A class="show" href="http://www.tdnd.cn/forum.php?mod=viewthread&amp;tid=218550&amp;extra=page%3D1&amp;ordertype=1">倒序浏览</A>
+                                <SPAN class="pipe show">|</SPAN><A class="show" onclick="readmode($('thread_subject').innerHTML, 371067);"
+                                                                   href="javascript:;">阅读模式</A>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <A class="xw1" href="http://www.tdnd.cn/space-uid-60038.html"
+                                   target="_blank"></A>
+                            </td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                <A class="avtm" href="http://www.tdnd.cn/space-uid-60038.html"
+                                   target="_blank">
+                                    <img src=" ~/Content/B/微信图片_20190715151718.jpg" />
+                                </A>
+                            </td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                        </tr>
+                    </table>
+                    <br />
+                    <br />
+                    <br />
                     <TABLE class="plhin" id="pid371067" cellspacing="0" cellpadding="0" summary="pid371067">
                         <TBODY>
                             <TR>
@@ -329,27 +372,29 @@
 
                                                                     <SCRIPT type="text/javascript">crystal2.addStaticSlot({ id: 'discuz_5909081_017', width:, height:});</SCRIPT>
                                                                 </DIV>　<h1>MLX退役</h1>　<br><br>
-                                                                            <table>
-                                                                                <thead>
-                                                                                    <tr>
-                                                                                        <td>ID</td>
-                                                                                        <td>标题</td>
-                                                                                        <td>内容</td>
-                                                                                        <td>发布时间</td>
-                                                                                    </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    @foreach (var m in Model)
-                                                                                    {
-                                                                                        <tr>
-                                                                                            <td>@m.PId</td>
-                                                                                            <td>@m.PTitle</td>
-                                                                                            <td>@m.PContent</td>
-                                                                                            <td>@m.CreateDate</td>
-                                                                                        </tr>
-                                                                                    }
-                                                                                </tbody>
-                                                                            </table>
+                                                                @*<table>
+                                                        <thead>
+                                                            <tr>
+                                                                <td>ID</td>
+                                                                <td>标题</td>
+                                                                <td>内容</td>
+                                                                <td>发布时间</td>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach (var m in Model)
+                                                            {
+                                                                <tr>
+                                                                    <td>@m.PId</td>
+                                                                    <td>@m.PTitle</td>
+                                                                    <td>@m.PContent</td>
+                                                                    <td>@m.CreateDate</td>
+                                                                </tr>
+                                                            }
+                                                        </tbody>
+                                                    </table>*@
+
+
                                                             </TD>
                                                         </TR>
                                                     </TBODY>
@@ -435,6 +480,9 @@
                             </TR>
                         </TBODY>
                     </TABLE>
+
+
+
                 </DIV>
                 <DIV class="pl" id="postlistreply">
                     <DIV class="viewthread_table" id="post_new"
@@ -488,12 +536,12 @@
                                                     <SCRIPT src="~/Content/B/seditor.js" type="text/javascript"></SCRIPT>
 
                                                     <DIV class="fpd">
-                                                        <A title="文字加粗" class="fbld" href="javascript:;">B</A> 
-                                                        <A title="设置文字颜色" class="fclr" id="fastpostforecolor" href="javascript:;">Color</A> 
-                                                        <A title="图片" class="fmg" id="fastpostimg" href="javascript:;">Image</A> 
-                                                        <A title="添加链接" class="flnk" id="fastposturl" href="javascript:;">Link</A> 
-                                                        <A title="引用" class="fqt" id="fastpostquote" href="javascript:;">Quote</A> 
-                                                        <A title="代码" class="fcd" id="fastpostcode" href="javascript:;">Code</A> 
+                                                        <A title="文字加粗" class="fbld" href="javascript:;">B</A>
+                                                        <A title="设置文字颜色" class="fclr" id="fastpostforecolor" href="javascript:;">Color</A>
+                                                        <A title="图片" class="fmg" id="fastpostimg" href="javascript:;">Image</A>
+                                                        <A title="添加链接" class="flnk" id="fastposturl" href="javascript:;">Link</A>
+                                                        <A title="引用" class="fqt" id="fastpostquote" href="javascript:;">Quote</A>
+                                                        <A title="代码" class="fcd" id="fastpostcode" href="javascript:;">Code</A>
                                                         <A class="fsml" id="fastpostsml" href="javascript:;">Smilies</A>
                                                     </DIV>
                                                 </DIV>
@@ -579,17 +627,12 @@
     </DIV>
     <DIV class="a_fl">
         <A href="http://www.tdnd.cn/thread-36965-1-1.html" target="_blank">
-            <IMG src="~/Content/B/110446a00rjmoy0co622o0.png" border="0">
         </A><BR><A onclick="setcookie('adclose_', 1, 86400);this.parentNode.style.display='none'"
-                   href="javascript:;"><IMG src="~/Content/B/ad_close.gif"></A>
     </DIV>
     <DIV class="a_cn">
         <P class="close" id="ad_corner_close" onclick="setcookie('adclose_57', 1, 86400);this.parentNode.style.display='none'">
-            <A href="javascript:;"><IMG src="~/Content/B/ad_close.gif"></A>
         </P><A href="http://www.tdnd.cn/forum.php"
                target="_blank">
-            <IMG src="~/Content/B/144727i7ayay8nn8bhkrwz.jpg"
-                 border="0">
         </A>
     </DIV>
     <DIV class="wp cl" id="ft">
