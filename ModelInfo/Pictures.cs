@@ -11,5 +11,6 @@ namespace ModelInfo
         public int PId { get; set; }//主键
         public int PostId { get; set; }//帖子
         public string Picture { get; set; }//图片路径
+        public int RowId { get; set; }//标识列
     }
 }
