@@ -46,6 +46,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NPOI, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\资料\专高四\技能\PublicToolsLib\bin\Debug\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="PublicToolsLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\资料\专高四\技能\PublicToolsLib\bin\Debug\PublicToolsLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -126,7 +134,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -143,7 +150,13 @@
     <Content Include="Content\images\5.png" />
     <Content Include="Content\images\6.png" />
     <Content Include="Content\images\7.png" />
-    <Content Include="Content\images\u=2390138591,1873007123&amp;fm=26&amp;gp=0.jpg" />
+    <Content Include="Content\images\thum_untitled1.png" />
+    <Content Include="Content\images\thum_untitled2.png" />
+    <Content Include="Content\images\thum_untitled3.png" />
+    <Content Include="Content\images\thum_untitled4.jpg" />
+    <Content Include="Content\images\thum_untitled5.jpg" />
+    <Content Include="Content\images\thum_untitled6.jpg" />
+    <Content Include="Content\images\thum_untitled7.jpg" />
     <Content Include="Content\Index\110446a00rjmoy0co622o0.png" />
     <Content Include="Content\Index\144727i7ayay8nn8bhkrwz.jpg" />
     <Content Include="Content\Index\ad_close.gif" />
@@ -276,6 +289,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Index\like_files\" />
+    <Folder Include="Models\" />
     <Folder Include="Views\Login\" />
     <Folder Include="Views\Posts\" />
   </ItemGroup>

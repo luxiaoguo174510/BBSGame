@@ -13,10 +13,9 @@ namespace BBSGame.Controllers
         // GET: Login
         public ActionResult Index()
         {
+           
             return View();
         }
-
-
         /// <summary>
         /// Api接口发送短信验证码
         /// 验证码=>随即生成
