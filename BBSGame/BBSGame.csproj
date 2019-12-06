@@ -45,15 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DxCsharpSDK">
+      <HintPath>..\..\DxCsharpSDK.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="NPOI, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\资料\专高四\技能\PublicToolsLib\bin\Debug\NPOI.dll</HintPath>
-    </Reference>
-    <Reference Include="PublicToolsLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\资料\专高四\技能\PublicToolsLib\bin\Debug\PublicToolsLib.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -128,12 +123,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LoginHtml\DuanXinYanZheng.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -141,77 +136,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\css\Cooldog.css" />
-    <Content Include="Content\css\iconfont.css" />
-    <Content Include="Content\images\1.png" />
-    <Content Include="Content\images\2.png" />
-    <Content Include="Content\images\3.png" />
-    <Content Include="Content\images\4.png" />
-    <Content Include="Content\images\5.png" />
-    <Content Include="Content\images\6.png" />
-    <Content Include="Content\images\7.png" />
-    <Content Include="Content\images\thum_untitled1.png" />
-    <Content Include="Content\images\thum_untitled2.png" />
-    <Content Include="Content\images\thum_untitled3.png" />
-    <Content Include="Content\images\thum_untitled4.jpg" />
-    <Content Include="Content\images\thum_untitled5.jpg" />
-    <Content Include="Content\images\thum_untitled6.jpg" />
-    <Content Include="Content\images\thum_untitled7.jpg" />
-    <Content Include="Content\Index\110446a00rjmoy0co622o0.png" />
-    <Content Include="Content\Index\144727i7ayay8nn8bhkrwz.jpg" />
-    <Content Include="Content\Index\ad_close.gif" />
-    <Content Include="Content\Index\collapsed_no.gif" />
-    <Content Include="Content\Index\common.js" />
-    <Content Include="Content\Index\common_101_icon.jpg" />
-    <Content Include="Content\Index\common_102_icon.jpg" />
-    <Content Include="Content\Index\common_105_icon.jpg" />
-    <Content Include="Content\Index\common_109_icon.jpg" />
-    <Content Include="Content\Index\common_117_icon.jpg" />
-    <Content Include="Content\Index\common_44_icon.png" />
-    <Content Include="Content\Index\common_45_icon.png" />
-    <Content Include="Content\Index\common_49_icon.png" />
-    <Content Include="Content\Index\common_51_icon.png" />
-    <Content Include="Content\Index\common_52_icon.png" />
-    <Content Include="Content\Index\common_58_icon.png" />
-    <Content Include="Content\Index\common_60_icon.png" />
-    <Content Include="Content\Index\common_64_icon.png" />
-    <Content Include="Content\Index\common_65_icon.png" />
-    <Content Include="Content\Index\common_66_icon.png" />
-    <Content Include="Content\Index\common_67_icon.png" />
-    <Content Include="Content\Index\common_69_icon.png" />
-    <Content Include="Content\Index\common_72_icon.png" />
-    <Content Include="Content\Index\common_74_icon.png" />
-    <Content Include="Content\Index\common_75_icon.png" />
-    <Content Include="Content\Index\common_77_icon.png" />
-    <Content Include="Content\Index\common_78_icon.png" />
-    <Content Include="Content\Index\common_80_icon.jpg" />
-    <Content Include="Content\Index\common_81_icon.png" />
-    <Content Include="Content\Index\common_84_icon.png" />
-    <Content Include="Content\Index\common_85_icon.png" />
-    <Content Include="Content\Index\common_88_icon.png" />
-    <Content Include="Content\Index\common_92_icon.png" />
-    <Content Include="Content\Index\common_93_icon.jpg" />
-    <Content Include="Content\Index\common_94_icon.gif" />
-    <Content Include="Content\Index\forum.gif" />
-    <Content Include="Content\Index\forum.js" />
-    <Content Include="Content\Index\forum_slide.js" />
-    <Content Include="Content\Index\home.js" />
-    <Content Include="Content\Index\like.htm" />
-    <Content Include="Content\Index\logging.js" />
-    <Content Include="Content\Index\logo.png" />
-    <Content Include="Content\Index\logo_88_31.gif" />
-    <Content Include="Content\Index\online_admin.gif" />
-    <Content Include="Content\Index\online_member.gif" />
-    <Content Include="Content\Index\online_moderator.gif" />
-    <Content Include="Content\Index\online_supermod.gif" />
-    <Content Include="Content\Index\qq_login.gif" />
-    <Content Include="Content\Index\QQ图片20191204092257.png" />
-    <Content Include="Content\Index\site_qq.jpg" />
-    <Content Include="Content\Index\style_1_common.css" />
-    <Content Include="Content\Index\style_1_forum_index.css" />
-    <Content Include="Content\Index\untitled.png" />
-    <Content Include="Content\js\Cooldog.js" />
-    <Content Include="Content\js\jquery.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -284,13 +208,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\HomePage\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Index\like_files\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Login\" />
     <Folder Include="Views\Posts\" />
   </ItemGroup>
   <ItemGroup>
