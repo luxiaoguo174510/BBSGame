@@ -36,16 +36,12 @@
                         <input type="text" id="Iphone" placeholder="请输入手机号" />
                     </div>
                     <div class="m-2-2">
-                        <input type="text" id="IphoneYanZheng" placeholder="请输入短信验证码" />
+                        <button onclick="GetIphoneYanZheng()">获取短信验证码</button>
                     </div>
                     <div class="m-2-2-1">
                         <input type="text" id="SuiJiYanZheng" placeholder="请输入验证码" />
-                        <img src="assets/images/1.png" />
                     </div>
-                    <div c lass="m-2-2">
-                        <button onclick="GetIphoneYanZheng()">获取短信验证码</button>
-                    </div>
-                    <div id="P1" style="width:200px;height:10px;margin:auto" class="text-center">
+                    <div id="P1" style="width:200px;height:5px;margin:auto" class="text-center">
 
                     </div>
                     <div class="m-2-2" id="P2">
@@ -115,52 +111,58 @@
 
     <script type="text/javascript" src="https://cdn.dingxiang-inc.com/ctu-group/captcha-ui/index.js"></script>
     <script>
-        function TuPianYanZheng() {
-            var myCaptcha = _dx.Captcha(document.getElementById('P1'), {
-                appId: 'f4821addb462dd54853153c0c72ef42f', //appId，在控制台中“应用管理”或“应用配置”模块获取
-                success: function (token) {
-                    $.ajax({
-                        url: "/Login/TuPianYanZheng",
-                        typ: "get",
-                        data: { token: token },
-                        success: function (data) {
-                            if (data == "SERVER_SUCCESS1") {
-                                var UName = $("#UserName").val();
-                                var PassWord = $("#UserWord").val();
-                                var Phone = $("#Iphone").val();
-                                $.ajax({
-                                    url: "/Login/LoginUser",
-                                    type: "get",
-                                    data: { UName: UName, PassWord: PassWord, Phone: Phone},
-                                    success: function (data1) {
-                                        if (data1 > 0) {
-                                            alert("登录成功");
-                                            location.href = "https://www.baidu.com";
-                                        }
-                                        else {
-                                            alert("登录失败");
-                                        }
-                                    }
-                                })
-                            }
-                            else
-                            {
-                                alert("验证未通过");
-                            }
-                        }
 
-                    })
-                }
-            })
-        };
+        var x = 123;//接受短信验证码
+        function TuPianYanZheng() {
+            var y = $("#SuiJiYanZheng").val();
+            if (x == y) {
+                var myCaptcha = _dx.Captcha(document.getElementById('P1'), {
+                    appId: 'f4821addb462dd54853153c0c72ef42f', //appId，在控制台中“应用管理”或“应用配置”模块获取
+                    success: function (token) {
+                        $.ajax({
+                            url: "/Login/TuPianYanZheng",
+                            typ: "get",
+                            data: { token: token },
+                            success: function (data) {
+                                if (data == "SERVER_SUCCESS1") {
+                                    var UName = $("#UserName").val();
+                                    var PassWord = $("#UserWord").val();
+                                    var Phone = $("#Iphone").val();
+                                    $.ajax({
+                                        url: "/Login/LoginUser",
+                                        type: "get",
+                                        data: { UName: UName, PassWord: PassWord, Phone: Phone },
+                                        success: function (data1) {
+                                            if (data1 > 0) {
+                                                alert("登录成功");
+                                                location.href = "https://www.baidu.com";
+                                            }
+                                            else {
+                                                alert("登录失败");
+                                            }
+                                        }
+                                    })
+                                }
+                                else {
+                                    alert("图片验证未通过");
+                                }
+                            }
+                        })
+                    }
+                })
+            }
+            else {
+                alert("验证码不正确");
+            }
+            }
         function GetIphoneYanZheng() {
             var phone = $("#Iphone").val();
             $.ajax({
-                url: "/Login/GetIphoneYanZheng",
+                url: "/Login/GetPhoneYanZheng",
                 type: "get",
-                data: { iphone: phone },
+                data: { phone: phone },
                 success: function (data) {
-                    alert(data);
+                    x = data;
                 }
             })
         }

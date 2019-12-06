@@ -3,5 +3,80 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<table class="table-bordered ; text-center" style="margin:auto">
+    <tr>
+        <td>用户名</td>
+        <td><input type="text" id="Name" /></td>
+    </tr>
+    <tr>
+        <td>密码</td>
+        <td><input type="text" id="Pwd" /></td>
+    </tr>
+    <tr>
+        <td>昵称</td>
+        <td><input type="text" id="NName" /></td>
+    </tr>
+    <tr>
+        <td>性别</td>
+        <td>
+            <input class="myforms-3-2" type="radio" checked="checked" name="sex" value="男">男
 
+            <input class="myforms-3-3" type="radio" name="sex" value="女">女
+        </td>
+    </tr>
+    <tr>
+        <td>生日</td>
+        <td><input type="date" id="Date"/></td>
+    </tr>
+    <tr>
+        <td>省份</td>
+        <td>
+            <select id="Sel">
+                <option value="河北">河北</option>
+                <option value="北京">北京</option>
+                <option value="上海">上海</option>
+                <option value="深圳">深圳</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>手机号</td>
+        <td><input type="text" id="Phone" /></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button class="btn btn-danger" onclick="ZhuCe()">注册</button></td>
+    </tr>
+</table>
+<script>
+    ///注册按钮事件
+    function ZhuCe() {
+        var val = $('input:radio[name="sex"]:checked').val();
+        var obj = {};
+        obj.UName = $("#Name").val();
+        obj.PassWord = $("#Pwd").val();
+        obj.NickName = $("#NName").val();
+        obj.HeadPic = "";
+        obj.Sex = val;
+        obj.Birthday = $("#Date").val();
+        obj.Integral = "0";
+        obj.Grade = "0";
+        obj.Province = $("#Sel").val();
+        obj.Phone = $("#Phone").val();
+        obj.UState = "测试";
+        $.ajax({
+            url: "/Login/ZhuCe",
+            type: "post",
+            data: { m: obj },
+            success: function (data) {
+                if (data > 0) {
+                    alert("注册成功");
+                    location.href = "https://www.baidu.com";
+                }
+                else {
+                    alert("注册失败");
+                }
+            }
+        })
+    }
+</script>

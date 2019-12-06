@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Data;
 using System.Data.SqlClient;
 using ModelInfo;
+using BBSGame.LoginHtml;
 
 namespace BBSGame.Controllers
 {
@@ -17,6 +18,34 @@ namespace BBSGame.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        /// <summary>
+        /// 短信验证码
+        /// </summary>
+        /// <param name="phone"></param>
+        /// <returns></returns>
+        public string GetPhoneYanZheng(string phone)
+        {
+            DuanXinYanZheng m = new DuanXinYanZheng();
+            return m.Main(phone);
+        }
+
+        /// <summary>
+        /// 注册
+        /// </summary>
+        /// <returns></returns>
+        public int ZhuCe(UserInfo m)
+        {
+            using (SqlConnection conn = new SqlConnection("Data Source=10.1.152.12;Initial Catalog=BBSGame;User ID=sa;pwd=1234"))
+            {
+                conn.Open();
+                SqlCommand comm = new SqlCommand($"insert into UserInfo values('{m.UName}','{m.PassWord}','{m.NickName}','{m.HeadPic}','{m.Sex}','{m.Birthday}','{m.Integral}','{m.Grade}','{m.Province}','{m.Phone}','{m.UState}')", conn);
+                int i = comm.ExecuteNonQuery();
+                conn.Close();
+                return i;
+            }
+
         }
 
         /// <summary>
@@ -30,41 +59,13 @@ namespace BBSGame.Controllers
             using (SqlConnection conn=new SqlConnection("Data Source=10.1.152.12;Initial Catalog=BBSGame;User ID=sa;pwd=1234"))
             {
                 conn.Open();
-                SqlCommand comm = new SqlCommand($"select COUNT(1) from UserInfo where UName='{UName}' and PassWord='{PassWord}' and Phone='{Phone}'",conn);
+                SqlCommand comm = new SqlCommand($"select COUNT(1) from UserInfo where UName like '{UName}' and PassWord like '{PassWord}' and Phone like '{Phone}'",conn);
                 SqlDataAdapter sqlData = new SqlDataAdapter(comm);
                 DataTable DT = new DataTable();
                 sqlData.Fill(DT);
                 int i = (int)DT.Rows[0][0];
                 conn.Close();
                 return i;
-            }
-        }
-
-        /// <summary>
-        /// Api接口发送短信验证码
-        /// 验证码=>随即生成
-        /// </summary>
-        /// <param name="iphone"></param>
-        /// <returns></returns>
-        public string GetIphoneYanZheng(string iphone)
-        {
-            string _timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
-            string _content = "【GameLife】富婆你好!我是你大哥。";
-            string _sign =Sign("你们的豪哥g+H19990326+DateTime.Now","UTF-8");
-            //string url = $"http://cloud.yunsms.cn/v2sms.aspx/?action=send&userid=1787&timestamp={_timestamp}&sign={_sign}&mobile={iphone}&content={_content}&extno=";
-            string url = $"http://cloud.yunsms.cn/v2sms.aspx?action=send&userid=1787&timestamp={_timestamp}&sign={_sign}&mobile={iphone}&content={_content}&extno=";
-            //string url = $"http://cloud.yunsms.cn/v2sms.aspx?action=send&userid=1690&timestamp=20190117230015&sign=8cc9da70545cc7da27c2eb95031a13ff&mobile={iphone}&content=【GameLife】富婆你好!我是你大哥。&extno=";
-            HttpClient client = new HttpClient();//【GameLife】富婆你好!我是你大哥。
-            HttpResponseMessage message = client.GetAsync(url).Result;
-            string x = message.Content.ReadAsStringAsync().Result;
-
-            if (message.IsSuccessStatusCode)
-            {
-                return message.Content.ReadAsStringAsync().Result;
-            }
-            else
-            {
-                return "";
             }
         }
 
@@ -89,25 +90,5 @@ namespace BBSGame.Controllers
             
 
         }
-
-        private string Sign(string strSource, string sEncode)
-        {
-            //new
-            System.Security.Cryptography.MD5 md5 = new System.Security.Cryptography.MD5CryptoServiceProvider(); 
-            //获取密文字节数组
-            byte[] bytResult = md5.ComputeHash(System.Text.Encoding.GetEncoding(sEncode).GetBytes(strSource));
-
-            //转换成字符串，并取9到25位
-            //string strResult = BitConverter.ToString(bytResult, 4, 8);
-
-            //转换成字符串，32位
-            string strResult = BitConverter.ToString(bytResult);
-
-            //BitConverter转换出来的字符串会在每个字符中间产生一个分隔符，需要去除掉        
-            strResult = strResult.Replace("-", "");
-
-            return strResult.ToLower();
-        }
-
     }
 }

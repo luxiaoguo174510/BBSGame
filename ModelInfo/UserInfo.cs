@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModelInfo
 {
-    class UserInfo
+    public class UserInfo
     {
         public string UId { get; set; }//主键        
         public string UName { get; set; }//用户名      
