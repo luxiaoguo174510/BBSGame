@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace ModelInfo
 {
-    public class UserInfo
+    class UserInfo
     {
-        public string UId { get; set; }             //int identity              not null,
-        public string UName { get; set; }             //varchar(50)                    null,
-        public string PassWord { get; set; }             //varchar(255)                   null,
-        public string NickName { get; set; }             //varchar(50)                    null,   昵称
-        public string HeadPic { get; set; }             //varchar(255)                   null,      头像
-        public string Sex { get; set; }             //varchar(2)                     null,
-        public string Birthday { get; set; }             //datetime                       null,
-        public string Integral { get; set; }             //int                            null,     积分
-        public string Grade { get; set; }             //int                            null,        等级
-        public string Province { get; set; }             //varchar(50)                    null,     省份
-        public string Phone { get; set; }             //varchar(11)                    null,
-        public string UState { get; set; }             //varchar(50)                    null,
+        public string UId { get; set; }//主键        
+        public string UName { get; set; }//用户名      
+        public string PassWord { get; set; }//密码   
+        public string NickName { get; set; }//昵称   
+        public string HeadPic { get; set; }//头像路径    
+        public string Sex { get; set; }//性别        
+        public string Birthday { get; set; }//生日   
+        public string Integral { get; set; }//积分   
+        public string Grade { get; set; }//等级      
+        public string Province { get; set; }//居住省   
+        public string Phone { get; set; }//手机号      
+        public string UState { get; set; }//状态     
     }
 }
