@@ -13,9 +13,9 @@ namespace BBSGame.Controllers
     {
         BllOpt bp = new BllOpt();
         // GET: HomePage
-        public ActionResult Index()
+        public ActionResult Index(string GType = "")
         {
-            ViewBags();
+            ViewBags(GType);
             return View();
         }
         public void GetFile(HttpPostedFileBase Path)
@@ -24,7 +24,7 @@ namespace BBSGame.Controllers
             Path.SaveAs(Server.MapPath("/Content/images/" +Path.FileName));
             PublicToolsLib.HelpImg.ImageHandlerHelper.PointThumbnail(Server.MapPath("/Content/images/" + Path.FileName), Server.MapPath("/Content/images/thum_" + Path.FileName), 498, 220, mode);
         }
-        public void ViewBags()
+        public void ViewBags(string GType="")
         {
             List<GameType> games = JsonConvert.DeserializeObject<List<GameType>>(JsonConvert.SerializeObject(bp.GetGameType()));
             List<PlateInfo> plates = JsonConvert.DeserializeObject<List<PlateInfo>>(JsonConvert.SerializeObject(bp.GetPlate()));
