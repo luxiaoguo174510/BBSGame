@@ -76,19 +76,47 @@ namespace BLL
             pairs.Add("@Pricture", m.Picture);
             return db.Proc_ExecuteNonQuery("P_AddPicture", pairs);
         }
-        public DataTable GetGameType(string GName="")
+        /// <summary>
+        /// 查询游戏分类
+        /// </summary>
+        /// <param name="GName"></param>
+        /// <returns></returns>
+        public DataTable GetGameType(string GName = "")
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
-            pairs.Add("@GName",GName);
+            pairs.Add("@GName", GName);
             return db.Proc_GetTable("P_GTS", pairs);
         }
-        public List<Pictures> ShowPicture()
+        /// <summary>
+        /// 查询所有板块
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetPlate()
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
-            DataTable dt = db.Proc_GetTable("P_ShowPicture", pairs);
-            List<Pictures> list = JsonConvert.DeserializeObject<List<Pictures>>(JsonConvert.SerializeObject(dt));
-            return list;
+            DataTable data = db.Proc_GetTable("P_Plate", pairs);
+            return data;
         }
-        
+        /// <summary>
+        /// 查询所有版主
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetPlateUser()
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            DataTable data = db.Proc_GetTable("P_PlateUser", pairs);
+            return data;
+        }
+        /// <summary>
+        /// 获取图片
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetPicture(string GName = "")
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@GName", GName);
+            DataTable data = db.Proc_GetTable("P_Pic", pairs);
+            return data;
+        }
     }
 }

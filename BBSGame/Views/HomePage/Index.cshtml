@@ -2,6 +2,11 @@
 @{
     ViewBag.Title = "Index";
 }
+@using (Html.BeginForm("GetFile", "HomePage",FormMethod.Post,new { @enctype = "multipart/form-data" }))
+{
+<input type="file" name="Path" value="" />
+<input type="submit" value="上传" />
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,41 +19,14 @@
     <div class="Cooldog_container">
         <div class="Cooldog_content">
             <ul>
-                <li class="p3">
-                    <a href="#">
-                        <img alt="" src="~/Content/images/1.png">
-                    </a>
-                </li>
-                <li class="p4">
-                    <a href="#">
-                        <img alt="" src="~/Content/images/2.png">
-                    </a>
-                </li>
-                <li class="p5">
-                    <a href="#">
-                        <img alt="" src="~/Content/images/3.png">
-                    </a>
-                </li>
-                <li class="p6">
-                    <a href="#">
-                        <img alt="" src="~/Content/images/4.png">
-                    </a>
-                </li>
-                <li class="p7">
-                    <a href="#">
-                        <img alt="" src="~/Content/images/5.png">
-                    </a>
-                </li>
-                <li class="p1">
-                    <a href="#">
-                        <img alt="" src="~/Content/images/6.png">
-                    </a>
-                </li>
-                <li class="p2">
-                    <a href="#">
-                        <img alt="" src="~/Content/images/7.png">
-                    </a>
-                </li>
+                @foreach (var item in ViewBag.Picture)
+                {
+                    <li class="p@(item.RowId)">
+                        <a href="#">
+                            <img alt="" src="@item.Picture">
+                        </a>
+                    </li>
+                }
             </ul>
         </div>
         <a class="btn_left" style="display: none;" href="javascript:;">
@@ -152,10 +130,10 @@
                                                 <TD width="49.9%" class="fl_g">
                                                     @foreach (var item in ViewBag.Plate)
                                                     {
-                                                        //if (item)
-                                                        //{
+                                                        if (item.)
+                                                        {
 
-                                                        //}
+                                                        }
                                                         <DIV class="fl_icn_g" style="width: 50px;">
                                                             <A href="http://www.tdnd.cn/forum-45-1.html">
                                                                 <IMG align="left" alt="" src="~/Content/Index/common_45_icon.png">
@@ -175,7 +153,7 @@
                                         </TR>
                                     }
                                 </TBODY>
-                            </TABLE>*@
+                            </TABLE>
                         </DIV>
                     </DIV>
                     <DIV class="bm bmw  flg cl">
@@ -189,131 +167,7 @@
                             </SPAN>
                             <H2><A style="color: rgb(255, 0, 0);" href="http://www.tdnd.cn/forum.php?gid=113">★★【土地学人】——好客游戏[中国土地政策与法律研究中心]</A></H2>
                         </DIV>
-                        <DIV class="bm_c" id="category_113">
-                            <TABLE class="fl_tb" cellspacing="0" cellpadding="0">
-                                <TBODY>
-                                    <TR>
-                                        <TD width="32.9%" class="fl_g">
-                                            <DIV class="fl_icn_g" style="width: 50px;">
-                                                <A href="http://www.tdnd.cn/forum-117-1.html">
-                                                    <IMG align="left" alt="" src="~/Content/Index/common_117_icon.jpg">
-                                                </A>
-                                            </DIV>
-                                            <DL style="margin-left: 50px;">
-                                                <DT><A href="http://www.tdnd.cn/forum-117-1.html">土地学人</A></DT>
-                                                <DD><EM>主题: 57</EM>, <EM>帖数: 89</EM></DD>
-                                                <DD>
-                                                    <A href="http://www.tdnd.cn/forum.php?mod=redirect&amp;tid=225381&amp;goto=lastpost#lastpost">
-                                                        最后发表:
-                                                        2018-10-11 11:52
-                                                    </A>
-                                                </DD>
-                                            </DL>
-                                        </TD>
-                                        <TD width="32.9%">&nbsp;</TD>
-                                        <TD width="32.9%">&nbsp;</TD>
-                                    </TR>
-                                </TBODY>
-                            </TABLE>
-                        </DIV>
-                    </DIV>
-                    <DIV class="bm bmw  flg cl">
-                        <DIV class="bm_h cl">
-                            <SPAN class="o">
-                                <IMG title="收起/展开" id="category_42_img"
-                                     onclick="toggle_collapse('category_42');" alt="收起/展开" src="~/Content/Index/collapsed_no.gif">
-                            </SPAN> <SPAN class="y">
-                                分区版主: <A class="notabs" href="http://www.tdnd.cn/space-username-%E4%B8%E4%B8%C1%F7%CB%AE.html"
-                                         c="1">涓涓流水</A>
-                            </SPAN>
-                            <H2><A style="color: rgb(102, 51, 0);" href="http://www.tdnd.cn/forum.php?gid=42">【毕业之后】</A></H2>
-                        </DIV>
-                        <DIV class="bm_c" id="category_42">
-                            <TABLE class="fl_tb" cellspacing="0" cellpadding="0">
-                                <TBODY>
-                                    <TR>
-                                        <TD width="49.9%" class="fl_g">
-                                            <DIV class="fl_icn_g" style="width: 50px;">
-                                                <A href="http://www.tdnd.cn/forum-88-1.html">
-                                                    <IMG align="left" alt="" src="~/Content/Index/common_88_icon.png">
-                                                </A>
-                                            </DIV>
-                                            <DL style="margin-left: 50px;">
-                                                <DT><A href="http://www.tdnd.cn/forum-88-1.html">上班</A></DT>
-                                                <DD><EM>主题: 57</EM>, <EM>帖数: 115</EM></DD>
-                                                <DD>
-                                                    <A class="xi2" href="http://www.tdnd.cn/forum.php?mod=redirect&amp;tid=218474&amp;goto=lastpost#lastpost">毕业后有评职称的吗？</A>
-                                                    <CITE>2018-1-2 10:00 <A href="http://www.tdnd.cn/space-username-%CD%C1%C4%BE%C4%BE%C4%BE.html">土木木木</A></CITE>
-                                                </DD>
-                                            </DL>
-                                        </TD>
-                                        <TD width="49.9%" class="fl_g">
-                                            <DIV class="fl_icn_g" style="width: 50px;">
-                                                <A href="http://www.tdnd.cn/forum-92-1.html">
-                                                    <IMG align="left" alt="" src="~/Content/Index/common_92_icon.png">
-                                                </A>
-                                            </DIV>
-                                            <DL style="margin-left: 50px;">
-                                                <DT><A href="http://www.tdnd.cn/forum-92-1.html">创业</A></DT>
-                                                <DD><EM>主题: 115</EM>, <EM>帖数: 168</EM></DD>
-                                                <DD>
-                                                    <A class="xi2" href="http://www.tdnd.cn/forum.php?mod=redirect&amp;tid=254204&amp;goto=lastpost#lastpost">有想做社区团购创业的小伙伴吗</A>
-                                                    <CITE>2019-5-30 23:48 <A href="http://www.tdnd.cn/space-username-oulianwei.html">oulianwei</A></CITE>
-                                                </DD>
-                                            </DL>
-                                        </TD>
-                                    </TR>
-                                </TBODY>
-                            </TABLE>
-                        </DIV>
-                    </DIV>
-                    <DIV class="bm bmw  flg cl">
-                        <DIV class="bm_h cl">
-                            <SPAN class="o">
-                                <IMG title="收起/展开" id="category_43_img"
-                                     onclick="toggle_collapse('category_43');" alt="收起/展开" src="~/Content/Index/collapsed_no.gif">
-                            </SPAN>
-                            <H2><A style="color: rgb(153, 51, 153);" href="http://www.tdnd.cn/forum.php?gid=43">&#10033;【论坛事务】</A></H2>
-                        </DIV>
-                        <DIV class="bm_c" id="category_43">
-                            <TABLE class="fl_tb" cellspacing="0" cellpadding="0">
-                                <TBODY>
-                                    <TR>
-                                        <TD width="49.9%" class="fl_g">
-                                            <DIV class="fl_icn_g" style="width: 50px;">
-                                                <A href="http://www.tdnd.cn/forum-93-1.html">
-                                                    <IMG align="left" alt="" src="~/Content/Index/common_93_icon.jpg">
-                                                </A>
-                                            </DIV>
-                                            <DL style="margin-left: 50px;">
-                                                <DT><A href="http://www.tdnd.cn/forum-93-1.html">站务管理</A></DT>
-                                                <DD><EM>主题: 35</EM>, <EM>帖数: 293</EM></DD>
-                                                <DD>
-                                                    <A class="xi2" href="http://www.tdnd.cn/forum.php?mod=redirect&amp;tid=36965&amp;goto=lastpost#lastpost">站内资源导航帖</A>
-                                                    <CITE>2019-7-28 21:09 <A href="http://www.tdnd.cn/space-username-xiaoxinxin.html">xiaoxinxin</A></CITE>
-                                                </DD>
-                                            </DL>
-                                        </TD>
-                                        <TD width="49.9%" class="fl_g">
-                                            <DIV class="fl_icn_g" style="width: 50px;">
-                                                <A href="http://www.tdnd.cn/forum-94-1.html">
-                                                    <IMG align="left" alt="" src="~/Content/Index/common_94_icon.gif">
-                                                </A>
-                                            </DIV>
-                                            <DL style="margin-left: 50px;">
-                                                <DT><A href="http://www.tdnd.cn/forum-94-1.html">每日签到</A></DT>
-                                                <DD><EM>主题: 3114</EM>, <EM>帖数: <SPAN title="83266">8万</SPAN></EM></DD>
-                                                <DD>
-                                                    <A class="xi2" href="http://www.tdnd.cn/forum.php?mod=redirect&amp;tid=226796&amp;goto=lastpost#lastpost">旋挖钻机施工原理</A>
-                                                    <CITE>2018-8-14 14:47 <A href="http://www.tdnd.cn/space-username-funnyhour.html">funnyhour</A></CITE>
-                                                </DD>
-                                            </DL>
-                                        </TD>
-                                    </TR>
-                                </TBODY>
-                            </TABLE>
-                        </DIV>
-                    </DIV>
+                    }
                 </DIV>
                 <DIV class="wp mtn">
                     <!--[diy=diy3]-->
@@ -343,14 +197,6 @@
                             版主 &nbsp; &nbsp; &nbsp; <IMG src="~/Content/Index/online_member.gif">
                             会员 &nbsp; &nbsp; &nbsp; <IMG src=""> 等待【邮箱验证】会员 &nbsp; &nbsp; &nbsp;
                         </DT>
-                        <DD class="ptm pbm">
-                            <UL class="cl">
-                                <LI title="时间: 10:48">
-                                    <IMG alt="icon" src="~/Content/Index/online_member.gif">
-                                    <A href="http://www.tdnd.cn/space-uid-64861.html">heheda</A>
-                                </LI>
-                            </UL>
-                        </DD>
                     </DL>
                 </DIV>
 

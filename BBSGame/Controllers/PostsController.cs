@@ -6,19 +6,23 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace BBSGame.Controllers
 {
     public class PostsController : Controller
     {
         BllOpt bl = new BllOpt();
+        HomePageController Home = new HomePageController();
         // GET: Posts
         public ActionResult Index(string name="")
         {
+            Home.ViewBags();
             return View(bl.ShowPoste(name));
         }
         //添加帖子
         public ActionResult AddPost()
         {
+            Home.ViewBags();
             return View();
         }
         public ActionResult CreatePost()
