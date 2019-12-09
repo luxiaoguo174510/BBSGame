@@ -82,5 +82,13 @@ namespace BLL
             pairs.Add("@GName",GName);
             return db.Proc_GetTable("P_GTS", pairs);
         }
+        public List<Pictures> ShowPicture()
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            DataTable dt = db.Proc_GetTable("P_ShowPicture", pairs);
+            List<Pictures> list = JsonConvert.DeserializeObject<List<Pictures>>(JsonConvert.SerializeObject(dt));
+            return list;
+        }
+        
     }
 }

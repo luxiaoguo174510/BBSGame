@@ -21,10 +21,16 @@ namespace BBSGame.Controllers
         {
             return View();
         }
-        [HttpPost]
-        public void AddPost(PostsInfo m,out string outname)
+        public ActionResult CreatePost()
         {
+            return View();
+        }
+        [HttpPost]
+        public void CreatePost(PostsInfo m)
+        {
+            string outname = "";
             int result = bl.AddPoste(m,out outname);
+            int i = Convert.ToInt32(outname);
             if(result>0)
             {
                 Response.Write("<script>alert('添加帖子成功！');location.href='/Posts/index'</script>");

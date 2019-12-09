@@ -2,7 +2,9 @@
 @{
     Layout = null;
 }
+
 @model List<ModelInfo.PostsInfo>
+
 <script src="~/Content/B/common.js"></script>
 <SCRIPT src="~/Content/B/common.js" type="text/javascript"></SCRIPT>
 
@@ -68,7 +70,7 @@
             <DIV class="hdc cl">
                 <H2>
                     <A title="中国农业大学论坛|天地农大BBS" href="http://www.tdnd.cn/">
-                        <img src="~/Content/Plate/QQ图片20191204104950.png" width="960" height="386" />
+                        <img src="~/Content/B/123123123123.png" width="960" />
                     </A>
                 </H2>
                 <SCRIPT src="~/Content/B/logging.js" type="text/javascript"></SCRIPT>
@@ -157,14 +159,6 @@
         <STYLE id="diy_style" type="text/css"></STYLE>
         <!--[diy=diynavtop]-->
         <DIV class="area" id="diynavtop"></DIV><!--[/diy]-->
-        <DIV class="bm cl" id="pt">
-            <DIV class="z">
-                <A title="首页" class="nvhm"
-                   href="http://www.tdnd.cn/">中国农业大学论坛|天地农大BBS</A><EM>&raquo;</EM><A href="http://www.tdnd.cn/forum.php">社区论坛</A>
-                <EM>&#8250;</EM> <A href="http://www.tdnd.cn/forum.php?gid=1">★【人在农大】</A> <EM>&#8250;</EM>
-                <A href="http://www.tdnd.cn/forum-51-1.html">高考专版</A> <EM>&#8250;</EM> <A href="http://www.tdnd.cn/thread-218550-1-1.html">雅思、托福一对一辅导</A>
-            </DIV>
-        </DIV>
 
 
         <DIV class="wp">
@@ -224,43 +218,127 @@
                     }
                     
                     <table class="table table-bordered:1px">
-                        <tr>
-                            <td>1查看: 258|回复: 0</td>
+                        <tr width="300">
+                            <td width="150px">1查看: 258|回复: 0</td>
                             <td>
-                                <IMG class="authicn vm" id="authicon371067" src="~/Content/B/online_member.gif">
-                                <EM id="authorposton371067">发表于 2018-1-10 18:23:34</EM> <SPAN class="pipe">|</SPAN> <A href="http://www.tdnd.cn/forum.php?mod=viewthread&amp;tid=218550&amp;page=1&amp;authorid=60038"
-                                                                                                                       rel="nofollow">只看该作者</A> <SPAN class="none">
-                                    <IMG class="vm" alt="回帖奖励"
-                                         src="~/Content/B/arw_r.gif">
-                                </SPAN> <SPAN class="pipe show">|</SPAN><A class="show" href="http://www.tdnd.cn/forum.php?mod=viewthread&amp;tid=218550&amp;extra=page%3D1&amp;ordertype=1">倒序浏览</A>
-                                <SPAN class="pipe show">|</SPAN><A class="show" onclick="readmode($('thread_subject').innerHTML, 371067);"
-                                                                   href="javascript:;">阅读模式</A>
+                                <h1>@p.PTitle</h1>
                             </td>
                         </tr>
-                        <tr>
+                        <tr width="300">
                             <td>
                                 <A class="xw1" href="http://www.tdnd.cn/space-uid-60038.html"
-                                   target="_blank"></A>
+                                   target="_blank">@p.CreateUser</A>
                             </td>
-                            <td>2</td>
+                            <td>
+                                <p>@p.PContent</p>
+                            </td>
                         </tr>
-                        <tr>
-                            <td rowspan="2">
+                        <tr width="300">
+                            <td rowspan="3">
                                 <A class="avtm" href="http://www.tdnd.cn/space-uid-60038.html"
                                    target="_blank">
                                     <img src=" ~/Content/B/微信图片_20190715151718.jpg" />
                                 </A>
                             </td>
-                            <td>3</td>
+                            <td>
+                                <DIV class="mtw mbm hm cl" id="p_btn">
+                                    <DIV class="tshare cl">
+                                        <B>分享到:&nbsp;</B> <A title="QQ好友和群" id="k_share_to_qq"
+                                                             href="http://www.tdnd.cn/home.php?mod=spacecp&amp;ac=plugin&amp;id=qqconnect:spacecp&amp;pluginop=share&amp;sh_type=4&amp;thread_id=218550"
+                                                             target="_blank">
+                                            <I>
+                                                <IMG alt="QQ好友和群"
+                                                     src="~/Content/B/qq_share.png">QQ好友和群
+                                            </I>
+                                        </A>
+                                    </DIV><A title="收藏本帖" id="k_favorite"
+                                             onmouseover="this.title = $('favoritenumber').innerHTML + ' 人收藏'" onclick="showWindow(this.id, this.href, 'get', 0);"
+                                             href="http://www.tdnd.cn/home.php?mod=spacecp&amp;ac=favorite&amp;type=thread&amp;id=218550&amp;formhash=be2be25b">
+                                        <I>
+                                            <IMG alt="收藏" src="~/Content/B/fav.gif">收藏<SPAN id="favoritenumber" style="display: none;">0</SPAN>
+                                        </I>
+                                    </A>
+                                    <A title="转播求扩散" class="followp" onclick="showWindow('relaythread', this.href, 'get', 0);"
+                                       href="http://www.tdnd.cn/home.php?mod=spacecp&amp;ac=follow&amp;op=relay&amp;tid=218550&amp;from=forum">
+                                        <I>
+                                            <IMG alt="转播" src="~/Content/B/rt.png">转播
+                                        </I>
+                                    </A> <A title="分享推精华" class="sharep"
+                                            onclick="showWindow('sharethread', this.href, 'get', 0);" href="http://www.tdnd.cn/home.php?mod=spacecp&amp;ac=share&amp;type=thread&amp;id=218550">
+                                        <I>
+                                            <IMG alt="分享" src="~/Content/B/oshr.png">分享
+                                        </I>
+                                    </A> <A title="顶一下" id="recommend_add"
+                                            onmouseover="this.title = $('recommendv_add').innerHTML + ' 人支持'" onclick="showWindow('login', this.href)"
+                                            href="http://www.tdnd.cn/forum.php?mod=misc&amp;action=recommend&amp;do=add&amp;tid=218550&amp;hash=be2be25b">
+                                        <I>
+                                            <IMG alt="支持" src="~/Content/B/rec_add.gif">支持<SPAN id="recommendv_add" style="display: none;">0</SPAN>
+                                        </I>
+                                    </A>
+                                    <A title="踩一下" id="recommend_subtract" onmouseover="this.title = $('recommendv_subtract').innerHTML + ' 人反对'"
+                                       onclick="showWindow('login', this.href)" href="http://www.tdnd.cn/forum.php?mod=misc&amp;action=recommend&amp;do=subtract&amp;tid=218550&amp;hash=be2be25b">
+                                        <I>
+                                            <IMG alt="反对" src="~/Content/B/rec_subtract.gif">反对<SPAN id="recommendv_subtract"
+                                                                                                     style="display: none;">0</SPAN>
+                                        </I>
+                                    </A>
+                                </DIV>
+                            </td>
                         </tr>
                         <tr>
-                            <td>4</td>
+                            <td>
+                                <DIV class="po hin">
+                                    <DIV class="pob cl">
+                                        <EM>
+                                            <A class="fastre" onclick="showWindow('reply', this.href)"
+                                               href="http://www.tdnd.cn/forum.php?mod=post&amp;action=reply&amp;fid=51&amp;tid=218550&amp;reppost=371067&amp;extra=page%3D1&amp;page=1">回复</A>
+                                        </EM>
+                                        <P>
+                                            <A class="showmenu" id="mgc_post_371067" onmouseover="showMenu(this.id)"
+                                               href="javascript:;">使用道具</A> <A onclick="showWindow('miscreport371067', 'misc.php?mod=report&amp;rtype=post&amp;rid=371067&amp;tid=218550&amp;fid=51', 'get', -1);return false;"
+                                                                               href="javascript:;">举报</A>
+                                        </P>
+                                        <UL class="p_pop mgcmn" id="mgc_post_371067_menu"
+                                            style="display: none;"></UL>
+                                        <SCRIPT type="text/javascript" reload="1">checkmgcmn('post_371067')</SCRIPT>
+                                    </DIV>
+                                </DIV>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <DIV class="pi">
+                                    <DIV class="y" id="fj">
+                                        <LABEL class="z">电梯直达</LABEL> <INPUT title="跳转到指定楼层" class="px p_fre z" onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}" onkeyup="$('fj_btn').href='forum.php?mod=redirect&amp;ptid=218550&amp;authorid=0&amp;postno='+this.value" type="text" size="2">
+                                        <A title="跳转到指定楼层" class="z" id="fj_btn" href="javascript:;">
+                                            <IMG class="vm"
+                                                 alt="跳转到指定楼层" src="~/Content/B/fj_btn.png">
+                                        </A>
+                                    </DIV><STRONG>
+                                        <A id="postnum371067"
+                                           onclick="setCopy(this.href, '帖子地址复制成功');return false;" href="http://www.tdnd.cn/thread-218550-1-1.html">楼主</A>
+                                    </STRONG>
+                                    <DIV class="pti">
+                                        <DIV class="pdbt"></DIV>
+                                        <DIV class="authi">
+                                            <IMG class="authicn vm" id="authicon371067" src="~/Content/B/online_member.gif">
+                                            <EM id="authorposton371067">发表于 @p.CreateDate</EM> <SPAN class="pipe">|</SPAN> <A href="http://www.tdnd.cn/forum.php?mod=viewthread&amp;tid=218550&amp;page=1&amp;authorid=60038"
+                                                                                                                                   rel="nofollow">只看该作者</A> <SPAN class="none">
+                                                <IMG class="vm" alt="回帖奖励"
+                                                     src="~/Content/B/arw_r.gif">
+                                            </SPAN> <SPAN class="pipe show">|</SPAN><A class="show" href="http://www.tdnd.cn/forum.php?mod=viewthread&amp;tid=218550&amp;extra=page%3D1&amp;ordertype=1">倒序浏览</A>
+                                            <SPAN class="pipe show">|</SPAN><A class="show" onclick="readmode($('thread_subject').innerHTML, 371067);"
+                                                                               href="javascript:;">阅读模式</A>
+                                        </DIV>
+                                    </DIV>
+                                </DIV>
+                            </td>
                         </tr>
                     </table>
                     <br />
                     <br />
                     <br />
-                    <TABLE class="plhin" id="pid371067" cellspacing="0" cellpadding="0" summary="pid371067">
+                    @*<TABLE class="plhin" id="pid371067" cellspacing="0" cellpadding="0" summary="pid371067">
                         <TBODY>
                             <TR>
                                 <TD class="pls" rowspan="2">
@@ -395,7 +473,7 @@
                                                     </table>*@
 
 
-                                                            </TD>
+                                                            @*</TD>
                                                         </TR>
                                                     </TBODY>
                                                 </TABLE>
@@ -479,7 +557,7 @@
                                 <TD class="plc"></TD>
                             </TR>
                         </TBODY>
-                    </TABLE>
+                    </TABLE>*@
 
 
 
@@ -634,34 +712,6 @@
         </P><A href="http://www.tdnd.cn/forum.php"
                target="_blank">
         </A>
-    </DIV>
-    <DIV class="wp cl" id="ft">
-        <DIV class="y" id="flk">
-            <P>
-                <A title="QQ" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1690642617&amp;site=中国农业大学论坛|天地农大BBS&amp;menu=yes&amp;from=discuz"
-                   target="_blank"><IMG alt="QQ" src="~/Content/B/site_qq.jpg"></A><SPAN class="pipe">|</SPAN><STRONG>
-                    <A href="http://www.tdnd.cn/" target="_blank">天地农大BBS</A>
-                </STRONG>
-            </P>
-            <P class="xs0">
-                GMT+8, 2019-12-2 14:53<SPAN id="debuginfo">
-                    , Processed in
-                    1.038491 second(s), 19 queries .
-                </SPAN>
-            </P>
-        </DIV>
-        <DIV id="frt">
-            <P>
-                Powered by <STRONG>
-                    <A href="http://www.discuz.net/"
-                       target="_blank">Discuz!</A>
-                </STRONG> <EM>X3.4</EM>
-            </P>
-            <P class="xs0">
-                &copy; 2001-2017 <A href="http://www.comsenz.com/"
-                                    target="_blank">Comsenz Inc.</A>
-            </P>
-        </DIV>
     </DIV>
     <DIV id="scrolltop">
         <SPAN>

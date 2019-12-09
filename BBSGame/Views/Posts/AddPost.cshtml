@@ -341,7 +341,7 @@
                             <A href="http://www.tdnd.cn/forum.php">返&nbsp;回</A>
                         </SPAN> <A title="发新帖" id="newspecial"
                                    onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"
-                                   onclick="showWindow('newthread', 'forum.php?mod=post&amp;action=newthread&amp;fid=51')"
+                                    onclick="location.href='/Posts/CreatePost'"
                                    href="javascript:;"><IMG alt="发新帖" src="~/Content/Plate/pn_post.png"></A>
                     </DIV>
                     <DIV class="tl bm bmw" id="threadlist">
@@ -1418,10 +1418,10 @@
                         <SPAN id="fd_page_bottom"></SPAN> <SPAN class="pgb y"
                                                                 id="visitedforumstmp" onmouseover="$('visitedforums').id = 'visitedforumstmp';this.id = 'visitedforums';showMenu({'ctrlid':this.id,'pos':'21'})">
                             <A href="http://www.tdnd.cn/forum.php">返&nbsp;回</A>
-                        </SPAN> <A title="发新帖" id="newspecialtmp"
+                        </SPAN> <A title="去新帖" id="newspecialtmp"
                                    onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"
-                                   onclick="showWindow('newthread', 'forum.php?mod=post&amp;action=newthread&amp;fid=51')"
-                                   href="javascript:;"><IMG alt="发新帖" src="~/Content/Plate/pn_post.png"></A>
+                                   onclick="location.href='/Posts/CreatePost'"
+                                   href="javascript:;"><IMG alt="去发帖" src="~/Content/Plate/pn_post.png"></A>
                     </DIV><!--[diy=diyfastposttop]-->
                     <DIV class="area" id="diyfastposttop"></DIV><!--[/diy]-->
                     <SCRIPT type="text/javascript">
@@ -1431,16 +1431,16 @@
                         var fid = parseInt('51');
                     </SCRIPT>
 
-                    <DIV class="bm" id="f_pst">
-                        <DIV class="bm_h">
-                            <H2>快速发帖</H2>
-                        </DIV>
-                        <DIV class="bm_c">
+                    
+
+                        @*<DIV class="bm_c">
                             <FORM id="fastpostform" onsubmit="return fastpostvalidate(this)" action="forum.php?mod=post&amp;action=newthread&amp;fid=51&amp;topicsubmit=yes&amp;infloat=yes&amp;handlekey=fastnewpost"
-                                  method="post" autocomplete="off">
+        method="post" autocomplete="off">
+                            @using (Html.BeginForm("AddPost", "Posts", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                            {
                                 <DIV id="fastpostreturn" style="margin: -5px 0px 5px;"></DIV>
                                 <DIV class="pbt cl">
-                                    <INPUT name="subject" tabindex="11" class="px" id="subject" style="width: 25em;" onkeyup="strLenCalc(this, 'checklen', 80);" type="text">
+                                    标题:<INPUT name="PTitle" tabindex="11" class="px" id="subject" style="width: 25em;" onkeyup="strLenCalc(this, 'checklen', 80);" type="text">
                                     <SPAN>还可输入 <STRONG id="checklen">80</STRONG> 个字符</SPAN>
                                 </DIV>
                                 <DIV class="cl">
@@ -1470,6 +1470,7 @@
                                                                    href="http://www.tdnd.cn/member.php?mod=logging&amp;action=login">登录</A> | <A class="xi2" href="http://www.tdnd.cn/member.php?mod=register">立即注册</A> <A href="http://www.tdnd.cn/connect.php?mod=login&amp;op=init&amp;referer=forum.php%3Fmod%3Dforumdisplay%26fid%3D51%26page%3D1%26&amp;statfrom=login"
                                                                                                                                                                                                                            target="_top" rel="nofollow"><IMG class="vm" src="~/Content/Plate/qq_login.gif"></A>
                                                 </DIV>
+                                                <input type="text" name="PContent" style="width: 580px;height:250px;" value="" />
                                             </DIV>
                                         </DIV>
                                     </DIV>
@@ -1486,14 +1487,18 @@
                                                                           id="fastpostsubmit" type="submit"
                                                                           value="topicsubmit">
                                         <STRONG>发表帖子</STRONG>
-                                    </BUTTON> <LABEL>
+                                    </BUTTON>*
+                                    <input type="submit" name="name" value="发帖" />
+                                    <LABEL>
                                         <INPUT name="adddynamic"
                                                class="pc" type="checkbox" value="1">转播给听众
                                     </LABEL>
                                 </P>
+                            }
+
                             </FORM>
-                        </DIV>
-                    </DIV><!--[diy=diyforumdisplaybottom]-->
+                        </DIV>*@
+                    <!--[diy=diyforumdisplaybottom]-->
                     <DIV class="area" id="diyforumdisplaybottom"></DIV><!--[/diy]-->
                 </DIV>
             </DIV>
@@ -1530,11 +1535,8 @@
 
     <DIV class="a_cn">
         <P class="close" id="ad_corner_close" onclick="setcookie('adclose_57', 1, 86400);this.parentNode.style.display='none'">
-            <A href="javascript:;"><IMG src="~/Content/Plate/ad_close.gif"></A>
         </P><A href="http://www.tdnd.cn/forum.php"
                target="_blank">
-            <IMG src="~/Content/Plate/144727i7ayay8nn8bhkrwz.jpg"
-                 border="0">
         </A>
     </DIV>
     <DIV class="wp cl" id="ft">
