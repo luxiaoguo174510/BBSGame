@@ -56,11 +56,20 @@
                             <a hidefocus="true" href="@item.Url">@item.GName</a>
                         </li>
                     }
-                    <li id="mn_S11">
-                        <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" href="">登录</a>
-                    </li>
+                    @if (Session["UName"] != null)
+                    {
+                        <li id="mn_S11">
+                            <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" href="">丨@(Session["NickName"])丨</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li id="mn_S11">
+                            <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" href="~/LoginHtml/index.html">登录</a>
+                        </li>
+                    }
                     <li id="mn_N76E">
-                        <a class="xi2 xw1" style="color:  brown; font-weight: bold;" hidefocus="true" href="">注册</a>
+                        <a class="xi2 xw1" style="color:  brown; font-weight: bold;" hidefocus="true" href="/Login/Index">注册</a>
                     </li>
                 </ul>
             </div>

@@ -14,6 +14,7 @@ namespace BBSGame.Controllers
 {
     public class LoginController : Controller
     {
+        HomePageController Home = new HomePageController();
         // GET: Login
         public ActionResult Index()
         {
@@ -56,7 +57,7 @@ namespace BBSGame.Controllers
         /// <returns></returns>
         public int LoginUser(string UName,string PassWord,string Phone)
         {
-            using (SqlConnection conn=new SqlConnection("Data Source=10.1.152.12;Initial Catalog=BBSGame;User ID=sa;pwd=1234"))
+            using (SqlConnection conn=new SqlConnection("Data Source=DESKTOP-G7L4DJ9;Initial Catalog=BBSGame;User ID=sa;pwd=1234"))
             {
                 conn.Open();
                 SqlCommand comm = new SqlCommand($"select COUNT(1) from UserInfo where UName like '{UName}' and PassWord like '{PassWord}' and Phone like '{Phone}'",conn);
@@ -64,6 +65,10 @@ namespace BBSGame.Controllers
                 DataTable DT = new DataTable();
                 sqlData.Fill(DT);
                 int i = (int)DT.Rows[0][0];
+                if (i>0)
+                {
+                    Session["NickName"] = DT.Columns["NickName"];
+                }
                 conn.Close();
                 return i;
             }
