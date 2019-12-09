@@ -111,9 +111,10 @@ namespace BLL
         /// 获取图片
         /// </summary>
         /// <returns></returns>
-        public DataTable GetPicture()
+        public DataTable GetPicture(string GName = "")
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@GName", GName);
             DataTable data = db.Proc_GetTable("P_Pic", pairs);
             return data;
         }
