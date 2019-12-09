@@ -38,5 +38,9 @@ namespace BBSGame.Controllers
             ViewBag.User = users;
             ViewBag.Picture = pictures;
         }
+        public ActionResult PersonalInformation(int UId)
+        {
+            return View();
+        }
     }
 }

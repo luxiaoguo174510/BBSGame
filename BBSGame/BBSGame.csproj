@@ -141,6 +141,18 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Message\app.078a6629dce30838fb8a.css" />
+    <Content Include="Content\Message\da8e974dc_is.jpg" />
+    <Content Include="Content\Message\da8e974dc_xl.jpg" />
+    <Content Include="Content\Message\hm.js" />
+    <Content Include="Content\Message\init.js" />
+    <Content Include="Content\Message\main.app.df21a528304d99e449f9.js" />
+    <Content Include="Content\Message\main.modals.00e1735de888e5fbf749.js" />
+    <Content Include="Content\Message\main.people-routes.def29f63fbab29640068.js" />
+    <Content Include="Content\Message\modals.6b87b004f9b1e55b8b23.css" />
+    <Content Include="Content\Message\people-routes.943b1b2ae097ca1dd672.css" />
+    <Content Include="Content\Message\vendor.1c14c07589f9cc850a64.js" />
+    <Content Include="Content\Message\zap.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -215,6 +227,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\HomePage\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\HomePage\PersonalInformation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
