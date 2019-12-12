@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "AddPricture";
+}
+
+<h2>AddPricture</h2>
+@using (Html.BeginForm("AddPricture", "Picture", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+<input type="file" name="file" value="" />
+<input type="submit" name="name" value="添加图片" />
+}
+
+@*<script>
+    //无刷新上传
+    //原理是把 File 对象封装到 FormData，再通过 ajax 的形式提交到后端接口。直接上代码：
+
+    function upload(file) {
+        const xhr = new XMLHttpRequest();
+
+        // 上传进度
+        xhr.upload.onprogress = function progress(e) {
+        };
+        // 上传状态
+        xhr.onload = function onload() {
+        };
+
+        const formData = new FormData();
+        // 往 formData 里面增加要上传的文件对象
+        formData.append('filename', file);
+
+        // 指定 api 接口和上传方式
+        xhr.open('POST', '/api/upload', true);
+        // 开始发送数据
+        xhr.send(formData);
+    }
+    //以上是把一个 file 对象加到 formData 中，再通过 XMLHttpRequest 把 formData 发送到指定的接口 / api / upload 的一个大致过程。详细代码可以查看这里 https://github.com/alibaba-fusion/next/blob/master/src/upload/runtime/request.jsx 我们现实中为了可能为了兼容 ie9 , 所以还需要封装一个 uploader，优先支持 html5 但是在 ie9 下自动切换为 iframe 方案。
+</script>*@
+
+
