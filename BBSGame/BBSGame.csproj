@@ -51,7 +51,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PublicToolsLib">
-      <HintPath>D:\资料\专高四\技能\PublicToolsLib\bin\Debug\PublicToolsLib.dll</HintPath>
+      <HintPath>..\..\..\十一月份文件\CookieDaoFile\CookieDaoFile\bin\PublicToolsLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -134,7 +134,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="LoginHtml\DuanXinYanZheng.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -218,6 +218,38 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\B\110446a00rjmoy0co622o0.png" />
+    <Content Include="Content\B\123123123123.png" />
+    <Content Include="Content\B\144727i7ayay8nn8bhkrwz.jpg" />
+    <Content Include="Content\B\ad_close.gif" />
+    <Content Include="Content\B\arw_r.gif" />
+    <Content Include="Content\B\common.js" />
+    <Content Include="Content\B\crystal2.js" />
+    <Content Include="Content\B\fav.gif" />
+    <Content Include="Content\B\fj_btn.png" />
+    <Content Include="Content\B\forum.js" />
+    <Content Include="Content\B\forum_viewthread.js" />
+    <Content Include="Content\B\logging.js" />
+    <Content Include="Content\B\logo.png" />
+    <Content Include="Content\B\noavatar_middle.gif" />
+    <Content Include="Content\B\online_member.gif" />
+    <Content Include="Content\B\oshr.png" />
+    <Content Include="Content\B\pn_post.png" />
+    <Content Include="Content\B\print.png" />
+    <Content Include="Content\B\qq_login.gif" />
+    <Content Include="Content\B\qq_share.png" />
+    <Content Include="Content\B\rec_add.gif" />
+    <Content Include="Content\B\rec_subtract.gif" />
+    <Content Include="Content\B\rt.png" />
+    <Content Include="Content\B\seditor.js" />
+    <Content Include="Content\B\site_qq.jpg" />
+    <Content Include="Content\B\star_level2.gif" />
+    <Content Include="Content\B\style_1_common.css" />
+    <Content Include="Content\B\style_1_forum_viewthread.css" />
+    <Content Include="Content\B\thread-next.png" />
+    <Content Include="Content\B\thread-prev.png" />
+    <Content Include="Content\B\userinfo.gif" />
+    <Content Include="Content\B\微信图片_20190715151718.jpg" />
     <Content Include="Content\css\Cooldog.css" />
     <Content Include="Content\css\iconfont.css" />
     <Content Include="Content\images\1.png" />
@@ -283,6 +315,42 @@
     <Content Include="Content\Index\untitled.png" />
     <Content Include="Content\js\Cooldog.js" />
     <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\Message\app.078a6629dce30838fb8a.css" />
+    <Content Include="Content\Message\da8e974dc_is.jpg" />
+    <Content Include="Content\Message\da8e974dc_xl.jpg" />
+    <Content Include="Content\Message\hm.js" />
+    <Content Include="Content\Message\init.js" />
+    <Content Include="Content\Message\main.app.df21a528304d99e449f9.js" />
+    <Content Include="Content\Message\main.modals.00e1735de888e5fbf749.js" />
+    <Content Include="Content\Message\main.people-routes.def29f63fbab29640068.js" />
+    <Content Include="Content\Message\modals.6b87b004f9b1e55b8b23.css" />
+    <Content Include="Content\Message\people-routes.943b1b2ae097ca1dd672.css" />
+    <Content Include="Content\Message\vendor.1c14c07589f9cc850a64.js" />
+    <Content Include="Content\Message\zap.js" />
+    <Content Include="Content\Plate\005.small.gif" />
+    <Content Include="Content\Plate\008.small.gif" />
+    <Content Include="Content\Plate\011.small.gif" />
+    <Content Include="Content\Plate\110446a00rjmoy0co622o0.png" />
+    <Content Include="Content\Plate\144727i7ayay8nn8bhkrwz.jpg" />
+    <Content Include="Content\Plate\ad_close.gif" />
+    <Content Include="Content\Plate\collapsed_no.gif" />
+    <Content Include="Content\Plate\common.gif" />
+    <Content Include="Content\Plate\common.js" />
+    <Content Include="Content\Plate\crystal2.js" />
+    <Content Include="Content\Plate\folder_common.gif" />
+    <Content Include="Content\Plate\forum.js" />
+    <Content Include="Content\Plate\image_s.gif" />
+    <Content Include="Content\Plate\logging.js" />
+    <Content Include="Content\Plate\logo.png" />
+    <Content Include="Content\Plate\pin_1.gif" />
+    <Content Include="Content\Plate\pin_3.gif" />
+    <Content Include="Content\Plate\pn_post.png" />
+    <Content Include="Content\Plate\qq_login.gif" />
+    <Content Include="Content\Plate\QQ图片20191204104950.png" />
+    <Content Include="Content\Plate\seditor.js" />
+    <Content Include="Content\Plate\site_qq.jpg" />
+    <Content Include="Content\Plate\style_1_common.css" />
+    <Content Include="Content\Plate\style_1_forum_forumdisplay.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -396,12 +464,19 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\HomePage\Index.cshtml" />
+    <Content Include="Views\Picture\AddPricture.cshtml" />
+    <Content Include="Views\Picture\Index.cshtml" />
+    <Content Include="Views\Picture\ProcessRequest.cshtml" />
+    <Content Include="Views\Posts\AddPost.cshtml" />
+    <Content Include="Views\Posts\CreatePost.cshtml" />
+    <Content Include="Views\Posts\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\HomePage\PersonalInformation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Index\like_files\" />
-    <Folder Include="Views\Login\" />
-    <Folder Include="Views\Posts\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

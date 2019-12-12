@@ -309,7 +309,7 @@
                             <td>
                                 <DIV class="pi">
                                     <DIV class="y" id="fj">
-                                        <LABEL class="z">电梯直达</LABEL> <INPUT title="跳转到指定楼层" class="px p_fre z" onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}" onkeyup="$('fj_btn').href='forum.php?mod=redirect&amp;ptid=218550&amp;authorid=0&amp;postno='+this.value" type="text" size="2">
+                                        @Html.ActionLink("删除该帖", "DelPost") <INPUT title="跳转到指定楼层" class="px p_fre z" onkeydown="if(event.keyCode==13) {window.location=$('fj_btn').href;return false;}" onkeyup="$('fj_btn').href='forum.php?mod=redirect&amp;ptid=218550&amp;authorid=0&amp;postno='+this.value" type="text" size="2">
                                         <A title="跳转到指定楼层" class="z" id="fj_btn" href="javascript:;">
                                             <IMG class="vm"
                                                  alt="跳转到指定楼层" src="~/Content/B/fj_btn.png">

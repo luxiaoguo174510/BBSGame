@@ -94,6 +94,37 @@ namespace BLL
             List<Pictures> list = JsonConvert.DeserializeObject<List<Pictures>>(JsonConvert.SerializeObject(dt));
             return list;
         }
-        
+        /// <summary>
+        /// 查询所有板块
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetPlate()
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            DataTable data = db.Proc_GetTable("P_Plate", pairs);
+            return data;
+        }
+        /// <summary>
+        /// 查询所有版主
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetPlateUser()
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            DataTable data = db.Proc_GetTable("P_PlateUser", pairs);
+            return data;
+        }
+        /// <summary>
+        /// 获取图片
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetPicture(string GName = "")
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@GName", GName);
+            DataTable data = db.Proc_GetTable("P_Pic", pairs);
+            return data;
+        }
+
     }
 }

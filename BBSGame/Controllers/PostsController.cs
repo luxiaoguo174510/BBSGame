@@ -2,6 +2,7 @@
 using ModelInfo;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -30,9 +31,19 @@ namespace BBSGame.Controllers
             return View();
         }
         [HttpPost]
-        public void CreatePost(PostsInfo m)
+        public void CreatePost(PostsInfo m,HttpPostedFileBase file,Pictures p)
         {
+            string strpath = "/resource/images";
+            string s = Path.GetFileName(file.FileName);
+            if(!Directory.Exists(Server.MapPath("images")))
+            {
+                Directory.CreateDirectory(Server.MapPath("images"));
+            }
+            file.SaveAs(Server.MapPath(strpath + s));
+            p.Picture = strpath + s;
             string outname = "";
+            string name = Session["CreateUser"].ToString();
+            m.CreateUser = name;
             int result = bl.AddPoste(m,out outname);
             int i = Convert.ToInt32(outname);
             if(result>0)
@@ -49,11 +60,11 @@ namespace BBSGame.Controllers
             int result = bl.DelPoste(IdName, TableName, Id);
             if (result > 0)
             {
-                Response.Write("<script>alert('删除帖子成功！');location.href='/Posts/index'</script>");
+                Response.Write("<script>alert('删除帖子成功！');location.href='/Posts/AddPost'</script>");
             }
             else
             {
-                Response.Write("<script>alert('删除失败！');location.href='/Posts/AddPost'</script>");
+                Response.Write("<script>alert('删除失败！');location.href='/Posts/index'</script>");
             }
         }
 
