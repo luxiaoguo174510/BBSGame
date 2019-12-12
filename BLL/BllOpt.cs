@@ -87,36 +87,13 @@ namespace BLL
             pairs.Add("@GName", GName);
             return db.Proc_GetTable("P_GTS", pairs);
         }
-        /// <summary>
-        /// 查询所有板块
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetPlate()
+        public List<Pictures> ShowPicture()
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
-            DataTable data = db.Proc_GetTable("P_Plate", pairs);
-            return data;
+            DataTable dt = db.Proc_GetTable("P_ShowPicture", pairs);
+            List<Pictures> list = JsonConvert.DeserializeObject<List<Pictures>>(JsonConvert.SerializeObject(dt));
+            return list;
         }
-        /// <summary>
-        /// 查询所有版主
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetPlateUser()
-        {
-            Dictionary<string, object> pairs = new Dictionary<string, object>();
-            DataTable data = db.Proc_GetTable("P_PlateUser", pairs);
-            return data;
-        }
-        /// <summary>
-        /// 获取图片
-        /// </summary>
-        /// <returns></returns>
-        public DataTable GetPicture(string GName = "")
-        {
-            Dictionary<string, object> pairs = new Dictionary<string, object>();
-            pairs.Add("@GName", GName);
-            DataTable data = db.Proc_GetTable("P_Pic", pairs);
-            return data;
-        }
+        
     }
 }
