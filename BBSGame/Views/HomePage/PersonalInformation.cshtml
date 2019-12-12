@@ -17,8 +17,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">头像</label>
                                 <div class="layui-input-inline">
-                                    <input type="hidden" name="HeadPic" value="@Model.HeadPic" />
-                                    <img src="~/Content/images/untitled2.png" style="width: 60px;height:60px;margin-right: 10px;border-radius: 50%;" />
+                                    <img src="@Model.HeadPic" style="width: 60px;height:60px;margin-right: 10px;border-radius: 50%;" />
                                     <input type="file" name="Path" value="" />
                                 </div>
                             </div>
@@ -111,6 +110,7 @@
                             </div>
                             <div class="layui-form-item">
                                 <div class="layui-input-block">
+                                    <input type="hidden" name="HeadPic" value="@Model.HeadPic" />
                                     <button class="layui-btn">修改</button>
                                 </div>
                             </div>

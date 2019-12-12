@@ -56,7 +56,7 @@
                             <a hidefocus="true" href="@item.Url">@item.GName</a>
                         </li>
                     }
-                    @if (Session["UName"] != null)
+                    @if (Session["NickName"]!=null)
                     {
                         <li id="mn_S11">
                             <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" onclick="useradd()">丨@(Session["NickName"])丨</a>
@@ -162,6 +162,7 @@
     </div>
 </body>
 </HTML>
+<script src="~/layui/layui.js"></script>
 <script>
     function useradd() {
         layui.use('layer', function () {

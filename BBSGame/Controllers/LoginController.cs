@@ -60,15 +60,15 @@ namespace BBSGame.Controllers
             using (SqlConnection conn=new SqlConnection("Data Source=DESKTOP-G7L4DJ9;Initial Catalog=BBSGame;User ID=sa;pwd=1234"))
             {
                 conn.Open();
-                SqlCommand comm = new SqlCommand($"select COUNT(1) from UserInfo where UName like '{UName}' and PassWord like '{PassWord}' and Phone like '{Phone}'",conn);
+                SqlCommand comm = new SqlCommand($"select * from UserInfo where UName like '{UName}' and PassWord like '{PassWord}' and Phone like '{Phone}'",conn);
                 SqlDataAdapter sqlData = new SqlDataAdapter(comm);
                 DataTable DT = new DataTable();
                 sqlData.Fill(DT);
-                int i = (int)DT.Rows[0][0];
+                int i = (int)DT.Rows.Count;
                 if (i>0)
                 {
-                    Session["NickName"] = DT.Columns["NickName"];
-                    Session["UId"] = DT.Columns["UId"];
+                    Session["NickName"] = DT.Rows[0]["NickName"];
+                    Session["UId"] = DT.Rows[0]["UId"];
                     
                 }
                 conn.Close();
