@@ -59,7 +59,7 @@
                     @if (Session["UName"] != null)
                     {
                         <li id="mn_S11">
-                            <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" href="">丨@(Session["NickName"])丨</a>
+                            <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" onclick="useradd()">丨@(Session["NickName"])丨</a>
                         </li>
                     }
                     else
@@ -162,3 +162,21 @@
     </div>
 </body>
 </HTML>
+<script>
+    function useradd() {
+        layui.use('layer', function () {
+            layer.open({
+                type: 2,
+                content: ["/HomePage/PersonalInformation"],   //添加页，后台controller转发到指定页
+                area: ["600px", "400px"],
+                title: ['设置我的资料'],
+                fixed: false,
+                //maxmin: true,
+                shadeClose: true,
+                end: function () {  //刷新页面
+                    location.reload();
+                }
+            })
+        })
+    }
+</script>

@@ -68,6 +68,8 @@ namespace BBSGame.Controllers
                 if (i>0)
                 {
                     Session["NickName"] = DT.Columns["NickName"];
+                    Session["UId"] = DT.Columns["UId"];
+                    
                 }
                 conn.Close();
                 return i;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,10 +22,10 @@ namespace BBSGame.Controllers
         public void GetFile(HttpPostedFileBase Path)
         {
             string mode = "Cut";
-            Path.SaveAs(Server.MapPath("/Content/images/" +Path.FileName));
+            Path.SaveAs(Server.MapPath("/Content/images/" + Path.FileName));
             PublicToolsLib.HelpImg.ImageHandlerHelper.PointThumbnail(Server.MapPath("/Content/images/" + Path.FileName), Server.MapPath("/Content/images/thum_" + Path.FileName), 498, 220, mode);
         }
-        public void ViewBags(string GType="")
+        public void ViewBags(string GType = "")
         {
             List<GameType> game = JsonConvert.DeserializeObject<List<GameType>>(JsonConvert.SerializeObject(bp.GetGameType()));
             List<GameType> games = JsonConvert.DeserializeObject<List<GameType>>(JsonConvert.SerializeObject(bp.GetGameType(GType)));
@@ -34,13 +35,59 @@ namespace BBSGame.Controllers
             ViewBag.GameType = games;
             ViewBag.GType = game;
             ViewBag.Plate = plates;
-            ViewBag.count = (plates.Count/2);
+            ViewBag.count = (plates.Count / 2);
             ViewBag.User = users;
             ViewBag.Picture = pictures;
         }
-        public ActionResult PersonalInformation(int UId)
+        public ActionResult PersonalInformation()
         {
-            return View();
+
+            int i = int.Parse(Session["UId"].ToString());
+            UserInfo user = JsonConvert.DeserializeObject<List<UserInfo>>(JsonConvert.SerializeObject(bp.UserSelectOne(i))).First();
+            return View(user);
+        }
+        [HttpPost]
+        public void PersonalInformation(UserInfo user, HttpPostedFileBase Path)
+        {
+            if (Path != null)
+            {
+                if (!Directory.Exists(Server.MapPath("/Image/")))
+                {
+                    Directory.CreateDirectory(Server.MapPath("/Image/"));
+                }
+                Path.SaveAs(Server.MapPath("/Image/" + Path.FileName));
+                user.HeadPic = "/Image/" + Path.FileName;
+            }
+            int i = bp.UserUpd(user);
+            if (i > 0)
+            {
+                Response.Write("<script>aletr('修改资料成功!');parent.layer.close(parent.layer.getFrameIndex(window.name));</script>");
+            }
+        }
+        public void UpGrade(int Integral, int Grade)
+        {
+            if (Grade==100)
+            {
+                Response.Write("<script>alert('您已经是满级了，不能再升了!😱 ');location.href='/HomePage/PersonalInformation'</script>");
+            }
+            int gral = 1;
+            for (int i = 0; i < Grade; i++)
+            {
+                gral = gral * 2;
+            }
+            if (Integral< gral)
+            {
+                Response.Write("<script>alert('升级失败，积分不足😭');location.href='/HomePage/PersonalInformation'</script>");
+            }
+            else
+            {
+                int i = int.Parse(Session["UId"].ToString());
+                int j= bp.GradeUp(gral, i);
+                if (j>0)
+                {
+                    Response.Write("<script>alert('等级+1😁');location.href='/HomePage/PersonalInformation'</script>");
+                }
+            }
         }
     }
 }

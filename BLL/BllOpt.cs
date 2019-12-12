@@ -118,5 +118,31 @@ namespace BLL
             DataTable data = db.Proc_GetTable("P_Pic", pairs);
             return data;
         }
+        public DataTable UserSelectOne(int UId)
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@UId",UId);
+            DataTable data= db.Proc_GetTable("P_UserSelectOne", pairs);
+            return data;
+        }
+        public int UserUpd(UserInfo user)
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@UId",user.UId);
+            pairs.Add("@NickName",user.NickName);
+            pairs.Add("@HeadPic",user.HeadPic);
+            pairs.Add("@Sex",user.Sex);
+            pairs.Add("@Province",user.Province);
+            int i =db.Proc_ExecuteNonQuery("P_UserUpd", pairs);
+            return i;
+        }
+        public int GradeUp(int gral, int UId)
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@gral",gral);
+            pairs.Add("@UId",UId);
+            int i = db.Proc_ExecuteNonQuery("P_GradeUp", pairs);
+            return i;
+        }
     }
 }
