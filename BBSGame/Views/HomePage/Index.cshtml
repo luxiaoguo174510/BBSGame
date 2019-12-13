@@ -2,11 +2,6 @@
 @{
     ViewBag.Title = "Index";
 }
-@using (Html.BeginForm("GetFile", "HomePage",FormMethod.Post,new { @enctype = "multipart/form-data" }))
-{
-<input type="file" name="Path" value="" />
-<input type="submit" value="上传" />
-}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,38 +44,9 @@
         </div>
     </div>
     <DIV class="wp" id="wp">
-        <DIV class="bm cl" id="pt">
-            <DIV class="z">
-                <A title="首页" class="nvhm"
-                   href="http://www.tdnd.cn/">GameLife|游戏生活</A><EM>&raquo;</EM><A href="http://www.tdnd.cn/forum.php">社区论坛</A>
-            </DIV>
-            <DIV class="z">
-                <IFRAME width="280" height="25" id="connectlike" src="~/Content/Index/like.htm"
-                        border="0" frameborder="0" scrolling="no" allowtransparency="true"></IFRAME>
-                <SCRIPT type="text/javascript">_attachEvent(window, 'load', function () { $('connectlike').src = 'api/connect/like.php'; }, document);</SCRIPT>
-            </DIV>
-        </DIV>
         <STYLE id="diy_style" type="text/css"></STYLE>
-
-        <DIV class="wp">
-            <!--[diy=diy1]-->
-            <DIV class="area" id="diy1"></DIV><!--[/diy]-->
-        </DIV>
         <DIV class="wp cl" id="ct">
-            <DIV class="bm bw0 cl" id="chart">
-                <P class="chart z">
-                    今日: <EM>2</EM><SPAN class="pipe">|</SPAN>昨日: <EM>3</EM><SPAN class="pipe">|</SPAN>帖子: <EM>198125</EM><SPAN class="pipe">|</SPAN>会员:
-                    <EM>59715</EM><SPAN class="pipe">|</SPAN>欢迎新会员: <EM>
-                        <A class="xi2" href="http://www.tdnd.cn/space-username-%CC%C6%BC%AA%D8%BC.html"
-                           target="_blank">唐吉丶</A>
-                    </EM>
-                </P>
-                <DIV class="y"><A title="最新回复" class="xi2" href="http://www.tdnd.cn/forum.php?mod=guide&amp;view=new">最新回复</A></DIV>
-            </DIV><!--[diy=diy_chart]-->
-            <DIV class="area" id="diy_chart"></DIV><!--[/diy]-->
             <DIV class="mn">
-                <!-- index four grid -->
-                <!-- index four grid end -->
                 <DIV class="bm">
                     <DIV class="bm_h cl">
                         <H2>社区论坛热点</H2>
@@ -89,14 +55,12 @@
                         <DIV class="heat z">
                             <DL class="xld">
                                 <DT>
-                                    <A class="xi2" href="http://www.tdnd.cn/thread-270902-1-1.html" target="_blank">
-                                        科大讯飞2020届A.iflyer校园招聘
-                                        京津冀补招岗位
+                                    <A class="xi2" href="" target="_blank">
+                                        标题
                                     </A>
                                 </DT>
                                 <DD>
-                                    一、关于讯飞科大讯飞（股票002230）是一家专注于智能语音及人工智能领域技术研究，产品研发与服务的国家级高新技术企业。公司在语音合成、语音识别、口语评测、自然语言处理、机器翻译、人工智能等核心技术上代表世
-                                    ...
+                                    多余109个字后面显示...
                                 </DD>
                             </DL>
                         </DIV>
@@ -104,18 +68,97 @@
                     </DIV>
                 </DIV>
                 <DIV class="fl bm">
-                    <DIV class="bm bmw  flg cl">
-                        <DIV class="bm_h cl">
-                            <SPAN class="o">
-                                <IMG title="收起/展开" id="category_1_img"
-                                     onclick="toggle_collapse('category_1');" alt="收起/展开" src="~/Content/Index/collapsed_no.gif">
-                            </SPAN> <SPAN class="y">
-                                分区版主: <A class="notabs" href="http://www.tdnd.cn/space-username-%C3%CE%CB%BC%B7%C9%D1%EF.html"
-                                         c="1">梦思飞扬</A>, <A class="notabs" href="http://www.tdnd.cn/space-username-%CB%DE%BA%EA%C0%DA.html"
-                                                            c="1">宿宏磊</A>
-                            </SPAN>
-                            <H2>
-                                <A style="color: rgb(0, 102, 0);"
-                                   href="http://www.tdnd.cn/forum.php?gid=1">★【大型游戏】</A>
-                            </H2>
+                    @foreach (var game in ViewBag.GameType)
+                    {
+                        <DIV class="bm bmw  flg cl">
+                            <DIV class="bm_h cl">
+                                <SPAN class="o">
+                                    <IMG title="收起/展开" id="category_1_img"
+                                         onclick="toggle_collapse('category_1');" alt="收起/展开" src="~/Content/Index/collapsed_no.gif">
+                                </SPAN>
+                                <SPAN class="y">
+                                    分区版主:
+                                    @foreach (var pla in ViewBag.Plate)
+                                    {
+                                        if (pla.GId == game.GId)
+                                        {
+                                            foreach (var use in ViewBag.User)
+                                            {
+                                                if (pla.UId == use.UId)
+                                                {
+                                                    <A class="notabs" href="@pla.Url"
+                                                       c="1">@(use.NickName)丨</A>
+                                                }
+                                            }
+                                        }
+                                    }
+                                </SPAN>
+                                <H2>
+                                    <A style="color: rgb(0, 102, 0);"
+                                       href="@game.Url">@game.GName</A>
+                                </H2>
+                            </DIV>
+                            <DIV class="bm_c" id="category_1">
+                                <TABLE class="fl_tb" cellspacing="0" cellpadding="0">
+                                    <TBODY>
+                                        @for (int i = 1; i <= ViewBag.count; i++)
+                                        {
+                                            <TR class="fl_row">
+                                                @foreach (var item in ViewBag.Plate)
+                                                {
+                                                    if (item.GId == game.GId)
+                                                    {
+                                                        if (item.RowId == i || item.RowId == i + 1)
+                                                        {
+                                                            <TD width="49.9%" class="fl_g">
+                                                                <DIV class="fl_icn_g" style="width: 50px;">
+                                                                    <A href="@item.Url">
+                                                                        <IMG align="left" alt="" style="width:50px;height:50px" src="@item.PImage">
+                                                                    </A>
+                                                                </DIV>
+                                                                <DL style="margin-left: 50px;">
+                                                                    <DT><A href="http://www.tdnd.cn/forum-45-1.html">@item.PName</A></DT>
+                                                                    <DD><EM>帖数: @item.FLag</EM></DD>
+                                                                </DL>
+                                                            </TD>
+                                                        }
+                                                    }
+                                                }
+                                            </TR>
+                                        }
+                                    </TBODY>
+                                </TABLE>
+                            </DIV>
                         </DIV>
+                    }
+                </DIV>
+                <DIV class="wp mtn">
+                    <!--[diy=diy3]-->
+                    <DIV class="area" id="diy3"></DIV><!--[/diy]-->
+                </DIV>
+                <DIV class="bm oll" id="online">
+                    <DIV class="bm_h">
+                        <SPAN class="o">
+                            <A title="收起/展开" href="http://www.tdnd.cn/forum.php?showoldetails=no#online">
+                                <IMG alt="收起/展开" src="~/Content/Index/collapsed_no.gif">
+                            </A>
+                        </SPAN>
+                        <H3>
+                            <STRONG><A href="http://www.tdnd.cn/home.php?mod=space&amp;do=friend&amp;view=online&amp;type=member">在线会员</A></STRONG>
+                            <SPAN class="xs1">
+                                - <STRONG>55</STRONG> 人在线 - <STRONG>1</STRONG>
+                                会员(<STRONG>0</STRONG> 隐身), <STRONG>54</STRONG> 位游客 - 最高记录是 <STRONG>2969</STRONG>
+                                于 <STRONG>2017-9-20</STRONG>.
+                            </SPAN>
+                        </H3>
+                    </DIV>
+                </DIV>
+
+            </DIV>
+        </DIV>
+        <SCRIPT>fixed_top_nv();</SCRIPT>
+    </DIV>
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/Cooldog.js"></script>
+</body>
+</html>

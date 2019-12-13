@@ -1,111 +1,84 @@
 ﻿
 @{
+    /**/
+
     Layout = null;
 }
-    <META content="IE=11.0000"
-          http-equiv="X-UA-Compatible">
-    <META http-equiv="Content-Type" content="text/html; charset=gbk">
-    <TITLE>GameLife游戏生活</TITLE>
-    <META name="keywords" content="GameLife游戏论坛">
-    <META name="description" content="GameLife游戏最活跃的生活社区，GameLife游戏考研论坛，最新考研资讯，最全考研真题资料分享。 ">
-    <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
-    <META name="author" content="Discuz! Team and Comsenz UI Team">
-    <META name="copyright" content="2001-2017 Comsenz Inc.">
-    <META name="MSSmartTagsPreventParsing" content="True">
-    <META http-equiv="MSThemeCompatible" content="Yes">
-    <LINK href="~/Content/Index/style_1_common.css"
-          rel="stylesheet" type="text/css">
-    <LINK href="~/Content/Index/style_1_forum_index.css"
-          rel="stylesheet" type="text/css">
-    <link href="~/Content/css/iconfont.css" rel="stylesheet" />
-    <link href="~/Content/css/Cooldog.css" rel="stylesheet" />
-    <SCRIPT type="text/javascript">var STYLEID = '1', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'l2X', charset = 'gbk', discuz_uid = '0', cookiepre = 'VvWM_2132_', cookiedomain = '', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'login|newthread|reply', creditnotice = '1|威望|,2|金钱|,3|贡献|', defaultstyle = '', REPORTURL = 'aHR0cDovL3d3dy50ZG5kLmNuL2luZGV4LnBocA==', SITEURL = 'http://www.tdnd.cn/', JSPATH = 'data/cache/', CSSPATH = 'data/cache/style_', DYNAMICURL = '';</SCRIPT>
-
-    <SCRIPT src="~/Content/Index/common.js" type="text/javascript"></SCRIPT>
-
-    <META name="application-name" content="GameLife游戏论坛">
-    <META name="msapplication-tooltip" content="GameLife游戏论坛">
-    <META name="msapplication-task" content="name=社区论坛;action-uri=http://www.tdnd.cn/forum.php;icon-uri=http://www.tdnd.cn/static/image/common/bbs.ico">
-    <META name="msapplication-task" content="name=同道中人;action-uri=http://www.tdnd.cn/group.php;icon-uri=http://www.tdnd.cn/static/image/common/group.ico">
-    <META name="msapplication-task" content="name=家园;action-uri=http://www.tdnd.cn/home.php;icon-uri=http://www.tdnd.cn/static/image/common/home.ico">
-    <LINK title="GameLife游戏论坛" href="http://www.tdnd.cn/archiver/" rel="archives">
-    <SCRIPT src="~/Content/Index/forum.js" type="text/javascript"></SCRIPT>
-    <script src="~/Content/js/Cooldog.js"></script>
-    <script src="~/Content/js/jquery.min.js"></script>
-
+<META content="IE=11.0000"
+      http-equiv="X-UA-Compatible">
+<META http-equiv="Content-Type" content="text/html; charset=gbk">
+<TITLE>GameLife游戏生活</TITLE>
+<LINK href="~/Content/Index/style_1_common.css"
+      rel="stylesheet" type="text/css">
+<LINK href="~/Content/Index/style_1_forum_index.css"
+      rel="stylesheet" type="text/css">
+<link href="~/Content/css/iconfont.css" rel="stylesheet" />
+<link href="~/Content/css/Cooldog.css" rel="stylesheet" />
+<SCRIPT type="text/javascript">var STYLEID = '1', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'l2X', charset = 'gbk', discuz_uid = '0', cookiepre = 'VvWM_2132_', cookiedomain = '', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'login|newthread|reply', creditnotice = '1|威望|,2|金钱|,3|贡献|', defaultstyle = '', REPORTURL = 'aHR0cDovL3d3dy50ZG5kLmNuL2luZGV4LnBocA==', SITEURL = 'http://www.tdnd.cn/', JSPATH = 'data/cache/', CSSPATH = 'data/cache/style_', DYNAMICURL = '';</SCRIPT>
+<SCRIPT src="~/Content/Index/common.js" type="text/javascript"></SCRIPT>
+<LINK title="GameLife游戏论坛" href="http://www.tdnd.cn/archiver/" rel="archives">
+<SCRIPT src="~/Content/Index/forum.js" type="text/javascript"></SCRIPT>
+<script src="~/Content/js/Cooldog.js"></script>
+<script src="~/Content/js/jquery.min.js"></script>
 <DIV class="bm" id="f_pst">
     <DIV class="bm_h">
         <H2>快速发帖</H2>
     </DIV>
 </DIV>
-
-@using (Html.BeginForm("CreatePost", "Posts", FormMethod.Post, new { @enctype = "multipart/form-data" }))
-{
-    <DIV class="bm_c">
-        <FORM id="fastpostform" onsubmit="return fastpostvalidate(this)" action="forum.php?mod=post&amp;action=newthread&amp;fid=51&amp;topicsubmit=yes&amp;infloat=yes&amp;handlekey=fastnewpost"
-              method="post" autocomplete="off">
-            @using (Html.BeginForm("AddPost", "Posts", FormMethod.Post, new { @enctype = "multipart/form-data" }))
-            {
-                <DIV id="fastpostreturn" style="margin: -5px 0px 5px;"></DIV>
-                <DIV class="pbt cl">
-                    标题:<INPUT name="PTitle" tabindex="11" class="px" id="subject" style="width: 25em;" onkeyup="strLenCalc(this, 'checklen', 80);" type="text">
-                    <SPAN>还可输入 <STRONG id="checklen">80</STRONG> 个字符</SPAN>
+<DIV class="bm_c">
+    <FORM id="fastpostform" onsubmit="return fastpostvalidate(this)" action="/Posts/CreatePost" method="post" autocomplete="off">
+        <DIV id="fastpostreturn" style="margin: -5px 0px 5px;"></DIV>
+        <DIV class="pbt cl">
+            标题:<INPUT name="PTitle" tabindex="11" class="px" id="subject" style="width: 25em;" onkeyup="strLenCalc(this, 'checklen', 80);" type="text">
+            <SPAN>还可输入 <STRONG id="checklen">80</STRONG> 个字符</SPAN>
+        </DIV>
+        <DIV class="cl">
+            <DIV class="y" id="fastsmiliesdiv">
+                <DIV id="fastsmiliesdiv_data">
+                    <DIV id="fastsmilies"></DIV>
                 </DIV>
-                <DIV class="cl">
-                    <DIV class="y" id="fastsmiliesdiv">
-                        <DIV id="fastsmiliesdiv_data">
-                            <DIV id="fastsmilies"></DIV>
+            </DIV>
+            <DIV class="hasfsl" id="fastposteditor" style="width:100%">
+                <DIV class="tedt">
+                    <DIV class="bar">
+                        <SCRIPT src="~/Content/Plate/seditor.js" type="text/javascript"></SCRIPT>
+
+                        <DIV class="fpd">
+                            <A title="文字加粗" class="fbld" href="javascript:;">B</A> <A title="设置文字颜色" class="fclr" id="fastpostforecolor" href="javascript:;">Color</A>
+
+                            <input type="file" name="file" multiple value="添加图片" />
+                            <A title="添加链接" class="flnk" id="fastposturl" href="javascript:;">Link</A> <A title="引用" class="fqt" id="fastpostquote" href="javascript:;">Quote</A> <A title="代码" class="fcd" id="fastpostcode" href="javascript:;">Code</A> <A class="fsml"
+                                                                                                                                                                                                                                                              id="fastpostsml" href="javascript:;">Smilies</A>
                         </DIV>
                     </DIV>
-                    <DIV class="hasfsl" id="fastposteditor">
-                        <DIV class="tedt">
-                            <DIV class="bar">
-                                <SPAN class="y">
-                                    <A onclick="switchAdvanceMode(this.href);doane(event);"
-                                       href="http://www.tdnd.cn/forum.php?mod=post&amp;action=newthread&amp;fid=51">高级模式</A>
-                                </SPAN>
-                                <SCRIPT src="~/Content/Plate/seditor.js" type="text/javascript"></SCRIPT>
-
-                                <DIV class="fpd">
-                                    <A title="文字加粗" class="fbld" href="javascript:;">B</A> <A title="设置文字颜色" class="fclr" id="fastpostforecolor" href="javascript:;">Color</A>
-                                    
-                                    <input type="file" name="file" value="添加图片" />
-                                    <A title="添加链接" class="flnk" id="fastposturl" href="javascript:;">Link</A> <A title="引用" class="fqt" id="fastpostquote" href="javascript:;">Quote</A> <A title="代码" class="fcd" id="fastpostcode" href="javascript:;">Code</A> <A class="fsml"
-                                                                                                                                                                                                                                                                                                                                               id="fastpostsml" href="javascript:;">Smilies</A>
-                                </DIV>
-                            </DIV>
-                            <DIV class="area">
-
-                                <input type="text" name="PContent" style="width: 580px;height:250px;" value="" />
-                                <DIV class="pt hm">
-                                    您需要登录后才可以发帖 <A class="xi2" onclick="showWindow('login', this.href)"
-                                                   href="http://www.tdnd.cn/member.php?mod=logging&amp;action=login">登录</A> | <A class="xi2" href="http://www.tdnd.cn/member.php?mod=register">立即注册</A> <A href="http://www.tdnd.cn/connect.php?mod=login&amp;op=init&amp;referer=forum.php%3Fmod%3Dforumdisplay%26fid%3D51%26page%3D1%26&amp;statfrom=login"                                                                                                                                                           target="_top" rel="nofollow"></A>
-                                </DIV>
-                            </DIV>
+                    <DIV>
+                        <textarea id="editor" style="width: 100%;height:250px;"></textarea>
+                        <DIV class="pt hm">
+                            您需要登录后才可以发帖 <A class="xi2" onclick="showWindow('login', this.href)"
+                                           href="~/LoginHtml/index.html">登录</A> | <A class="xi2" href="/Login/Index">立即注册</A> <A href="http://www.tdnd.cn/connect.php?mod=login&amp;op=init&amp;referer=forum.php%3Fmod%3Dforumdisplay%26fid%3D51%26page%3D1%26&amp;statfrom=login" target="_top" rel="nofollow"></A>
                         </DIV>
                     </DIV>
-                    <DIV id="seccheck_fastpost">
-                        <DIV class="mtm">
-                            <SPAN id="seccode_cSFSn13k"></SPAN>
-                            <SCRIPT type="text/javascript" reload="1">updateseccode('cSFSn13k', '<sec> <span id="sec<hash>" onclick="showMenu(this.id)"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div>', 'forum::forumdisplay');</SCRIPT>
-                        </DIV>
-                    </DIV><INPUT name="formhash" type="hidden" value="be2be25b"> <INPUT name="usesig" type="hidden">
                 </DIV>
-                <P class="ptm pnpost">
-                    <A class="y" href="http://www.tdnd.cn/home.php?mod=spacecp&amp;ac=credit&amp;op=rule&amp;fid=51"
-                       target="_blank">本版积分规则</A> <BUTTON name="topicsubmit" tabindex="13" class="pn pnc"
-                                                          id="fastpostsubmit" type="submit"
-                                                          value="topicsubmit">
-                        <STRONG>发表帖子</STRONG>
-                    </BUTTON>*
-                    <input type="submit" name="name" value="发帖" />
-                    <LABEL>
-                        <INPUT name="adddynamic"
-                               class="pc" type="checkbox" value="1">转播给听众
-                    </LABEL>
-                </P>
-            }
+            </DIV>
+            <DIV id="seccheck_fastpost">
+                <DIV class="mtm">
+                    <SPAN id="seccode_cSFSn13k"></SPAN>
+                    <SCRIPT type="text/javascript" reload="1">updateseccode('cSFSn13k', '<sec> <span id="sec<hash>" onclick="showMenu(this.id)"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div>', 'forum::forumdisplay');</SCRIPT>
+                </DIV>
+            </DIV><INPUT name="formhash" type="hidden" value="be2be25b"> <INPUT name="usesig" type="hidden">
+        </DIV>
+        <P class="ptm pnpost">
+            <A class="y" href="http://www.tdnd.cn/home.php?mod=spacecp&amp;ac=credit&amp;op=rule&amp;fid=51"
+               target="_blank">本版积分规则</A>
+            <BUTTON name="topicsubmit" tabindex="13" class="pn pnc" id="fastpostsubmit" type="submit" value="topicsubmit">
+                <STRONG>发表帖子</STRONG>
+            </BUTTON>
+        </P>
 
-        </FORM>
-    </DIV>
-}
+    </FORM>
+</DIV>
+<script src="~/Content/uesditor1_4_3_3/ueditor.config.js"></script>
+<script src="~/Content/uesditor1_4_3_3/ueditor.all.js"></script>
+<script>
+    var ue = UE.getEditor('editor');
+</script>

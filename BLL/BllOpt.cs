@@ -51,10 +51,10 @@ namespace BLL
             return db.Proc_ExecuteNonQuery("P_AddPostsInfo", pairs, out outname);
         }
         //显示帖子（模糊查询）
-        public List<PostsInfo> ShowPoste(string name)
+        public List<PostsInfo> ShowPoste(string title="")
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
-            pairs.Add("@title", name);
+            pairs.Add("@title", title);
             DataTable dt = db.Proc_GetTable("P_ShowPostsInfo", pairs);
             List<PostsInfo> list = JsonConvert.DeserializeObject<List<PostsInfo>>(JsonConvert.SerializeObject(dt));
             return list;

@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewBag.Title = "ShowPost";
+}
+@model List<ModelInfo.ViewModel>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+    <META content="IE=11.0000"
+          http-equiv="X-UA-Compatible">
+
+    <META http-equiv="Content-Type" content="text/html; charset=gbk">
+    <TITLE>GameLife丨游戏生活</TITLE>
+    <LINK href="~/Content/Plate/style_1_common.css"
+          rel="stylesheet" type="text/css">
+    <LINK href="~/Content/Plate/style_1_forum_forumdisplay.css"
+          rel="stylesheet" type="text/css">
+    <SCRIPT type="text/javascript">var STYLEID = '1', STATICURL = 'static/', IMGDIR = 'static/image/common', VERHASH = 'l2X', charset = 'gbk', discuz_uid = '0', cookiepre = 'VvWM_2132_', cookiedomain = '', cookiepath = '/', showusercard = '1', attackevasive = '0', disallowfloat = 'login|newthread|reply', creditnotice = '1|威望|,2|金钱|,3|贡献|', defaultstyle = '', REPORTURL = 'aHR0cDovL3d3dy50ZG5kLmNuL2ZvcnVtLnBocD9tb2Q9Zm9ydW1kaXNwbGF5JmZpZD01MSZwYWdlPTEm', SITEURL = 'http://www.tdnd.cn/', JSPATH = 'data/cache/', CSSPATH = 'data/cache/style_', DYNAMICURL = '';</SCRIPT>
+
+    <SCRIPT src="~/Content/Plate/common.js" type="text/javascript"></SCRIPT>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <LINK title="中国农业大学论坛|天地农大BBS" href="http://www.tdnd.cn/archiver/" rel="archives">
+    <LINK title="中国农业大学论坛|天地农大BBS - 高考专版-中国农业大学论坛|天地农大BBS" href="http://www.tdnd.cn/forum.php?mod=rss&amp;fid=51&amp;auth=0" rel="alternate" type="application/rss+xml">
+    <SCRIPT src="~/Content/Plate/forum.js" type="text/javascript"></SCRIPT>
+</HEAD>
+<BODY class="pg_forumdisplay">
+    <DIV class="wp" id="wp">
+        <DIV class="boardnav">
+            <DIV class="mn">
+                <DIV class="tl bm bmw" id="threadlist">
+                    <DIV class="scbar_narrow cl" id="scbar">
+                        <FORM action="" method="post">
+                            <div style="text-align:left">
+                                <input type="text" class="form-control" style="width:80%;float:left" name="name" value="" />
+                                <input type="submit" class="btn btn-info" style="width:15%" value="🔍搜索" />
+                            </div>
+                        </FORM>
+                    </DIV>
+                    <DIV class="th">
+                        <TABLE cellspacing="0" cellpadding="0">
+                            <TBODY>
+                                <TR>
+                                    <TH colspan="2">
+                                        <DIV class="tf">
+                                            <SPAN title="在新窗口中打开帖子" class="y" id="atarget" onclick="setatarget(1)"></SPAN>
+                                            <A class="xi2" href="http://www.tdnd.cn/forum.php?mod=forumdisplay&amp;fid=51&amp;filter=lastpost&amp;orderby=lastpost"></A>&nbsp;
+                                            <A class="xi2" href="http://www.tdnd.cn/forum.php?mod=forumdisplay&amp;fid=51&amp;filter=heat&amp;orderby=heats"></A>&nbsp;
+                                            <A class="xi2" href="http://www.tdnd.cn/forum.php?mod=forumdisplay&amp;fid=51&amp;filter=hot"></A>&nbsp;
+                                            <A class="xi2" href="http://www.tdnd.cn/forum.php?mod=forumdisplay&amp;fid=51&amp;filter=digest&amp;digest=1"></A>&nbsp;
+                                            <SPAN id="clearstickthread" style="display: none;">
+                                                <SPAN class="pipe"></SPAN> <A title="" class="xi2" onclick="clearStickThread()" href="javascript:;"></A>
+                                            </SPAN>
+                                        </DIV>
+                                    </TH>
+                                    <TD class="by">作者</TD>
+                                    <TD class="num">回复/查看</TD>
+                                </TR>
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                    <DIV class="bm_c">
+                        <SCRIPT type="text/javascript">var lasttime = 1575344104; var listcolspan = '5';</SCRIPT>
+
+                        <DIV id="forumnew" style="display: none;"></DIV>
+                        <INPUT name="formhash" type="hidden" value="be2be25b">
+                        <INPUT name="listextra" type="hidden" value="page%3D1">
+                        <TABLE id="threadlisttableid" cellspacing="0" cellpadding="0" summary="forum_51">
+                            <TBODY id="stickthread_21694">
+                                @foreach (var item in Model)
+                                {
+                                <TR>
+                                    <TH class="common">
+                                        <A class="s xst" style="color: rgb(236, 18, 130); font-weight: bold; background-color: rgb(255, 255, 0);" href="///?PId=@item.PId">@item.PTitle</A>
+                                    </TH>
+                                    <TD class="by">
+                                        <CITE>
+                                            <A style="color: rgb(255, 0, 0);" href="http://www.tdnd.cn/space-uid-16.html"
+                                               c="1">@item.CreateUser</A>
+                                        </CITE><EM><SPAN>@item.CreateDate</SPAN></EM>
+                                    </TD>
+                                    <TD class="num"><A class="xi2" href="http://www.tdnd.cn/thread-21694-1-1.html">回复条数</A><EM>浏览量</EM></TD>
+                                </TR>
+                                }
+                                
+                            </TBODY>
+                        </TABLE>
+                    </DIV>
+                </DIV>
+            </DIV>
+        </DIV>
+        <DIV style="text-align:left">
+            <button onclick="postsadd()" style="background-color:none;border:none;text-align:left">
+                <img src="~/Content/Plate/pn_post.png" alt="Alternate Text" />
+            </button>
+            <SPAN class="pgb y" id="visitedforumstmp">
+                <A href="http://www.tdnd.cn/forum.php">返&nbsp;回</A>
+            </SPAN>
+        </DIV>
+    </DIV>
+</BODY>
+</HTML>
+<script src="~/layui/layui.js"></script>
+<script>
+    function postsadd() {
+        layui.use('layer', function () {
+            layer.open({
+                type: 2,
+                content: ["/Posts/CreatePost"],   //添加页，后台controller转发到指定页
+                area: ["900px", "650px"],
+                title: ['设置我的资料'],
+                fixed: false,
+                //maxmin: true,
+                shadeClose: true,
+                end: function () {  //刷新页面
+                    location.reload();
+                }
+            })
+        })
+    }
+</script>

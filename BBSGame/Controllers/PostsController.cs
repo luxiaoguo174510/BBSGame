@@ -1,5 +1,6 @@
 ﻿using BLL;
 using ModelInfo;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,19 +13,27 @@ namespace BBSGame.Controllers
 {
     public class PostsController : Controller
     {
-        BllOpt bl = new BllOpt();
-        HomePageController Home = new HomePageController();
-        // GET: Posts
-        public ActionResult Index(string name="")
+        BllOpt bp = new BllOpt();
+        public void ViewBags(string GType = "")
         {
-            Home.ViewBags();
-            return View(bl.ShowPoste(name));
+            List<GameType> game = JsonConvert.DeserializeObject<List<GameType>>(JsonConvert.SerializeObject(bp.GetGameType()));
+            List<GameType> games = JsonConvert.DeserializeObject<List<GameType>>(JsonConvert.SerializeObject(bp.GetGameType(GType)));
+            List<PlateInfo> plates = JsonConvert.DeserializeObject<List<PlateInfo>>(JsonConvert.SerializeObject(bp.GetPlate()));
+            List<UserInfo> users = JsonConvert.DeserializeObject<List<UserInfo>>(JsonConvert.SerializeObject(bp.GetPlateUser()));
+            List<Pictures> pictures = JsonConvert.DeserializeObject<List<Pictures>>(JsonConvert.SerializeObject(bp.GetPicture(GType)));
+            ViewBag.GameType = games;
+            ViewBag.GType = game;
+            ViewBag.Plate = plates;
+            ViewBag.count = (plates.Count / 2);
+            ViewBag.User = users;
+            ViewBag.Picture = pictures;
         }
-        //添加帖子
-        public ActionResult AddPost()
+        //显示帖子
+        public ActionResult ShowPost(string Plate,string title)
         {
-            Home.ViewBags();
-            return View();
+            ViewBags();
+            List<PostsInfo> posts= bp.ShowPoste(title);
+            return View(posts);
         }
         public ActionResult CreatePost()
         {
@@ -44,7 +53,7 @@ namespace BBSGame.Controllers
             string outname = "";
             string name = Session["CreateUser"].ToString();
             m.CreateUser = name;
-            int result = bl.AddPoste(m,out outname);
+            int result = bp.AddPoste(m,out outname);
             int i = Convert.ToInt32(outname);
             if(result>0)
             {
@@ -57,7 +66,7 @@ namespace BBSGame.Controllers
         }
         public void DelPost(string IdName, string TableName, int Id)
         {
-            int result = bl.DelPoste(IdName, TableName, Id);
+            int result = bp.DelPoste(IdName, TableName, Id);
             if (result > 0)
             {
                 Response.Write("<script>alert('删除帖子成功！');location.href='/Posts/AddPost'</script>");
