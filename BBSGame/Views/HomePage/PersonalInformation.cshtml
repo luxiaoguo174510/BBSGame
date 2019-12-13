@@ -9,7 +9,6 @@
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md12">
             <div class="layui-card">
-                <div class="layui-card-header">设置我的资料</div>
                 <div class="layui-card-body" pad15="">
                     <form action="/HomePage/PersonalInformation" enctype="multipart/form-data" method="post">
 
@@ -30,12 +29,12 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">性别</label>
                                 <div class="layui-input-block">
-                                    <input name="Sex" title="男" type="radio" value="男">
+                                    <input name="Sex" title="男" type="radio" checked="@(Model.Sex=="男"?true:false)" value="男">
                                     <div class="layui-unselect layui-form-radio">
                                         <i class="layui-anim layui-icon"></i>
                                         <div>男</div>
                                     </div>
-                                    <input name="Sex" title="女" type="radio" checked value="女">
+                                    <input name="Sex" title="女" type="radio" checked="@(Model.Sex=="女"?true:false)" value="女">
                                     <div class="layui-unselect layui-form-radio  layui-form-radioed">
                                         <i class="layui-anim layui-icon"></i>
                                         <div>女</div>
@@ -45,7 +44,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">年龄</label>
                                 <div class="layui-input-inline" style="padding-top:7px">
-                                    <span style="margin-left:2px;">19</span>
+                                    <span style="margin-left:2px;">@((int)(DateTime.Now.Year-Model.Birthday.Year))</span>
                                 </div>
                             </div>
                             <div class="layui-form-item">
@@ -56,15 +55,15 @@
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">等级</label>
-                                <div class="layui-input-inline" style="padding-top:7px">
+                                <div class="layui-input-inline">
                                     <span style="margin-left:2px;">@Model.Grade</span>
-                                    <input type="button"  class="layui-btn" onclick="location.href='/HomePage/UpGrade/?Integral=@(Model.Integral)&Grade=@(Model.Grade)'" value="我要升级!!!!" />
+                                    <input type="button" style="margin-left:30px"  class="layui-btn" onclick="location.href='/HomePage/UpGrade/?Integral=@(Model.Integral)&Grade=@(Model.Grade)'" value="我要升级!!!!" />
                                 </div>
                             </div>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">手机</label>
                                 <div class="layui-input-inline">
-                                    <input name="cellphone" class="layui-input" type="text" disabled value="17552756477" autocomplete="off" lay-verify="phone">
+                                    <input name="cellphone" class="layui-input" type="text" disabled value="@Model.Phone" autocomplete="off" lay-verify="phone">
                                 </div>
                             </div>
                             <div class="layui-form-item">

@@ -144,5 +144,13 @@ namespace BLL
             int i = db.Proc_ExecuteNonQuery("P_GradeUp", pairs);
             return i;
         }
+        public int UpdPass(string NewPass, int UId)
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@PassWord", NewPass);
+            pairs.Add("@UId", UId);
+            int i = db.Proc_ExecuteNonQuery("P_UpdPass", pairs);
+            return i;
+        }
     }
 }

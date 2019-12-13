@@ -58,10 +58,11 @@ namespace BBSGame.Controllers
                 Path.SaveAs(Server.MapPath("/Image/" + Path.FileName));
                 user.HeadPic = "/Image/" + Path.FileName;
             }
+            user.UId= int.Parse(Session["UId"].ToString());
             int i = bp.UserUpd(user);
             if (i > 0)
             {
-                Response.Write("<script>aletr('修改资料成功!');parent.layer.close(parent.layer.getFrameIndex(window.name));</script>");
+                Response.Write("<script>alert('修改资料成功!');parent.layer.close(parent.layer.getFrameIndex(window.name));</script>");
             }
         }
         public void UpGrade(int Integral, int Grade)
@@ -86,6 +87,38 @@ namespace BBSGame.Controllers
                 if (j>0)
                 {
                     Response.Write("<script>alert('等级+1😁');location.href='/HomePage/PersonalInformation'</script>");
+                }
+            }
+        }
+        public ActionResult UpdPass()
+        {
+            return View();
+        }
+        [HttpPost]
+        public void UpdPass(string Phone, string Pass, string NewPass)
+        {
+            List<UserInfo> list = JsonConvert.DeserializeObject<List<UserInfo>>(Session["User"].ToString());
+            foreach (var item in list)
+            {
+                if (item.Phone != Phone)
+                {
+                    Response.Write("<script>alert('手机号不正确!');location.href='/HomePage/UpdPass'</script>");
+                }
+                else if (item.PassWord != Pass)
+                {
+                    Response.Write("<script>alert('旧密码有误!');location.href='/HomePage/UpdPass'</script>");
+                }
+                else if (item.PassWord == NewPass)
+                {
+                    Response.Write("<script>alert('新密码不能与旧密码一致!');location.href='/HomePage/UpdPass'</script>");
+                }
+                else
+                {
+                    int i = bp.UpdPass(NewPass, int.Parse(Session["UId"].ToString()));
+                    if (i > 0)
+                    {
+                        Response.Write("<script>alert('修改密码成功!');parent.layer.close(parent.layer.getFrameIndex(window.name));</script>");
+                    }
                 }
             }
         }

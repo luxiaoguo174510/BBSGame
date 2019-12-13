@@ -69,7 +69,7 @@ namespace BBSGame.Controllers
                 {
                     Session["NickName"] = DT.Rows[0]["NickName"];
                     Session["UId"] = DT.Rows[0]["UId"];
-                    
+                    Session["User"] = JsonConvert.SerializeObject(DT);
                 }
                 conn.Close();
                 return i;

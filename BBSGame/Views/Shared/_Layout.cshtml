@@ -56,11 +56,24 @@
                             <a hidefocus="true" href="@item.Url">@item.GName</a>
                         </li>
                     }
-                    @if (Session["NickName"]!=null)
+                    @if (Session["NickName"] != null)
                     {
                         <li id="mn_S11">
                             <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" onclick="useradd()">丨@(Session["NickName"])丨</a>
                         </li>
+                        <li id="mn_N76E">
+                            <dl class="layui-nav-child" style="background-color:#009688">
+                                <dd>
+                                    <a class="layui-btn layui-btn-sm" onclick="user_updpass()" style="width:100%">修改密码</a>
+                                </dd>
+                            </dl>
+                        </li>
+                        @if (Session["NickName"].ToString()=="admin")
+                        {
+                            <li id="mn_S11">
+                                <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" href="">论坛信息</a>
+                            </li>
+                        }
                     }
                     else
                     {
@@ -169,8 +182,24 @@
             layer.open({
                 type: 2,
                 content: ["/HomePage/PersonalInformation"],   //添加页，后台controller转发到指定页
-                area: ["600px", "400px"],
+                area: ["900px", "650px"],
                 title: ['设置我的资料'],
+                fixed: false,
+                //maxmin: true,
+                shadeClose: true,
+                end: function () {  //刷新页面
+                    location.reload();
+                }
+            })
+        })
+    }
+    function user_updpass() {
+        layui.use('layer', function () {
+            layer.open({
+                type: 2,
+                content: ["/HomePage/UpdPass"],   //添加页，后台controller转发到指定页
+                area: ["1000px", "600px"],
+                title: ['修改密码'],
                 fixed: false,
                 //maxmin: true,
                 shadeClose: true,

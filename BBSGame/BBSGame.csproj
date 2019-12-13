@@ -211,6 +211,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\881e36b0ed1d1a44af2fee567174a5d9.png" />
     <Content Include="layui\css\admin.css" />
     <Content Include="layui\css\layui.css" />
     <Content Include="layui\css\layui.mobile.css" />
@@ -393,6 +394,7 @@
     <Content Include="Views\HomePage\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\HomePage\PersonalInformation.cshtml" />
+    <Content Include="Views\HomePage\UpdPass.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
