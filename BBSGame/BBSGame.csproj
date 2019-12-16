@@ -476,6 +476,8 @@
     <Content Include="Views\HomePage\UpdPass.cshtml" />
     <Content Include="Views\Posts\CreatePost.cshtml" />
     <Content Include="Views\Posts\ShowPost.cshtml" />
+    <Content Include="Views\Posts\PostsInfo.cshtml" />
+    <Content Include="Views\Posts\AddComments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,5 +16,6 @@ namespace ModelInfo
         public string PState      { get; set; }//状态
         public int PageView    { get; set; }//浏览量
         public int PlateId     { get; set; }//板块
+        public int Num { get; set; }//回复条数
     }
 }

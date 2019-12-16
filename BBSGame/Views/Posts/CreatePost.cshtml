@@ -26,7 +26,7 @@
     </DIV>
 </DIV>
 <DIV class="bm_c">
-    <FORM id="fastpostform" onsubmit="return fastpostvalidate(this)" action="/Posts/CreatePost" method="post" autocomplete="off">
+    <FORM id="fastpostform" action="/Posts/CreatePost" method="post" enctype="multipart/form-data" autocomplete="off">
         <DIV id="fastpostreturn" style="margin: -5px 0px 5px;"></DIV>
         <DIV class="pbt cl">
             标题:<INPUT name="PTitle" tabindex="11" class="px" id="subject" style="width: 25em;" onkeyup="strLenCalc(this, 'checklen', 80);" type="text">
@@ -44,15 +44,18 @@
                         <SCRIPT src="~/Content/Plate/seditor.js" type="text/javascript"></SCRIPT>
 
                         <DIV class="fpd">
-                            <A title="文字加粗" class="fbld" href="javascript:;">B</A> <A title="设置文字颜色" class="fclr" id="fastpostforecolor" href="javascript:;">Color</A>
+                            <A title="文字加粗" class="fbld" href="javascript:;">B</A>
+                            <A title="设置文字颜色" class="fclr" id="fastpostforecolor" href="javascript:;">Color</A>
 
-                            <input type="file" name="file" multiple value="添加图片" />
-                            <A title="添加链接" class="flnk" id="fastposturl" href="javascript:;">Link</A> <A title="引用" class="fqt" id="fastpostquote" href="javascript:;">Quote</A> <A title="代码" class="fcd" id="fastpostcode" href="javascript:;">Code</A> <A class="fsml"
+                            <input type="file" name="Path" multiple value="添加图片" />
+                            <A title="添加链接" class="flnk" id="fastposturl" href="javascript:;">Link</A> 
+                            <A title="引用" class="fqt" id="fastpostquote" href="javascript:;">Quote</A>
+                            <A title="代码" class="fcd" id="fastpostcode" href="javascript:;">Code</A> <A class="fsml"
                                                                                                                                                                                                                                                               id="fastpostsml" href="javascript:;">Smilies</A>
                         </DIV>
                     </DIV>
                     <DIV>
-                        <textarea id="editor" style="width: 100%;height:250px;"></textarea>
+                        <textarea id="editor" name="PContent" style="width: 100%;height:250px;"></textarea>
                         <DIV class="pt hm">
                             您需要登录后才可以发帖 <A class="xi2" onclick="showWindow('login', this.href)"
                                            href="~/LoginHtml/index.html">登录</A> | <A class="xi2" href="/Login/Index">立即注册</A> <A href="http://www.tdnd.cn/connect.php?mod=login&amp;op=init&amp;referer=forum.php%3Fmod%3Dforumdisplay%26fid%3D51%26page%3D1%26&amp;statfrom=login" target="_top" rel="nofollow"></A>
@@ -70,6 +73,8 @@
         <P class="ptm pnpost">
             <A class="y" href="http://www.tdnd.cn/home.php?mod=spacecp&amp;ac=credit&amp;op=rule&amp;fid=51"
                target="_blank">本版积分规则</A>
+            <input type="hidden" name="PlateId" value="@(int.Parse(Session["PlateId"].ToString()))" />
+            <input type="hidden" name="CreateUser" value="@Session["NickName"].ToString()" />
             <BUTTON name="topicsubmit" tabindex="13" class="pn pnc" id="fastpostsubmit" type="submit" value="topicsubmit">
                 <STRONG>发表帖子</STRONG>
             </BUTTON>

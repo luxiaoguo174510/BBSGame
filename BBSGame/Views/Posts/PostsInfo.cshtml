@@ -1,0 +1,103 @@
+﻿
+@{
+    Layout = null;
+}
+@model ModelInfo.ViewModel
+<link href="~/layui/css/layui.css" rel="stylesheet" />
+<link href="~/layui/css/admin.css" rel="stylesheet" />
+<div class="layui-body" id="LAY_app_body">
+    <div class="layadmin-tabsbody-item layui-show">
+        <div class="layui-fluid layadmin-homepage-fluid">
+            <div class="layui-row layui-col-space8">
+                <div class="layui-col-md2">
+                    <div class="layadmin-homepage-panel layadmin-homepage-shadow">
+                        <div class="layui-card text-center">
+                            <div class="layui-card-body">
+                                <div class="layadmin-homepage-pad-ver">
+                                    <script type="text/html" template="">
+                                        <img class="layadmin-homepage-pad-img" src="" width="96" height="96">
+                                    </script> <img width="96" height="96" class="layadmin-homepage-pad-img" src="@Model.HeadPic">
+                                </div>
+                                <h4 class="layadmin-homepage-font">@Model.NickName</h4>
+                                <h4 class="layadmin-homepage-font">积分:@Model.Integral</h4>
+                                <button class="layui-btn layui-btn-fluid" onclick="">看看他(她)</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md10">
+                    <div class="layui-fluid layadmin-homepage-content">
+                        <div class="layui-row layui-col-space20 layadmin-homepage-list-imgtxt">
+                            <div class="layui-col-md9">
+                                <div class="grid-demo">
+                                    <div style="width:700px">
+                                        <div style="text-align:center">
+                                            <h1><span style="color:black">@Model.PTitle</span></h1>
+                                            <p style="font-size:15px;color:black">
+                                                @Model.PContent
+                                            </p>
+                                            <div style="text-align:center">
+                                                @foreach (var item in ViewBag.Picture)
+                                                {
+                                                    if (item.PostId == Model.PId)
+                                                    {
+                                                        <img src="@item.Picture" style="width:300px;height:200px" alt="Alternate Text" />
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                        <div>
+                                            @foreach (var item in ViewBag.Comms)
+                                            {
+                                                if (item.FId == 0)
+                                                {
+                                                    <div class="media-body">
+                                                        <a class="media-left" style="float: left;" href="/HomePage/PersonalInformation/?UId=@item.UId">
+                                                            <script type="text/html" template="">
+                                                                <img src="@item.HeadPic" alt="图片路径" style="height:46px;width:46px">
+                                                            </script><img src="@item.HeadPic" alt="图片路径" style="height:46px;width:46px">
+                                                        </a>
+                                                        <div class="pad-btm">
+                                                            <p class="fontColor"><a href="javascript:;">@item.NickName</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@item.CreateDate</p>
+                                                        </div>
+                                                        <p class="message-text" style="margin-top:30px">@item.Content</p>
+                                                    </div>
+                                                    <a href="/Posts/AddComments/?Nick=@item.NickName&PId=@Model.PId&CId=@item.CId">回复</a>
+                                                    if (item.FId == item.CId)
+                                                    {
+                                                        <div class="media-body" style="margin-left:50px">
+                                                            <a class="media-left" style="float: left;" href="/HomePage/PersonalInformation/?UId=@item.UId">
+                                                                <script type="text/html" template="">
+                                                                    <img src="@item.HeadPic" alt="图片路径" style="height:46px;width:46px">
+                                                                </script><img src="@item.HeadPic" alt="图片路径" style="height:46px;width:46px">
+                                                            </a>
+                                                            <div class="pad-btm">
+                                                                <p class="fontColor"><a href="javascript:;">@item.NickName</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@item.CreateDate</p>
+                                                            </div>
+                                                            <p class="message-text" style="margin-top:30px">@item.Content</p>
+                                                        </div>
+                                                    }
+                                                }
+                                            }
+                                        </div>
+                                        <div style="margin-top:50px">
+                                            <form action="/Posts/AddComments" method="post">
+                                                <div class="layui-form-item layui-form-text" style="text-align:left">
+                                                    <textarea name="Content" style="width:100%" class="layui-textarea" placeholder="请输入内容"></textarea>
+                                                </div>
+                                                <div class="layui-form-item" style="overflow: hidden;text-align:left">
+                                                    <input type="hidden" name="PId" value="@Model.PId" />
+                                                    <button class="layui-btn" lay-filter="formDemo" lay-submit="">发表</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

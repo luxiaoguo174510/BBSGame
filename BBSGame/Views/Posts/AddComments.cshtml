@@ -1,0 +1,16 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="~/layui/css/layui.css" rel="stylesheet" />
+<link href="~/layui/css/admin.css" rel="stylesheet" />
+<form action="/Posts/AddComments" method="post">
+    <div class="layui-form-item layui-form-text" style="text-align:left">
+        <textarea name="Content" style="width:100%" class="layui-textarea" placeholder="回复:@ViewBag.Nick"></textarea>
+    </div>
+    <div class="layui-form-item" style="overflow: hidden;text-align:left">
+        <input type="hidden" name="PId" value="@ViewBag.PId" />
+        <input type="hidden" name="FId" value="@ViewBag.CId" />
+        <button class="layui-btn" lay-filter="formDemo" lay-submit="">发表</button>
+    </div>
+</form>

@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "ShowPost";
 }
-@model List<ModelInfo.ViewModel>
+@model List<ModelInfo.PostsInfo>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
 <HTML xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
@@ -29,9 +29,9 @@
             <DIV class="mn">
                 <DIV class="tl bm bmw" id="threadlist">
                     <DIV class="scbar_narrow cl" id="scbar">
-                        <FORM action="" method="post">
+                        <FORM action="/Posts/ShowPost" method="post">
                             <div style="text-align:left">
-                                <input type="text" class="form-control" style="width:80%;float:left" name="name" value="" />
+                                <input type="text" class="form-control" style="width:80%;float:left" name="title" value="" />
                                 <input type="submit" class="btn btn-info" style="width:15%" value="🔍搜索" />
                             </div>
                         </FORM>
@@ -68,20 +68,22 @@
                             <TBODY id="stickthread_21694">
                                 @foreach (var item in Model)
                                 {
-                                <TR>
-                                    <TH class="common">
-                                        <A class="s xst" style="color: rgb(236, 18, 130); font-weight: bold; background-color: rgb(255, 255, 0);" href="///?PId=@item.PId">@item.PTitle</A>
-                                    </TH>
-                                    <TD class="by">
-                                        <CITE>
-                                            <A style="color: rgb(255, 0, 0);" href="http://www.tdnd.cn/space-uid-16.html"
-                                               c="1">@item.CreateUser</A>
-                                        </CITE><EM><SPAN>@item.CreateDate</SPAN></EM>
-                                    </TD>
-                                    <TD class="num"><A class="xi2" href="http://www.tdnd.cn/thread-21694-1-1.html">回复条数</A><EM>浏览量</EM></TD>
-                                </TR>
+                                    if (int.Parse(Session["PlateId"].ToString())== item.PlateId)
+                                    {
+                                        <TR>
+                                            <TH class="common">
+                                                <A class="s xst" style="color: rgb(236, 18, 130); font-weight: bold; background-color: rgb(255, 255, 0);" href="/Posts/PostsInfo/?PId=@item.PId">@item.PTitle</A>
+                                            </TH>
+                                            <TD class="by">
+                                                <CITE>
+                                                    <A style="color: rgb(255, 0, 0);" href="http://www.tdnd.cn/space-uid-16.html"
+                                                       c="1">@item.CreateUser</A>
+                                                </CITE><EM><SPAN>@item.CreateDate</SPAN></EM>
+                                            </TD>
+                                            <TD class="num"><A class="xi2" href="http://www.tdnd.cn/thread-21694-1-1.html">@item.Num</A><EM>@item.PageView</EM></TD>
+                                        </TR>
+                                    }
                                 }
-                                
                             </TBODY>
                         </TABLE>
                     </DIV>

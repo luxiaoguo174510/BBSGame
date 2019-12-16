@@ -44,7 +44,7 @@
                             <div class="layui-form-item">
                                 <label class="layui-form-label">年龄</label>
                                 <div class="layui-input-inline" style="padding-top:7px">
-                                    <span style="margin-left:2px;">@((int)(DateTime.Now.Year-Model.Birthday.Year))</span>
+                                    <span style="margin-left:2px;">@((int)(DateTime.Now.Year - Model.Birthday.Year))</span>
                                 </div>
                             </div>
                             <div class="layui-form-item">
@@ -57,7 +57,11 @@
                                 <label class="layui-form-label">等级</label>
                                 <div class="layui-input-inline">
                                     <span style="margin-left:2px;">@Model.Grade</span>
-                                    <input type="button" style="margin-left:30px"  class="layui-btn" onclick="location.href='/HomePage/UpGrade/?Integral=@(Model.Integral)&Grade=@(Model.Grade)'" value="我要升级!!!!" />
+                                    @if (Model.UId == int.Parse(Session["UId"].ToString()))
+                                    {
+                                        <input type="button" style="margin-left:30px" class="layui-btn" onclick="location.href='/HomePage/UpGrade/?Integral=@(Model.Integral)&Grade=@(Model.Grade)'" value="我要升级!!!!" />
+                                    }
+
                                 </div>
                             </div>
                             <div class="layui-form-item">
@@ -107,12 +111,16 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="layui-form-item">
-                                <div class="layui-input-block">
-                                    <input type="hidden" name="HeadPic" value="@Model.HeadPic" />
-                                    <button class="layui-btn">修改</button>
+                            @if (Model.UId == int.Parse(Session["UId"].ToString()))
+                            {
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <input type="hidden" name="HeadPic" value="@Model.HeadPic" />
+
+                                        <button class="layui-btn">修改</button>
+                                    </div>
                                 </div>
-                            </div>
+                            }
                         </div>
                     </form>
                 </div>

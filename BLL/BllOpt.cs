@@ -51,7 +51,7 @@ namespace BLL
             return db.Proc_ExecuteNonQuery("P_AddPostsInfo", pairs, out outname);
         }
         //显示帖子（模糊查询）
-        public List<PostsInfo> ShowPoste(string title="")
+        public List<PostsInfo> ShowPoste(string title)
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
             pairs.Add("@title", title);
@@ -150,6 +150,32 @@ namespace BLL
             pairs.Add("@PassWord", NewPass);
             pairs.Add("@UId", UId);
             int i = db.Proc_ExecuteNonQuery("P_UpdPass", pairs);
+            return i;
+        }
+        public ViewModel GetPostsInfo(int PId)
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@PId",PId);
+            DataTable data = db.Proc_GetTable("P_PostsInfo", pairs);
+            ViewModel plate = JsonConvert.DeserializeObject<List<ViewModel>>(JsonConvert.SerializeObject(data)).First();
+            return plate;
+        }
+        public List<ViewModel> GetComment(int PId)
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@PId", PId);
+            DataTable data = db.Proc_GetTable("P_Comments", pairs);
+            List<ViewModel> Comms = JsonConvert.DeserializeObject<List<ViewModel>>(JsonConvert.SerializeObject(data));
+            return Comms;
+        }
+        public int AddComments(Comments comm)
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@UId",comm.UId);
+            pairs.Add("@Content",comm.Content);
+            pairs.Add("@PId",comm.PId);
+            pairs.Add("@FId",comm.FId);
+            int i= db.Proc_ExecuteNonQuery("P_AddComments", pairs);
             return i;
         }
     }

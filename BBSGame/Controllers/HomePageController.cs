@@ -39,10 +39,17 @@ namespace BBSGame.Controllers
             ViewBag.User = users;
             ViewBag.Picture = pictures;
         }
-        public ActionResult PersonalInformation()
+        public ActionResult PersonalInformation(int UId= -1)
         {
-
-            int i = int.Parse(Session["UId"].ToString());
+            int i = 0;
+            if (UId==-1)
+            {
+                i = int.Parse(Session["UId"].ToString());
+            }
+            else
+            {
+                i = UId;
+            }
             UserInfo user = JsonConvert.DeserializeObject<List<UserInfo>>(JsonConvert.SerializeObject(bp.UserSelectOne(i))).First();
             return View(user);
         }

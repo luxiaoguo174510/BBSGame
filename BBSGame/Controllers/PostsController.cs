@@ -29,10 +29,11 @@ namespace BBSGame.Controllers
             ViewBag.Picture = pictures;
         }
         //显示帖子
-        public ActionResult ShowPost(string Plate,string title)
+        public ActionResult ShowPost(string title = "", int PlateId = 0)
         {
             ViewBags();
-            List<PostsInfo> posts= bp.ShowPoste(title);
+            Session["PlateId"] = PlateId;
+            List<PostsInfo> posts = bp.ShowPoste(title);
             return View(posts);
         }
         public ActionResult CreatePost()
@@ -40,28 +41,43 @@ namespace BBSGame.Controllers
             return View();
         }
         [HttpPost]
-        public void CreatePost(PostsInfo m,HttpPostedFileBase file,Pictures p)
-        {
-            string strpath = "/resource/images";
-            string s = Path.GetFileName(file.FileName);
-            if(!Directory.Exists(Server.MapPath("images")))
+        [ValidateInput(false)]
+        public void CreatePost(PostsInfo m)
+         {
+            if (!Directory.Exists(Server.MapPath("/Image/")))
             {
-                Directory.CreateDirectory(Server.MapPath("images"));
+                Directory.CreateDirectory(Server.MapPath("/Image/"));
             }
-            file.SaveAs(Server.MapPath(strpath + s));
-            p.Picture = strpath + s;
             string outname = "";
-            string name = Session["CreateUser"].ToString();
-            m.CreateUser = name;
-            int result = bp.AddPoste(m,out outname);
+            int result = bp.AddPoste(m, out outname);
             int i = Convert.ToInt32(outname);
-            if(result>0)
+            HttpFileCollectionBase httpFile = Request.Files;
+            if (result > 0)
             {
-                Response.Write("<script>alert('添加帖子成功！');location.href='/Posts/index'</script>");
+                int j = 0;
+                foreach (string item in httpFile)
+                {
+                    HttpPostedFileBase file = httpFile[item];
+                    file.SaveAs(Server.MapPath("/Image/" + file.FileName));
+                    Pictures pictures = new Pictures
+                    {
+                        PostId = i,
+                        Picture = "/Image/" + file.FileName
+                    };
+                    j += bp.AddPicture(pictures);
+                }
+                if (j > 0)
+                {
+                    Response.Write("<script>alert('发帖成功！');parent.layer.close(parent.layer.getFrameIndex(window.name));</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('发帖失败！');parent.layer.close(parent.layer.getFrameIndex(window.name));</script>");
+                }
             }
             else
             {
-                Response.Write("<script>alert('添加失败！');location.href='/Posts/AddPost'</script>");
+                Response.Write("<script>alert('发帖失败！');parent.layer.close(parent.layer.getFrameIndex(window.name));</script>");
             }
         }
         public void DelPost(string IdName, string TableName, int Id)
@@ -76,6 +92,42 @@ namespace BBSGame.Controllers
                 Response.Write("<script>alert('删除失败！');location.href='/Posts/index'</script>");
             }
         }
-
+        public ActionResult PostsInfo(int PId = 1)
+        {
+            ViewModel plate = bp.GetPostsInfo(PId);
+            ViewBag.Comms = bp.GetComment(PId);
+            ViewBags();
+            return View(plate);
+        }
+        public ActionResult AddComments(string Nick,int PId,int CId)
+        {
+            ViewBag.Nick = Nick;
+            ViewBag.PId = PId;
+            ViewBag.CId = CId;
+            return View();
+        } 
+        [HttpPost]
+        public void AddComments(Comments comm)
+        {
+            try
+            {
+                comm.UId = int.Parse(Session["UId"].ToString());
+                int i = bp.AddComments(comm);
+                if (i > 0)
+                {
+                    Response.Write($"<script>alert('评论成功!');location.href='/Posts/PostsInfo/?PId={comm.PId}'</script>");
+                }
+                else
+                {
+                    Response.Write($"<script>alert('评论失败!');location.href='/Posts/PostsInfo/?PId={comm.PId}'</script>");
+                }
+            }
+            catch (Exception)
+            {
+                Response.Write($"<script>alert('您还未登录!');location.href='/LoginHtml/index.html'</script>");
+            }
+            
+        }
+        
     }
 }

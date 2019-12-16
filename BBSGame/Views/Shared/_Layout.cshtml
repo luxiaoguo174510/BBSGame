@@ -53,7 +53,7 @@
                     @foreach (var item in ViewBag.GType)
                     {
                         <li id="mn_N67f5">
-                            <a hidefocus="true" href="@item.Url">@item.GName</a>
+                            <a hidefocus="true" href="/HomePage/Index/?GType=@item.GName">@item.GName</a>
                         </li>
                     }
                     @if (Session["NickName"] != null)
@@ -68,7 +68,7 @@
                                 </dd>
                             </dl>
                         </li>
-                        if (Session["NickName"].ToString()=="admin")
+                        if (Session["NickName"].ToString() == "admin")
                         {
                             <li id="mn_S11">
                                 <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" href="">论坛信息</a>
