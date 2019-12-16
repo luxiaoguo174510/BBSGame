@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PostsController.cs" />
@@ -478,6 +479,15 @@
     <Content Include="Views\Posts\ShowPost.cshtml" />
     <Content Include="Views\Posts\PostsInfo.cshtml" />
     <Content Include="Views\Posts\AddComments.cshtml" />
+    <Content Include="Views\Admin\Add.cshtml" />
+    <Content Include="Views\Admin\CommIndex.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\IndexPost.cshtml" />
+    <Content Include="Views\Admin\PlateAdd.cshtml" />
+    <Content Include="Views\Admin\PlateIndex.cshtml" />
+    <Content Include="Views\Admin\PlateUpt.cshtml" />
+    <Content Include="Views\Admin\Upt.cshtml" />
+    <Content Include="Views\Admin\UserShow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

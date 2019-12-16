@@ -19,6 +19,6 @@ namespace ModelInfo
         public int Grade { get; set; }//等级      
         public string Province { get; set; }//居住省   
         public string Phone { get; set; }//手机号      
-        public string UState { get; set; }//状态     
+        public int UState { get; set; }//状态     
     }
 }

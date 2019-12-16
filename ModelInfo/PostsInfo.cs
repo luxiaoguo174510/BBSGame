@@ -13,7 +13,7 @@ namespace ModelInfo
         public string PContent    { get; set; }//内容
         public DateTime CreateDate  { get; set; }//发布时间
         public string CreateUser  { get; set; }//发布人
-        public string PState      { get; set; }//状态
+        public int PState      { get; set; }//状态
         public int PageView    { get; set; }//浏览量
         public int PlateId     { get; set; }//板块
         public int Num { get; set; }//回复条数

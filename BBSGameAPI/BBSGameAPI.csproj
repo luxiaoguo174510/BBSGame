@@ -44,8 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="PublicToolsLib">
-      <HintPath>D:\资料\专高四\技能\PublicToolsLib\bin\Debug\PublicToolsLib.dll</HintPath>
+    <Reference Include="PublicToolsLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\PublicToolsLib.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />

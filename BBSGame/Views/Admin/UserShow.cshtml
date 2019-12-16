@@ -1,0 +1,116 @@
+﻿@model IEnumerable<ModelInfo.UserInfo>
+
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserShow</title>
+</head>
+<body>
+    <p>
+        <input type="button" class="btn btn-info" onclick="location.href='/Admin/Index'" value="返回" />
+    </p>
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NickName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HeadPic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birthday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Integral)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Province)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UState)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NickName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HeadPic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sex)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Birthday)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Integral)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Province)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    <button onclick="State(@item.UId,@item.UState)">@(item.UState == 1 ? "启用" : "禁用")</button>
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script>
+    function State(uid, Ustate) {
+        var oj = { "UId": uid, "UState": Ustate }
+        var a = 0
+        if (Ustate == 1) {
+            a = 0;
+        }
+        else {
+            a = 1;
+        }
+        $.post('/admin/T1', { "UId": uid, "UState": a }, function (data) {
+            if (data > 0) {
+                alert('修改成功')
+                location.href ='/Admin/UserShow'
+            }
+        })
+    }
+
+</script>

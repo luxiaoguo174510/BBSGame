@@ -10,7 +10,6 @@ namespace ModelInfo
     {
         public int GId { get; set; }//主键
         public string GName { get; set; }//类名
-        public string Url { get; set; }//路径
         public string GState { get; set; }//状态
     }
 }
