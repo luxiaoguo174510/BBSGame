@@ -14,6 +14,7 @@ namespace BBSGame.Controllers
     public class PostsController : Controller
     {
         BllOpt bp = new BllOpt();
+        HomePageController Home = new HomePageController();
         public void ViewBags(string GType = "")
         {
             List<GameType> game = JsonConvert.DeserializeObject<List<GameType>>(JsonConvert.SerializeObject(bp.GetGameType()));
@@ -29,11 +30,16 @@ namespace BBSGame.Controllers
             ViewBag.Picture = pictures;
         }
         //显示帖子
-        public ActionResult ShowPost(string title = "", int PlateId = 0)
+        public ActionResult ShowPost(string title = "", int PlateId = 0,int PageIndex=1)
         {
+            string OutName = "";
             ViewBags();
             Session["PlateId"] = PlateId;
-            List<PostsInfo> posts = bp.ShowPoste(title);
+            List<PostsInfo> posts = bp.ShowPoste(title,PageIndex,out OutName);
+            int count = int.Parse(OutName.ToString());
+            int pagecount = (int)Math.Ceiling((decimal)count / 20);
+            ViewBag.Pre = PageIndex <= 1 ? 1 : PageIndex - 1;
+            ViewBag.Next = PageIndex >= pagecount ? pagecount : PageIndex + 1;
             return View(posts);
         }
         public ActionResult CreatePost()
@@ -43,7 +49,7 @@ namespace BBSGame.Controllers
         [HttpPost]
         [ValidateInput(false)]
         public void CreatePost(PostsInfo m)
-         {
+        {
             if (!Directory.Exists(Server.MapPath("/Image/")))
             {
                 Directory.CreateDirectory(Server.MapPath("/Image/"));
@@ -68,6 +74,7 @@ namespace BBSGame.Controllers
                 }
                 if (j > 0)
                 {
+                    Home.AddIntegral(DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString() + "发帖成功!");
                     Response.Write("<script>alert('发帖成功！');parent.layer.close(parent.layer.getFrameIndex(window.name));</script>");
                 }
                 else
@@ -92,12 +99,28 @@ namespace BBSGame.Controllers
                 Response.Write("<script>alert('删除失败！');location.href='/Posts/index'</script>");
             }
         }
-        public ActionResult PostsInfo(int PId = 1)
+        public ActionResult PostsInfo(int PId)
         {
-            ViewModel plate = bp.GetPostsInfo(PId);
-            ViewBag.Comms = bp.GetComment(PId);
-            ViewBags();
-            return View(plate);
+            try
+            {
+                int UId = int.Parse(Session["UId"].ToString());
+                int i = bp.SelBrowse(UId, PId);
+                if (i > 0)
+                {
+                    ViewModel plate = bp.GetPostsInfo(PId);
+                    ViewBag.Comms = bp.GetComment(PId);
+                    ViewBags();
+                    return View(plate);
+                }
+                return View();
+            }
+            catch (Exception)
+            {
+                ViewModel plate = bp.GetPostsInfo(PId);
+                ViewBag.Comms = bp.GetComment(PId);
+                ViewBags();
+                return View(plate);
+            }
         }
         public ActionResult AddComments(string Nick,int PId,int CId)
         {
@@ -115,6 +138,7 @@ namespace BBSGame.Controllers
                 int i = bp.AddComments(comm);
                 if (i > 0)
                 {
+                    Home.AddIntegral(DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString() + "评论成功!");
                     Response.Write($"<script>alert('评论成功!');location.href='/Posts/PostsInfo/?PId={comm.PId}'</script>");
                 }
                 else

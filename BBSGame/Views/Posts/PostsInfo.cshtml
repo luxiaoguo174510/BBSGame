@@ -20,7 +20,7 @@
                                 </div>
                                 <h4 class="layadmin-homepage-font">@Model.NickName</h4>
                                 <h4 class="layadmin-homepage-font">积分:@Model.Integral</h4>
-                                <button class="layui-btn layui-btn-fluid" onclick="">看看他(她)</button>
+                                <button class="layui-btn layui-btn-fluid" onclick="useradd()">看看他(她)</button>
                             </div>
                         </div>
                     </div>
@@ -101,3 +101,22 @@
         </div>
     </div>
 </div>
+<script src="~/layui/layui.js"></script>
+<script>
+    function useradd() {
+        layui.use('layer', function () {
+            layer.open({
+                type: 2,
+                content: ["/HomePage/PersonalInformation"],   //添加页，后台controller转发到指定页
+                area: ["900px", "650px"],
+                title: ['设置我的资料'],
+                fixed: false,
+                //maxmin: true,
+                shadeClose: true,
+                end: function () {  //刷新页面
+                    location.reload();
+                }
+            })
+        })
+    }
+</script>

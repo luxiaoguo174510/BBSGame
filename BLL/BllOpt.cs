@@ -51,11 +51,13 @@ namespace BLL
             return db.Proc_ExecuteNonQuery("P_AddPostsInfo", pairs, out outname);
         }
         //显示帖子（模糊查询）
-        public List<PostsInfo> ShowPoste(string title)
+        public List<PostsInfo> ShowPoste(string title,int PageIndex,out string OutName)
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
             pairs.Add("@title", title);
-            DataTable dt = db.Proc_GetTable("P_ShowPostsInfo", pairs);
+            pairs.Add("@PageIndex", PageIndex);
+            pairs.Add("@count", "");
+            DataTable dt = db.ProcFY_GetTable("P_ShowPostsInfo", pairs,out OutName);
             List<PostsInfo> list = JsonConvert.DeserializeObject<List<PostsInfo>>(JsonConvert.SerializeObject(dt));
             return list;
         }
@@ -121,26 +123,26 @@ namespace BLL
         public DataTable UserSelectOne(int UId)
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
-            pairs.Add("@UId",UId);
-            DataTable data= db.Proc_GetTable("P_UserSelectOne", pairs);
+            pairs.Add("@UId", UId);
+            DataTable data = db.Proc_GetTable("P_UserSelectOne", pairs);
             return data;
         }
         public int UserUpd(UserInfo user)
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
-            pairs.Add("@UId",user.UId);
-            pairs.Add("@NickName",user.NickName);
-            pairs.Add("@HeadPic",user.HeadPic);
-            pairs.Add("@Sex",user.Sex);
-            pairs.Add("@Province",user.Province);
-            int i =db.Proc_ExecuteNonQuery("P_UserUpd", pairs);
+            pairs.Add("@UId", user.UId);
+            pairs.Add("@NickName", user.NickName);
+            pairs.Add("@HeadPic", user.HeadPic);
+            pairs.Add("@Sex", user.Sex);
+            pairs.Add("@Province", user.Province);
+            int i = db.Proc_ExecuteNonQuery("P_UserUpd", pairs);
             return i;
         }
         public int GradeUp(int gral, int UId)
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
-            pairs.Add("@gral",gral);
-            pairs.Add("@UId",UId);
+            pairs.Add("@gral", gral);
+            pairs.Add("@UId", UId);
             int i = db.Proc_ExecuteNonQuery("P_GradeUp", pairs);
             return i;
         }
@@ -155,7 +157,7 @@ namespace BLL
         public ViewModel GetPostsInfo(int PId)
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
-            pairs.Add("@PId",PId);
+            pairs.Add("@PId", PId);
             DataTable data = db.Proc_GetTable("P_PostsInfo", pairs);
             ViewModel plate = JsonConvert.DeserializeObject<List<ViewModel>>(JsonConvert.SerializeObject(data)).First();
             return plate;
@@ -171,12 +173,29 @@ namespace BLL
         public int AddComments(Comments comm)
         {
             Dictionary<string, object> pairs = new Dictionary<string, object>();
-            pairs.Add("@UId",comm.UId);
-            pairs.Add("@Content",comm.Content);
-            pairs.Add("@PId",comm.PId);
-            pairs.Add("@FId",comm.FId);
-            int i= db.Proc_ExecuteNonQuery("P_AddComments", pairs);
+            pairs.Add("@UId", comm.UId);
+            pairs.Add("@Content", comm.Content);
+            pairs.Add("@PId", comm.PId);
+            pairs.Add("@FId", comm.FId);
+            int i = db.Proc_ExecuteNonQuery("P_AddComments", pairs);
             return i;
+        }
+        public int AddIntegral(IntegralInfo info)
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@UId",info.UId);
+            pairs.Add("@Score",info.Score);
+            pairs.Add("@Remark",info.Remark);
+            int i = db.Proc_ExecuteNonQuery("P_AddIntegral", pairs);
+            return i;
+        }
+        public int SelBrowse(int UId, int PId)
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            pairs.Add("@UId", UId);
+            pairs.Add("@PId", PId);
+            int i = db.Proc_ExecuteNonQuery("P_SelBrowse", pairs);
+            return  i;
         }
     }
 }

@@ -12,7 +12,6 @@ namespace ModelInfo
         public string PName { get; set; }//板块名称
         public int GId { get; set; }//游戏分类
         public string PImage { get; set; }//板块图
-        public string Url { get; set; }//路径
         public int PState { get; set; }//状态
         public int FLag { get; set; }//帖子数
         public int RowId { get; set; }//标识列

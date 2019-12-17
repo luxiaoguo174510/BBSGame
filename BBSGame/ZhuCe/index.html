@@ -27,6 +27,9 @@
             <div class="m-2">
                 <div class="m-2-1">
                     <div class="m-2-2">
+                        <input type="file" name="Path" id="HeadImg" />
+                    </div>
+                    <div class="m-2-2">
                         <input type="text" id="UserName" placeholder="请输入账号" />
                     </div>
                     <div class="m-2-2">
@@ -36,22 +39,55 @@
                         <input type="text" id="Iphone" placeholder="请输入手机号" />
                     </div>
                     <div class="m-2-2">
-                        <button onclick="GetIphoneYanZheng()">获取短信验证码</button>
+                        <input type="text" id="NName" placeholder="请输入昵称" />
                     </div>
-                    <div class="m-2-2-1">
-                        <input type="text" id="SuiJiYanZheng" placeholder="请输入验证码" />
+                    <div class="m-2-2">
+                        <input type="text" id="Sex" placeholder="请输入性别" />
                     </div>
-                    <div id="P1" style="width:200px;height:5px;margin:auto" class="text-center">
-
+                    <div class="m-2-2">
+                        <input type="date" id="Bir" placeholder="请输入生日" />
+                    </div>
+                    <div class="m-2-2">
+                        <span>请选择地址：</span>
+                        <select name="Province" id="Sheng" lay-verify="">
+                            <option value="北京">北京</option>
+                            <option value="天津">天津</option>
+                            <option value="河北">河北</option>
+                            <option value="山西">山西</option>
+                            <option value="内蒙古">内蒙古</option>
+                            <option value="辽宁">辽宁</option>
+                            <option value="吉林">吉林</option>
+                            <option value="黑龙江">黑龙江</option>
+                            <option value="上海">上海</option>
+                            <option value="江苏">江苏</option>
+                            <option value="浙江省">浙江省</option>
+                            <option value="安徽">安徽</option>
+                            <option value="福建">福建</option>
+                            <option value="江西">江西</option>
+                            <option value="山东">山东</option>
+                            <option value="河南">河南</option>
+                            <option value="湖北">湖北</option>
+                            <option value="湖南">湖南</option>
+                            <option value="广东">广东</option>
+                            <option value="广西">广西</option>
+                            <option value="海南">海南</option>
+                            <option value="重庆">重庆</option>
+                            <option value="四川">四川</option>
+                            <option value="贵州">贵州</option>
+                            <option value="云南">云南</option>
+                            <option value="西藏">西藏</option>
+                            <option value="陕西">陕西</option>
+                            <option value="甘肃省">甘肃省</option>
+                            <option value="青海">青海</option>
+                            <option value="宁夏">宁夏</option>
+                            <option value="新疆">新疆</option>
+                            <option value="台湾">台湾</option>
+                            <option value="香港特别行政区">香港特别行政区</option>
+                            <option value="澳门">澳门</option>
+                        </select>
                     </div>
                     <div class="m-2-2" id="P2">
-                        <button onclick="TuPianYanZheng()">登录</button>
-                    </div>
-                    <div class="m-2-2">
-                        <button onclick="location.href='../ZhuCe/index.html'">注册</button>
-                    </div>
-                    <div class="m-2-2">
-                        <span>注：默认已同意GameLife使用条款（注册时已勾选）</span>
+                        <button onclick="ZhuCe()">注册</button>
                     </div>
                 </div>
             </div>
@@ -114,57 +150,29 @@
 
     <script type="text/javascript" src="https://cdn.dingxiang-inc.com/ctu-group/captcha-ui/index.js"></script>
     <script>
-        var x = 123;//接受短信验证码
-        function TuPianYanZheng() {
-            var y = $("#SuiJiYanZheng").val();
-            if (x == y) {
-                var myCaptcha = _dx.Captcha(document.getElementById('P1'), {
-                    appId: 'f4821addb462dd54853153c0c72ef42f', //appId，在控制台中“应用管理”或“应用配置”模块获取
-                    success: function (token) {
-                        $.ajax({
-                            url: "/Login/TuPianYanZheng",
-                            typ: "get",
-                            data: { token: token },
-                            success: function (data) {
-                                if (data == "SERVER_SUCCESS1") {
-                                    var UName = $("#UserName").val();
-                                    var PassWord = $("#UserWord").val();
-                                    var Phone = $("#Iphone").val();
-                                    $.ajax({
-                                        url: "/Login/LoginUser",
-                                        type: "get",
-                                        data: { UName: UName, PassWord: PassWord, Phone: Phone },
-                                        success: function (data1) {
-                                            if (data1 > 0) {
-                                                alert("登录成功");
-                                                location.href = "/HomePage/Index";
-                                            }
-                                            else {
-                                                alert("登录失败");
-                                            }
-                                        }
-                                    })
-                                }
-                                else {
-                                    alert("图片验证未通过");
-                                }
-                            }
-                        })
-                    }
-                })
+        function ZhuCe() {
+            var obj = {
+                UName: $("#UserName").val(),
+                PassWord: $("#UserWord").val(),
+                NickName: $("#NName").val(),
+                HeadPic: $("#HeadImg").val(),
+                Sex: $("#Sex").val(),
+                Birthday: $("#Bir").val(),
+                Province: $("#Sheng").val(),
+                Phone: $("#Iphone").val()
             }
-            else {
-                alert("验证码不正确");
-            }
-            }
-        function GetIphoneYanZheng() {
-            var phone = $("#Iphone").val();
             $.ajax({
-                url: "/Login/GetPhoneYanZheng",
-                type: "get",
-                data: { phone: phone },
+                url: "/Login/ZhuCe",
+                type: "post",
+                data: { m: obj },
                 success: function (data) {
-                    x = data;
+                    if (data == 1) {
+                        alert("注册成功");
+                        location.href = '../LoginHtml/index.html';
+                    }
+                    else {
+                        alert("注册字段不能为空或注册失败请稍后再试");
+                    }
                 }
             })
         }

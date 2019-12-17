@@ -129,5 +129,19 @@ namespace BBSGame.Controllers
                 }
             }
         }
+        public void AddIntegral(string Remark)
+        {
+            IntegralInfo info = new IntegralInfo
+            {
+                UId=int.Parse(Session["UId"].ToString()),
+                Score=10,
+                Remark=Remark
+            };
+            int i= bp.AddIntegral(info);
+            if (i>0)
+            {
+                Response.Write("<script>alert('积分+10😁!');</script>");
+            }
+        }
     }
 }

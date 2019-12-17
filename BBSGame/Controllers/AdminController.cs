@@ -19,7 +19,7 @@ namespace BBSGame.Controllers
         //游戏分类显示
         public ActionResult Index()
         {
-            string url = "http://localhost:56748/BBS/ShowType";
+            string url = "http://localhost:8086/BBS/ShowType";
             return View(api.GetApi<GameType>(url));
         }
 
@@ -32,7 +32,7 @@ namespace BBSGame.Controllers
         [HttpPost]
         public void Add(GameType game)
         {
-            string url = "http://localhost:56748/BBS/TypeAdd";
+            string url = "http://localhost:8086/BBS/TypeAdd";
 
             int i = Convert.ToInt32(api.PostApi(url, JsonConvert.SerializeObject(game)));
             if (i > 0)
@@ -50,7 +50,7 @@ namespace BBSGame.Controllers
 
         public void Delete(int GId)
         {
-            string url = "http://localhost:56748/BBS/DelType";
+            string url = "http://localhost:8086/BBS/DelType";
             string s = api.PostApi(url, JsonConvert.SerializeObject(GId));
             int i = Convert.ToInt32(s);
             if (i > 0)
@@ -66,14 +66,14 @@ namespace BBSGame.Controllers
         //游戏分类修改
         public ActionResult Upt(int id)
         {
-            string url = "http://localhost:56748/BBS/OneType/?id=" + id;
+            string url = "http://localhost:8086/BBS/OneType/?id=" + id;
             return View(api.GetApi<GameType>(url).First());
         }
 
         [HttpPost]
         public void Upt(GameType game)
         {
-            string url = "http://localhost:56748/BBS/UptType";
+            string url = "http://localhost:8086/BBS/UptType";
             int i = Convert.ToInt32(api.PostApi(url, JsonConvert.SerializeObject(game)));
             if (i > 0)
             {
@@ -92,7 +92,7 @@ namespace BBSGame.Controllers
         //板块显示
         public ActionResult PlateIndex()
         {
-            string url = "http://localhost:56748/BBS/ShowPlate";
+            string url = "http://localhost:8086/BBS/ShowPlate";
             return View(api.GetApi<PlateInfo>(url));
         }
         //板块添加
@@ -103,7 +103,7 @@ namespace BBSGame.Controllers
         [HttpPost]
         public void PlateAdd(PlateInfo info,HttpPostedFileBase Path)
         {
-            string url = "http://localhost:56748/BBS/AddPlate";
+            string url = "http://localhost:8086/BBS/AddPlate";
             if (Path != null)
             {
                 if (!Directory.Exists(Server.MapPath("/Image/")))
@@ -129,7 +129,7 @@ namespace BBSGame.Controllers
 
         public void PlateDelete(int GId)
         {
-            string url = "http://localhost:56748/BBS/DelPlate";
+            string url = "http://localhost:8086/BBS/DelPlate";
             string s = api.PostApi(url, JsonConvert.SerializeObject(GId));
             int i = Convert.ToInt32(s);
             if (i > 0)
@@ -144,14 +144,14 @@ namespace BBSGame.Controllers
         //板块修改
         public ActionResult PlateUpt(int cid)
         {
-            string url = "http://localhost:56748/BBS/OnePlate/?cid=" + cid;
+            string url = "http://localhost:8086/BBS/OnePlate/?cid=" + cid;
             return View(api.GetApi<PlateInfo>(url).First());
         }
 
         [HttpPost]
         public void PlateUpt(PlateInfo game)
         {
-            string url = "http://localhost:56748/BBS/UptPlate";
+            string url = "http://localhost:8086/BBS/UptPlate";
             int i = Convert.ToInt32(api.PostApi(url, JsonConvert.SerializeObject(game)));
             if (i > 0)
             {
@@ -171,13 +171,13 @@ namespace BBSGame.Controllers
         //帖子列表
         public ActionResult IndexPost()
         {
-            string url = "http://localhost:56748/BBS/ShowPost";
+            string url = "http://localhost:8086/BBS/ShowPost";
             return View(api.GetApi<PostsInfo>(url));
         }
         //帖子通过/不通过
         public void U1(PostsInfo p)
         {
-            string url = "http://localhost:56748/BBS/PostsPass";
+            string url = "http://localhost:8086/BBS/PostsPass";
             int i = Convert.ToInt32(api.PostApi(url, JsonConvert.SerializeObject(p)));
             if (i > 0)
             {
@@ -195,13 +195,13 @@ namespace BBSGame.Controllers
         //用户列表
         public ActionResult UserShow()
         {
-            string url = "http://localhost:56748/BBS/UserShow";
+            string url = "http://localhost:8086/BBS/UserShow";
             return View(api.GetApi<UserInfo>(url));
         }
         //用户通过/不通过
         public int T1(UserInfo p)
         {
-            string url = "http://localhost:56748/BBS/UserStart";
+            string url = "http://localhost:8086/BBS/UserStart";
             int i = Convert.ToInt32(api.PostApi(url, JsonConvert.SerializeObject(p)));
             if (i > 0)
             {
@@ -219,7 +219,7 @@ namespace BBSGame.Controllers
         #region 评价管理
         public ActionResult CommIndex()
         {
-            string url = "http://localhost:56748/BBS/CommShow";
+            string url = "http://localhost:8086/BBS/CommShow";
             return View(api.GetApi<Comments>(url));
         }
 
@@ -227,7 +227,7 @@ namespace BBSGame.Controllers
 
         public void CommDelete(int CId)
         {
-            string url = "http://localhost:56748/BBS/DelCom";
+            string url = "http://localhost:8086/BBS/DelCom";
             string s = api.PostApi(url, JsonConvert.SerializeObject(CId));
             int i = Convert.ToInt32(s);
             if (i > 0)

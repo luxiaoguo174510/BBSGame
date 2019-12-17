@@ -17,7 +17,7 @@
                 @foreach (var item in ViewBag.Picture)
                 {
                     <li class="p@(item.RowId)">
-                        <a href="#">
+                        <a href="/Posts/PostsInfo/?PId=@(item.RowId)">
                             <img alt="" src="@item.Picture">
                         </a>
                     </li>
@@ -86,7 +86,7 @@
                                             {
                                                 if (pla.UId == use.UId)
                                                 {
-                                                    <A class="notabs" href="@pla.Url"
+                                                    <A class="notabs" href="JavaScript;;;"
                                                        c="1">@(use.NickName)丨</A>
                                                 }
                                             }
@@ -95,7 +95,7 @@
                                 </SPAN>
                                 <H2>
                                     <A style="color: rgb(0, 102, 0);"
-                                       href="@game.Url">@game.GName</A>
+                                       href="">@game.GName</A>
                                 </H2>
                             </DIV>
                             <DIV class="bm_c" id="category_1">

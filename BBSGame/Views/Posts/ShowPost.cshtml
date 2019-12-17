@@ -68,7 +68,7 @@
                             <TBODY id="stickthread_21694">
                                 @foreach (var item in Model)
                                 {
-                                    if (int.Parse(Session["PlateId"].ToString())== item.PlateId)
+                                    if (int.Parse(Session["PlateId"].ToString()) == item.PlateId)
                                     {
                                         <TR>
                                             <TH class="common">
@@ -88,8 +88,12 @@
                         </TABLE>
                     </DIV>
                 </DIV>
+                <DIV style="text-align:left">
+                    <a href="/Posts/ShowPost/?PageIndex=@ViewBag.Pre">上一页</a>
+                    <a href="/Posts/ShowPost/?PageIndex=@ViewBag.Next" style="text-align:right">下一页</a>
+                </DIV>
+                </DIV>
             </DIV>
-        </DIV>
         <DIV style="text-align:left">
             <button onclick="postsadd()" style="background-color:none;border:none;text-align:left">
                 <img src="~/Content/Plate/pn_post.png" alt="Alternate Text" />
