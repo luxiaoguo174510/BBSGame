@@ -56,14 +56,14 @@ namespace BBSGame.Controllers
             }
             string outname = "";
             int result = bp.AddPoste(m, out outname);
-            int i = Convert.ToInt32(outname);
-            HttpFileCollectionBase httpFile = Request.Files;
             if (result > 0)
             {
                 int j = 0;
-                foreach (string item in httpFile)
+                int i = Convert.ToInt32(outname);
+                HttpFileCollection httpFile = System.Web.HttpContext.Current.Request.Files;
+                for (int y = 0; y < httpFile.Count; y++)
                 {
-                    HttpPostedFileBase file = httpFile[item];
+                    HttpPostedFile file = httpFile[y];
                     file.SaveAs(Server.MapPath("/Image/" + file.FileName));
                     Pictures pictures = new Pictures
                     {

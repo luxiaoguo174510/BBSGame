@@ -98,6 +98,8 @@ namespace BBSGame.Controllers
         //板块添加
         public ActionResult PlateAdd()
         {
+            ViewBag.listG = new SelectList(SelGameType(), "GId", "GName");
+            ViewBag.listU = new SelectList(SelUser(), "UId", "NickName");
             return View();
         }
         [HttpPost]
@@ -163,7 +165,18 @@ namespace BBSGame.Controllers
                 Response.Write("<script>alert('修改失败')</script>");
             }
         }
-    
+        //游戏分类
+        public List<GameType> SelGameType()
+        {
+            string url = "http://localhost:8086/BBS/SelGameType";
+            return api.GetApi<GameType>(url);
+        }
+        //所有用户
+        public List<UserInfo> SelUser()
+        {
+            string url = "http://localhost:8086/BBS/SelUser";
+            return api.GetApi<UserInfo>(url);
+        }
 
         #endregion
 

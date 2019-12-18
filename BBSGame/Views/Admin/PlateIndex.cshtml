@@ -13,7 +13,6 @@
         <td>帖子编号</td>
         <td>板块名称</td>
         <td>游戏分类</td>
-        <td>板块图</td>
         <td>状态</td>
         <td>版主</td>
         <td>操作</td>
@@ -25,10 +24,7 @@
             <td>@item.PId</td>
             <td>@item.PName</td>
             <td>@item.GId</td>
-            <td>@item.PImage</td>
             <td>@(item.PState == 1 ? "启用" : "禁用") </td>
-            <td>@item.FLag</td>
-            <td>@item.RowId</td>
             <td>@item.UId</td>
             <td>
                 @Html.ActionLink("删除", "PlateDelete", new { @GId = item.PId }, new { @onclick = "return confirm ('确认删除?')" })

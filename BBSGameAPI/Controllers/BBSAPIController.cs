@@ -1,4 +1,5 @@
 ﻿using ModelInfo;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -176,6 +177,23 @@ namespace BBSGameAPI.Controllers
             Dictionary<string, object> pairs = new Dictionary<string, object>();
             return db.Proc_GetTable("p_post", pairs);
         }
+        [Route("SelGameType")]
+        [HttpGet]
+        public IHttpActionResult SelGameType()
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            List<GameType> list = JsonConvert.DeserializeObject<List<GameType>>(JsonConvert.SerializeObject(db.Proc_GetTable("P_SelGameType", pairs)));
+            return Json(list);
+        }
+        [Route("SelUser")]
+        [HttpGet]
+        public IHttpActionResult SelUser()
+        {
+            Dictionary<string, object> pairs = new Dictionary<string, object>();
+            List<UserInfo> list = JsonConvert.DeserializeObject<List<UserInfo>>(JsonConvert.SerializeObject(db.Proc_GetTable("P_SelUser", pairs)));
+            return Json(list);
+        }
+
     }
 }
 

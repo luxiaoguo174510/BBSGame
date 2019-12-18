@@ -292,6 +292,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Image\881e36b0ed1d1a44af2fee567174a5d9.png" />
+    <Content Include="Image\thum_untitled4.jpg" />
     <Content Include="layui\css\admin.css" />
     <Content Include="layui\css\layui.css" />
     <Content Include="layui\css\layui.mobile.css" />
