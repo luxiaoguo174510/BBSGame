@@ -13,6 +13,7 @@ using System.IO;
 
 namespace BBSGame.Controllers
 {
+    [Serializable]
     public class LoginController : Controller
     {
         HomePageController Home = new HomePageController();
@@ -37,13 +38,17 @@ namespace BBSGame.Controllers
         /// 注册
         /// </summary>
         /// <returns></returns>
-        public int ZhuCe(UserInfo m, HttpPostedFileBase Path)
+        public ActionResult ZhuCe()
         {
-
+            return View();
+        }
+        [HttpPost]
+        public void ZhuCe(UserInfo m, HttpPostedFileBase Path)
+        {
             //判断字段是否包含空项
-            if (m.Birthday == null || m.HeadPic == null || m.NickName == null || m.PassWord == null || m.Phone == null || m.Province == null || m.Sex == null || m.UName == null)
+            if (m.Birthday == null  || m.NickName == null || m.PassWord == null || m.Phone == null || m.Province == null || m.Sex == null || m.UName == null)
             {
-                return 2;
+                Response.Write("<script>alert('注册字段不能为空或注册失败请稍后再试');</script>");
             }
             if (Path != null)
             {
@@ -86,7 +91,14 @@ namespace BBSGame.Controllers
                 comm.Parameters.Add(sqlPhone);
                 int i = comm.ExecuteNonQuery();
                 conn.Close();
-                return i;
+                if (i>0)
+                {
+                    Response.Write("<script>alert('注册成功');location.href = '../LoginHtml/index.html';</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('注册字段不能为空或注册失败请稍后再试');</script>");
+                }
             }
 
         }
@@ -117,9 +129,9 @@ namespace BBSGame.Controllers
                 DataTable DT = new DataTable();
                 sqlData.Fill(DT);
                 int i = (int)DT.Rows[0][0];
-                Session["NickName"] = DT.Rows[0]["NickName"];
-                Session["UId"] = DT.Rows[0]["UId"];
-                Session["User"] = JsonConvert.SerializeObject(DT);
+                System.Web.HttpContext.Current.Session["NickName"] = DT.Rows[0]["NickName"];
+                System.Web.HttpContext.Current.Session["UId"] = DT.Rows[0]["UId"];
+                System.Web.HttpContext.Current.Session["User"] = JsonConvert.SerializeObject(DT);
                 conn.Close();
                 Home.AddIntegral(DateTime.Now.ToShortDateString()+DateTime.Now.ToShortTimeString()+"登陆成功!");
                 return i;

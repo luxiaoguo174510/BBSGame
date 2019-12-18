@@ -16,11 +16,14 @@
             <ul>
                 @foreach (var item in ViewBag.Picture)
                 {
-                    <li class="p@(item.RowId)">
-                        <a href="/Posts/PostsInfo/?PId=@(item.RowId)">
-                            <img alt="" style="width:498px;height:220px" src="@item.Picture">
-                        </a>
-                    </li>
+                    if (item.RowId <= 7)
+                    {
+                        <li class="p@(item.RowId)">
+                            <a href="/Posts/PostsInfo/?PId=@(item.PostId)">
+                                <img alt="" style="width:498px;height:220px" src="@item.Picture">
+                            </a>
+                        </li>
+                    }
                 }
             </ul>
         </div>
@@ -101,31 +104,27 @@
                             <DIV class="bm_c" id="category_1">
                                 <TABLE class="fl_tb" cellspacing="0" cellpadding="0">
                                     <TBODY>
-                                        @for (int i = 1; i <= ViewBag.count; i++)
-                                        {
-                                            <TR class="fl_row">
-                                                @foreach (var item in ViewBag.Plate)
+                                        <TR class="fl_row">
+                                            @foreach (var item in ViewBag.Plate)
+                                            {
+                                                if (item.GId == game.GId)
                                                 {
-                                                    if (item.GId == game.GId)
-                                                    {
-                                                        if (item.RowId == i || item.RowId == i + 1)
-                                                        {
-                                                            <TD width="49.9%" class="fl_g">
-                                                                <DIV class="fl_icn_g" style="width: 50px;">
-                                                                    <A href="/Posts/ShowPost/?PlateId=@item.PId">
-                                                                        <IMG align="left" alt="" style="width:50px;height:50px" src="@item.PImage">
-                                                                    </A>
-                                                                </DIV>
-                                                                <DL style="margin-left: 50px;">
-                                                                    <DT><A href="/Posts/ShowPost/?PlateId=@item.PId">@item.PName</A></DT>
-                                                                    <DD><EM>帖数: @item.FLag</EM></DD>
-                                                                </DL>
-                                                            </TD>
-                                                        }
-                                                    }
+                                                    <TD width="49.9%" class="fl_g">
+                                                        <DIV class="fl_icn_g" style="width: 50px;">
+                                                            <A href="/Posts/ShowPost/?PlateId=@item.PId">
+                                                                <IMG align="left" alt="" style="width:50px;height:50px" src="@item.PImage">
+                                                            </A>
+                                                        </DIV>
+                                                        <DL style="margin-left: 50px;">
+                                                            <DT><A href="/Posts/ShowPost/?PlateId=@item.PId">@item.PName</A></DT>
+                                                            <DD><EM>帖数: @item.FLag</EM></DD>
+                                                        </DL>
+                                                    </TD>
+
                                                 }
-                                            </TR>
-                                        }
+                                            }
+                                        </TR>
+
                                     </TBODY>
                                 </TABLE>
                             </DIV>

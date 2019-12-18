@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 
 *{overflow:hidden }
@@ -20,18 +20,18 @@ video{
 
 .box{
 position:fixed; 
-width:1290;
-height:1080px; 
+width:1290px;
+height:1280px; 
 margin:0 auto 0 auto;
 top:0px;
 background: rgba(24,38,41, 0.1);
 background:url(../images/bj.png);
 padding:20px;
 }
-.box-a{
-width:1920px;
-height:1080px;
-position:relative;
+.box-a {
+    width: 1920px;
+    height: 1280px;
+    position: relative;
 }
 .box-a .m-1{
 width:500px;
@@ -1317,7 +1317,7 @@ line-height:40px;
 	top:292px;
 }
 .m-2-2{
-	margin:15px 0;
+	margin:10px 0;
 }
 
 .m-2-2 input{

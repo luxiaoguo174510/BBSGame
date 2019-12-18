@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 
 namespace BBSGame.Controllers
 {
+    [Serializable]
     public class HomePageController : Controller
     {
         BllOpt bp = new BllOpt();
@@ -44,7 +45,7 @@ namespace BBSGame.Controllers
             int i = 0;
             if (UId==-1)
             {
-                i = int.Parse(Session["UId"].ToString());
+                i = int.Parse(System.Web.HttpContext.Current.Session["UId"].ToString());
             }
             else
             {
@@ -65,7 +66,7 @@ namespace BBSGame.Controllers
                 Path.SaveAs(Server.MapPath("/Image/" + Path.FileName));
                 user.HeadPic = "/Image/" + Path.FileName;
             }
-            user.UId= int.Parse(Session["UId"].ToString());
+            user.UId= int.Parse(System.Web.HttpContext.Current.Session["UId"].ToString());
             int i = bp.UserUpd(user);
             if (i > 0)
             {
@@ -89,7 +90,7 @@ namespace BBSGame.Controllers
             }
             else
             {
-                int i = int.Parse(Session["UId"].ToString());
+                int i = int.Parse(System.Web.HttpContext.Current.Session["UId"].ToString());
                 int j= bp.GradeUp(gral, i);
                 if (j>0)
                 {
@@ -104,7 +105,7 @@ namespace BBSGame.Controllers
         [HttpPost]
         public void UpdPass(string Phone, string Pass, string NewPass)
         {
-            List<UserInfo> list = JsonConvert.DeserializeObject<List<UserInfo>>(Session["User"].ToString());
+            List<UserInfo> list = JsonConvert.DeserializeObject<List<UserInfo>>(System.Web.HttpContext.Current.Session["User"].ToString());
             foreach (var item in list)
             {
                 if (item.Phone != Phone)
@@ -121,7 +122,7 @@ namespace BBSGame.Controllers
                 }
                 else
                 {
-                    int i = bp.UpdPass(NewPass, int.Parse(Session["UId"].ToString()));
+                    int i = bp.UpdPass(NewPass, int.Parse(System.Web.HttpContext.Current.Session["UId"].ToString()));
                     if (i > 0)
                     {
                         Response.Write("<script>alert('修改密码成功!');parent.layer.close(parent.layer.getFrameIndex(window.name));</script>");
@@ -133,15 +134,11 @@ namespace BBSGame.Controllers
         {
             IntegralInfo info = new IntegralInfo
             {
-                UId=int.Parse(Session["UId"].ToString()),
+                UId=int.Parse(System.Web.HttpContext.Current.Session["UId"].ToString()),
                 Score=10,
                 Remark=Remark
             };
-            int i= bp.AddIntegral(info);
-            if (i>0)
-            {
-                Response.Write("<script>alert('积分+10😁!');</script>");
-            }
+            bp.AddIntegral(info);
         }
     }
 }

@@ -41,7 +41,7 @@
     <div id="hd">
         <div class="wp">
             <div class="hdc cl">
-                <a title="好客游戏论坛|天地农大BBS" href="http://www.tdnd.cn/">
+                <a title="好客游戏论坛|天地农大BBS" href="/HomePage/Index">
                     <img alt="游戏生活" src="/Content/Index/QQ%e5%9b%be%e7%89%8720191204092257.png" style="width:100%" height="300" border="0">
                 </a>
             </div>
@@ -74,6 +74,9 @@
                                 <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" href="/Admin/Index">论坛信息</a>
                             </li>
                         }
+                        <li id="mn_S11">
+                            <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" href="~/LoginHtml/index.html">注销</a>
+                        </li>
                     }
                     else
                     {
@@ -81,9 +84,12 @@
                             <a class="xi2" style="color: aqua; font-weight: bold;" hidefocus="true" href="~/LoginHtml/index.html">登录</a>
                         </li>
                     }
-                    <li id="mn_N76E">
-                        <a class="xi2 xw1" style="color:  brown; font-weight: bold;" hidefocus="true" href="/Login/Index">注册</a>
-                    </li>
+                    @if (Session["NickName"] != null)
+                    {
+                        <li id="mn_N76E">
+                            <a class="xi2 xw1" style="color:  brown; font-weight: bold;" hidefocus="true" href="/Login/ZhuCe">注册</a>
+                        </li>
+                    }
                 </ul>
             </div>
             <div class="p_pop h_pop" id="mn_userapp_menu" style="display: none;"></div>

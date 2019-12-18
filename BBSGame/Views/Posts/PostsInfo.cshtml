@@ -15,12 +15,12 @@
                             <div class="layui-card-body">
                                 <div class="layadmin-homepage-pad-ver">
                                     <script type="text/html" template="">
-                                        <img class="layadmin-homepage-pad-img" src="" width="96" height="96">
+                                        <img class="layadmin-homepage-pad-img" src="@Model.HeadPic" width="96" height="96">
                                     </script> <img width="96" height="96" class="layadmin-homepage-pad-img" src="@Model.HeadPic">
                                 </div>
                                 <h4 class="layadmin-homepage-font">@Model.NickName</h4>
                                 <h4 class="layadmin-homepage-font">积分:@Model.Integral</h4>
-                                <button class="layui-btn layui-btn-fluid" onclick="useradd()">看看他(她)</button>
+                                <button class="layui-btn layui-btn-fluid" onclick="location.href='/Posts/ShowPost/?PlateId=@System.Web.HttpContext.Current.Session["PlateId"]'">返回</button>
                             </div>
                         </div>
                     </div>

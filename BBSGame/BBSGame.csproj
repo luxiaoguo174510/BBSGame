@@ -533,6 +533,7 @@
     <Content Include="Views\Admin\PlateUpt.cshtml" />
     <Content Include="Views\Admin\Upt.cshtml" />
     <Content Include="Views\Admin\UserShow.cshtml" />
+    <Content Include="Views\Login\ZhuCe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

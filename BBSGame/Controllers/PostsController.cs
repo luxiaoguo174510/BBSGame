@@ -34,7 +34,7 @@ namespace BBSGame.Controllers
         {
             string OutName = "";
             ViewBags();
-            Session["PlateId"] = PlateId;
+            System.Web.HttpContext.Current.Session["PlateId"] = PlateId;
             List<PostsInfo> posts = bp.ShowPoste(title,PageIndex,out OutName);
             int count = int.Parse(OutName.ToString());
             int pagecount = (int)Math.Ceiling((decimal)count / 20);
@@ -103,9 +103,9 @@ namespace BBSGame.Controllers
         {
             try
             {
-                int UId = int.Parse(Session["UId"].ToString());
+                int UId = int.Parse(System.Web.HttpContext.Current.Session["UId"].ToString());
                 int i = bp.SelBrowse(UId, PId);
-                if (i > 0)
+                if (i > 0||i==-1)
                 {
                     ViewModel plate = bp.GetPostsInfo(PId);
                     ViewBag.Comms = bp.GetComment(PId);
@@ -134,7 +134,7 @@ namespace BBSGame.Controllers
         {
             try
             {
-                comm.UId = int.Parse(Session["UId"].ToString());
+                comm.UId = int.Parse(System.Web.HttpContext.Current.Session["UId"].ToString());
                 int i = bp.AddComments(comm);
                 if (i > 0)
                 {
