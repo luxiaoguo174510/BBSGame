@@ -1,68 +1,31 @@
-﻿@model IEnumerable<ModelInfo.Comments>
-
+﻿@model List<ModelInfo.ViewModel>
 @{
     Layout = null;
 }
-<link href="~/Content/bootstrap.css" rel="stylesheet" />
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>CommIndex</title>
-</head>
-<body>
-    <p>
-        <input type="button" onclick="location.href='/Admin/Index'" class="btn btn-info"  value="返回" />
-    </p>
-    <table class="table table-bordered">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Content)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreateDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FId)
-            </th>
-            <th></th>
+<link href="/Content/bootstrap.css" rel="stylesheet" />
+<input type="button" onclick="location.href='/Admin/Index'" class="btn btn-info" value="返回" />
+<table class="table table-bordered">
+    <thead>
+        <tr style="background-color:aqua">
+            <td>ID</td>
+            <td>用户昵称</td>
+            <td>评论内容</td>
+            <td>评论时间</td>
+            <td>帖子ID</td>
+            <td>操作</td>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreateDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FId)
-            </td>
-            <td>
-                @Html.ActionLink("删除", "CommDelete", new { CId = item.CId  })
-            </td>
-        </tr>
-    }
-    
-    </table>
-</body>
-</html>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CId</td>
+                <td>@item.NickName</td>
+                <td>@item.Content</td>
+                <td>@item.CreateDate</td>
+                <td>@item.PId</td>
+                <td>@Html.ActionLink("删除", "CommDelete", new { @CId=item.CId})</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -4,56 +4,28 @@
     Layout = null;
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Upt</title>
-</head>
-<body>
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>GameType</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.GId, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.GId, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.GId, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.GName, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.GName, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.GName, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.GState, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <input type="radio" name="GState" checked="@(Model.GState=="禁用"?true:false)" value="禁用" />禁用
-                    <input type="radio" name="GState" checked="@(Model.GState=="启用"?true:false)" value="启用" />启用
-                    @Html.ValidationMessageFor(model => model.GState, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-    }
-    
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-</body>
-</html>
+
+@using (Html.BeginForm())
+{
+<table class="table table-bordered">
+    <tr>
+        <td>游戏ID</td>
+        <td><input type="text" name="GId" value="" /></td>
+    </tr>
+    <tr>
+        <td>游戏名称</td>
+        <td><input type="text" name="GName" value="" /></td>
+    </tr>
+    <tr>
+        <td>状态</td>
+        <td>
+            <input type="radio" name="GState" checked="@(Model.GState==0?true:false)" value="禁用" />禁用
+            <input type="radio" name="GState" checked="@(Model.GState==1?true:false)" value="启用" />启用
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" name="name" value="提交" class="btn btn-info" /></td>
+    </tr>
+</table>
+}

@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -13,13 +14,14 @@ namespace BBSGame.Controllers
     public class AdminController : Controller
     {
         ApiHelper api = new ApiHelper();
+        string apival = ConfigurationManager.AppSettings["GameLife"];
         // GET: Admin
 
         #region 游戏分类
         //游戏分类显示
         public ActionResult Index()
         {
-            string url = "http://localhost:8086/BBS/ShowType";
+            string url = apival+"BBS/ShowType";
             return View(api.GetApi<GameType>(url));
         }
 
@@ -32,7 +34,7 @@ namespace BBSGame.Controllers
         [HttpPost]
         public void Add(GameType game)
         {
-            string url = "http://localhost:8086/BBS/TypeAdd";
+            string url = apival+"BBS/TypeAdd";
 
             int i = Convert.ToInt32(api.PostApi(url, JsonConvert.SerializeObject(game)));
             if (i > 0)
@@ -50,7 +52,7 @@ namespace BBSGame.Controllers
 
         public void Delete(int GId)
         {
-            string url = "http://localhost:8086/BBS/DelType";
+            string url = apival+"BBS/DelType";
             string s = api.PostApi(url, JsonConvert.SerializeObject(GId));
             int i = Convert.ToInt32(s);
             if (i > 0)
@@ -66,14 +68,14 @@ namespace BBSGame.Controllers
         //游戏分类修改
         public ActionResult Upt(int id)
         {
-            string url = "http://localhost:8086/BBS/OneType/?id=" + id;
+            string url = apival+"BBS/OneType/?id=" + id;
             return View(api.GetApi<GameType>(url).First());
         }
 
         [HttpPost]
         public void Upt(GameType game)
         {
-            string url = "http://localhost:8086/BBS/UptType";
+            string url = apival+"BBS/UptType";
             int i = Convert.ToInt32(api.PostApi(url, JsonConvert.SerializeObject(game)));
             if (i > 0)
             {
@@ -92,7 +94,7 @@ namespace BBSGame.Controllers
         //板块显示
         public ActionResult PlateIndex()
         {
-            string url = "http://localhost:8086/BBS/ShowPlate";
+            string url = apival+"BBS/ShowPlate";
             return View(api.GetApi<PlateInfo>(url));
         }
         //板块添加
@@ -105,7 +107,7 @@ namespace BBSGame.Controllers
         [HttpPost]
         public void PlateAdd(PlateInfo info,HttpPostedFileBase Path)
         {
-            string url = "http://localhost:8086/BBS/AddPlate";
+            string url = apival+"BBS/AddPlate";
             if (Path != null)
             {
                 if (!Directory.Exists(Server.MapPath("/Image/")))
@@ -131,7 +133,7 @@ namespace BBSGame.Controllers
 
         public void PlateDelete(int GId)
         {
-            string url = "http://localhost:8086/BBS/DelPlate";
+            string url = apival+"BBS/DelPlate";
             string s = api.PostApi(url, JsonConvert.SerializeObject(GId));
             int i = Convert.ToInt32(s);
             if (i > 0)
@@ -146,14 +148,14 @@ namespace BBSGame.Controllers
         //板块修改
         public ActionResult PlateUpt(int cid)
         {
-            string url = "http://localhost:8086/BBS/OnePlate/?cid=" + cid;
+            string url = apival+"BBS/OnePlate/?cid=" + cid;
             return View(api.GetApi<PlateInfo>(url).First());
         }
 
         [HttpPost]
         public void PlateUpt(PlateInfo game)
         {
-            string url = "http://localhost:8086/BBS/UptPlate";
+            string url = apival+"BBS/UptPlate";
             int i = Convert.ToInt32(api.PostApi(url, JsonConvert.SerializeObject(game)));
             if (i > 0)
             {
@@ -168,13 +170,13 @@ namespace BBSGame.Controllers
         //游戏分类
         public List<GameType> SelGameType()
         {
-            string url = "http://localhost:8086/BBS/SelGameType";
+            string url = apival+"BBS/SelGameType";
             return api.GetApi<GameType>(url);
         }
         //所有用户
         public List<UserInfo> SelUser()
         {
-            string url = "http://localhost:8086/BBS/SelUser";
+            string url = apival+"BBS/SelUser";
             return api.GetApi<UserInfo>(url);
         }
 
@@ -184,13 +186,13 @@ namespace BBSGame.Controllers
         //帖子列表
         public ActionResult IndexPost()
         {
-            string url = "http://localhost:8086/BBS/ShowPost";
-            return View(api.GetApi<PostsInfo>(url));
+            string url = apival+"BBS/ShowPost";
+            return View(api.GetApi<ViewModel>(url));
         }
         //帖子通过/不通过
         public void U1(PostsInfo p)
         {
-            string url = "http://localhost:8086/BBS/PostsPass";
+            string url = apival+"BBS/PostsPass";
             int i = Convert.ToInt32(api.PostApi(url, JsonConvert.SerializeObject(p)));
             if (i > 0)
             {
@@ -208,13 +210,13 @@ namespace BBSGame.Controllers
         //用户列表
         public ActionResult UserShow()
         {
-            string url = "http://localhost:8086/BBS/UserShow";
+            string url = apival+"BBS/UserShow";
             return View(api.GetApi<UserInfo>(url));
         }
         //用户通过/不通过
         public int T1(UserInfo p)
         {
-            string url = "http://localhost:8086/BBS/UserStart";
+            string url = apival+"BBS/UserStart";
             int i = Convert.ToInt32(api.PostApi(url, JsonConvert.SerializeObject(p)));
             if (i > 0)
             {
@@ -232,15 +234,15 @@ namespace BBSGame.Controllers
         #region 评价管理
         public ActionResult CommIndex()
         {
-            string url = "http://localhost:8086/BBS/CommShow";
-            return View(api.GetApi<Comments>(url));
+            string url = apival+"BBS/CommShow";
+            return View(api.GetApi<ViewModel>(url));
         }
 
         //评价删除
 
         public void CommDelete(int CId)
         {
-            string url = "http://localhost:8086/BBS/DelCom";
+            string url = apival+"BBS/DelCom";
             string s = api.PostApi(url, JsonConvert.SerializeObject(CId));
             int i = Convert.ToInt32(s);
             if (i > 0)

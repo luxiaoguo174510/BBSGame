@@ -4,96 +4,45 @@
     Layout = null;
 }
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>UserShow</title>
-</head>
-<body>
-    <p>
-        <input type="button" class="btn btn-info" onclick="location.href='/Admin/Index'" value="返回" />
-    </p>
-    <table class="table table-bordered">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NickName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HeadPic)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Sex)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Birthday)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Integral)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Grade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Province)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UState)
-            </th>
-            <th></th>
+<input type="button" onclick="location.href='/Admin/Index'" class="btn btn-info" value="返回" />
+<table class="table table-bordered">
+    <thead>
+        <tr style="background-color:aqua">
+            <td>用户编号</td>
+            <td>用户名</td>
+            <td>昵称</td>
+            <td>头像</td>
+            <td>性别</td>
+            <td>生日</td>
+            <td>积分</td>
+            <td>等级</td>
+            <td>省份</td>
+            <td>手机号</td>
+            <td>状态</td>
         </tr>
-
+    </thead>
+    <tbody>
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NickName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.HeadPic)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Sex)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Birthday)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Integral)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Grade)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Province)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Phone)
-                </td>
-                <td>
-                    <button onclick="State(@item.UId,@item.UState)">@(item.UState == 1 ? "启用" : "禁用")</button>
-                </td>
+                <td>@item.UId</td>
+                <td>@item.UName</td>
+                <td>@item.NickName</td>
+                @*<td><img src="@item.HeadPic" alt="Alternate Text" /></td>*@
+                <td>@item.HeadPic</td>
+                <td>@item.Sex</td>
+                <td>@item.Birthday</td>
+                <td>@item.Integral</td>
+                <td>@item.Grade</td>
+                <td>@item.Province</td>
+                <td>@item.Phone</td>
+                <td><button onclick="State(@item.UId,@item.UState)">@(item.UState == 1 ? "启用" : "禁用")</button></td>
             </tr>
         }
+    </tbody>
+</table>
 
-    </table>
-</body>
-</html>
+
 <script src="~/Scripts/jquery-3.3.1.js"></script>
 <script>
     function State(uid, Ustate) {

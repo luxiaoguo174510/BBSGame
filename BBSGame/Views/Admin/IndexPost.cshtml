@@ -1,77 +1,40 @@
-﻿@model IEnumerable<ModelInfo.PostsInfo>
+﻿@model List<ModelInfo.ViewModel>
 
 @{
     Layout = null;
 }
-<script src="~/Scripts/jquery-3.3.1.min.js"></script>
-<script src="~/Scripts/jquery-3.3.1.js"></script>
-<link href="~/Content/bootstrap.css" rel="stylesheet" />
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>IndexPost</title>
-</head>
-<body>
-    <p>
-        <input type="button" class="btn btn-info" onclick="location.href='/Admin/Index'" value="返回" />
-    </p>
-    <table class="table table-bordered">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PTitle)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PContent)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreateDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreateUser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PState)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PageView)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PlateId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Num)
-            </th>
-            <th></th>
+<script src="/Scripts/jquery-3.3.1.min.js"></script>
+<script src="/Scripts/jquery-3.3.1.js"></script>
+<link href="/Content/bootstrap.css" rel="stylesheet" />
+<table class="table table-bordered">
+    <thead>
+        <tr style="background-color:aqua">
+            <td>ID</td>
+            <td>标题</td>
+            <td>内容</td>
+            <td>创建时间</td>
+            <td>创建人</td>
+            <td>状态</td>
+            <td>浏览量</td>
+            <td>操作</td>
+            <td>板块名称</td>
         </tr>
-
+    </thead>
+    <tbody>
         @foreach (var item in Model)
         {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PTitle)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PContent)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreateDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreateUser)
-            </td>
-            @if (item.PState == 0)
+            <td>@item.PId</td>
+            <td>@item.PTitle</td>
+            <td>@item.PContent</td>
+            <td>@item.CreateDate</td>
+            <td>@item.CreateUser</td>
+            <td>@item.PState</td>
+            @if (item.PState == "0")
             {
                 <td>待审核</td>
             }
-            else if (item.PState == 1)
+            else if (item.PState == "1")
             {
                 <td>通过</td>
             }
@@ -79,17 +42,10 @@
             {
                 <td>不通过</td>
             }
+            <td>@item.PageView</td>
+            <td>@item.PName</td>
             <td>
-                @Html.DisplayFor(modelItem => item.PageView)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PlateId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Num)
-            </td>
-            <td>
-                @if (item.PState == 0)
+                @if (item.PState == "0")
                 {
                     @Html.ActionLink("通过", "U1", new { PId = item.PId, PState = 1 })
                     @Html.ActionLink("不通过", "U1", new { PId = item.PId, PState = 2 })
@@ -97,7 +53,5 @@
             </td>
         </tr>
         }
-
-    </table>
-</body>
-</html>
+    </tbody>
+</table>

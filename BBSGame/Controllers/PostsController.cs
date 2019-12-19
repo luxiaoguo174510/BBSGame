@@ -34,7 +34,10 @@ namespace BBSGame.Controllers
         {
             string OutName = "";
             ViewBags();
-            System.Web.HttpContext.Current.Session["PlateId"] = PlateId;
+            if (PlateId!=0)
+            {
+                System.Web.HttpContext.Current.Session["PlateId"] = PlateId;
+            }
             List<PostsInfo> posts = bp.ShowPoste(title,PageIndex,out OutName);
             int count = int.Parse(OutName.ToString());
             int pagecount = (int)Math.Ceiling((decimal)count / 20);

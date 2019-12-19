@@ -14,5 +14,6 @@ namespace ModelInfo
         public DateTime CreateDate { get; set; }//发表时间
         public int PId{ get; set; }//帖子
         public int FId { get; set; }//父级Id
+
     }
 }
